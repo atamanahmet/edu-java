@@ -1,8 +1,17 @@
 public class Variables {
     public static void main(String[] args) {
-        int passengers = 5;
-        System.out.println(passengers);
-        int maxValue = 2147483647;
-        System.out.println(maxValue);
+        int points = 0;
+        points -= 50;
+        System.out.println(points);
+        points -= 3;
+        System.out.println(points);
+        points += 30;
+        System.out.println(points);
+        points += 100;
+        System.out.println(points);
+        points += 60;
+        System.out.println("Final points: " + points);
+        String string1 = "asdasd";
+        System.out.println(string1);
     }
 }
