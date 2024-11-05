@@ -1,8 +1,11 @@
 public class FirstJava {
     public static void main(String[] args) {
-        System.out.println("Print 1");
-        System.out.println("Java print");
-        System.out.println("Java 3 print");
-        System.out.println("Java print 4");
+        System.out.println(" SSS     A  ");
+        System.out.println("S   S   A A ");
+        System.out.println("s      A   A");
+        System.out.println(" SSS   AAAAA");
+        System.out.println("    S  A   A");
+        System.out.println("S   S  A   A");
+        System.out.println(" SSS   A   A");
     }
 }
