@@ -2,20 +2,26 @@ import java.util.Scanner;
 
 public class Survey {
     public static void main(String[] args) {
-
         Scanner scan = new Scanner(System.in);
 
-        System.out.println("Waht is your name?");
+        System.out.println("What is your first name?");
         String name = scan.nextLine();
-        System.out.println("How much do you spend on coffee?");
-        double coffee = scan.nextDouble();
-        System.out.println("how much spend on fast food?");
-        double fastFood = scan.nextDouble();
-
-        System.out.println("\nHello " + name);
-        System.out.println("\nYou spent on coffee: $" + coffee);
-        System.out.println("\nYou spent on fast food: $" + fastFood);
+        System.out.println("What is your last name?");
+        String lastname = scan.nextLine();
+        System.out.println("How old are you?");
+        int age = scan.nextInt();
+        scan.nextLine();
+        System.out.println("Make a username?");
+        String username = scan.nextLine();
+        System.out.println("What city do you live in?");
+        String city = scan.nextLine();
+        System.out.println("What country is that?");
+        String country = scan.nextLine();
 
         scan.close();
+
+        System.out.println(
+                "\tFirst Name: " + name + "\n\tLast Name: " + lastname + "\n\tAge: " + age + "\n\tUsername: " + username
+                        + "\n\tCity: " + city + "\n\tCountry: " + country);
     }
 }
