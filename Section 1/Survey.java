@@ -12,9 +12,9 @@ public class Survey {
         System.out.println("how much spend on fast food?");
         double fastFood = scan.nextDouble();
 
-        System.out.println("Hello " + name);
-        System.out.println("You spent on coffee: $" + coffee);
-        System.out.println("You spent on fast food: $" + fastFood);
+        System.out.println("\nHello " + name);
+        System.out.println("\nYou spent on coffee: $" + coffee);
+        System.out.println("\nYou spent on fast food: $" + fastFood);
 
         scan.close();
     }
