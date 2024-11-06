@@ -21,7 +21,8 @@ public class Survey {
         scan.close();
 
         System.out.println(
-                "\tFirst Name: " + name + "\n\tLast Name: " + lastname + "\n\tAge: " + age + "\n\tUsername: " + username
+                "\n\tFirst Name: " + name + "\n\tLast Name: " + lastname + "\n\tAge: " + age + "\n\tUsername: "
+                        + username
                         + "\n\tCity: " + city + "\n\tCountry: " + country);
     }
 }
