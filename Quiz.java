@@ -38,6 +38,14 @@ public class Quiz {
             points += 5;
         }
 
-        System.out.println("Congrats. Your final score is : " + points);
+        System.out.println("\nYour final score is : " + points);
+        if (points >= 15) {
+            System.out.println("\nWow, you know your stuff!");
+        } else if (points < 15 && points >= 5) {
+            System.out.println("\nNot bad!");
+        } else {
+            System.out.println("\nBetter luck next time.");
+        }
+
     }
 }
