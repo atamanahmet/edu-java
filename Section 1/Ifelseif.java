@@ -22,5 +22,18 @@ public class Ifelseif {
             forecast = "Warm!";
         }
         System.out.println(forecast);
+
+        String color = "yellow";
+
+        switch (color) {
+            case "green":
+                System.out.println("It's green");
+                break;
+            case "yellow":
+                System.out.println("Yellow!");
+                break;
+            default:
+                System.out.println("donno");
+        }
     }
 }
