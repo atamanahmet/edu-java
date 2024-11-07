@@ -29,5 +29,6 @@ public class Chatbot {
                     + "\n\tCity: " + city + "\n\tAge: " + age + "\n\tFav Language: " + language);
         }
         scan.close();
+
     }
 }
