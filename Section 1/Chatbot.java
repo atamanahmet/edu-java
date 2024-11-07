@@ -19,8 +19,8 @@ public class Chatbot {
 
         String language = scan.nextLine();
 
-        if (language == "english" || language == "English" || language == "italian" || language == "japanese"
-                || language == "Italian" || language == "Japanese") {
+        if (language.equals("english") || language.equals("japanese") || language.equals("English")
+                || language.equals("italian")) {
             System.out.println("Oo just an idiot sandwich.. " + language
                     + ".. How original. \n\nI mean programming language dufus?");
             language = scan.nextLine();
