@@ -12,14 +12,15 @@ public class Ifelseif {
         // } else if (raven - grif > 100) {
         // System.out.println("Griffindor 4th");
         // }
-        int temp = -2;
+        int temp = 20;
         String forecast;
         if (temp <= -1) {
-            System.out.println("Freezing!");
+            forecast = "Freezing!";
         } else if (temp > -1 && temp <= 10) {
-            System.out.println("Chilly..");
+            forecast = "Chilly..!";
         } else {
-            System.out.println("Warm!");
+            forecast = "Warm!";
         }
+        System.out.println(forecast);
     }
 }
