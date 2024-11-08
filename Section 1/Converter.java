@@ -6,6 +6,14 @@ public class Converter {
 
     }
 
+    /**
+     * Funtion name: printText
+     * 
+     * @param fahrenheit (double)
+     * @return (double)
+     * 
+     *         1.Converts fahrenheit data to celcius
+     */
     public static double converter(double fahrenheit) {
         return (fahrenheit - 32) * 5 / 9;
     }
