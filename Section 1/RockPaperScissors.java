@@ -11,11 +11,11 @@ public class RockPaperScissors {
     public static void printResult(String player, String computer) {
         if (player.equals(computer)) {
             System.out.println("Draw!");
-        } else if (player.equals("rock") && !computer.equals("paper")) {
+        } else if (player.toLowerCase().equals("rock") && !computer.equals("paper")) {
             System.out.println("You Won!");
-        } else if (player.equals("paper") && !computer.equals("scissors")) {
+        } else if (player.toLowerCase().equals("paper") && !computer.equals("scissors")) {
             System.out.println("You Won!");
-        } else if (player.equals("scissors") && !computer.equals("rock")) {
+        } else if (player.toLowerCase().equals("scissors") && !computer.equals("rock")) {
             System.out.println("You Won!");
         } else {
             System.out.println("You Lost.");
