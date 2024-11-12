@@ -22,5 +22,9 @@ public class BuiltInFunctions {
 
         System.out.println(random);
 
+        int min = 10;
+        int max = 100;
+        System.out.println(Math.min(min, max));
+
     }
 }
