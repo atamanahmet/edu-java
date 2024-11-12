@@ -8,8 +8,16 @@ public class BuiltInFunctions {
         b = b.replaceAll("e", "d");
         System.out.println(b);
 
-        int c = 71;
-        double d = Math.sqrt(c);
-        System.out.println(d);
+        double c = 71;
+        double sqrtC = Math.sqrt(c);
+        System.out.println(sqrtC);
+
+        double base = 2;
+        double exponent = 3;
+        double result = Math.pow(base, exponent);
+        System.out.println(result);
+
+        double random = Math.random();
+        System.out.println(random);
     }
 }
