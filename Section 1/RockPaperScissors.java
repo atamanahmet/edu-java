@@ -32,7 +32,7 @@ public class RockPaperScissors {
     }
 
     public static String computerSelect() {
-        int randomNum = (int) (Math.random() * 3) + 1;
+        int randomNum = (int) (Math.random() * 4);
         switch (randomNum) {
             case 1:
                 return "rock";
