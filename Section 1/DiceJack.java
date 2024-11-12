@@ -9,7 +9,7 @@ public class DiceJack {
         System.out.println("Your Sum: " + player);
         System.out.println("Dice Sum: " + dice);
         System.out.println(player - dice);
-        if (player - dice >= 3) {
+        if (player - dice >= 3 && player > dice) {
             System.out.println("You Won!");
         } else {
             System.out.println("You Lost.");
