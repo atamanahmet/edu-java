@@ -5,10 +5,10 @@ public class RockPaperScissors {
         String computer = computerSelect().toLowerCase();
         String player = playerSelect().toLowerCase();
         System.out.println("\n\tYou: " + player + "\n\tCPU: " + computer);
-        isPlayerWin(player, computer);
+        printResult(player, computer);
     }
 
-    public static void isPlayerWin(String player, String computer) {
+    public static void printResult(String player, String computer) {
         if (player.equals(computer)) {
             System.out.println("Draw!");
         } else if (player.equals("rock") && !computer.equals("paper")) {
