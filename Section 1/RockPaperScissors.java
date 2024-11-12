@@ -9,23 +9,30 @@ public class RockPaperScissors {
     }
 
     public static void isPlayerWin(String player, String computer) {
-        if (player.equals("rock") && !computer.equals("paper")) {
+        if (player.equals(computer)) {
+            System.out.println("Draw!");
+        } else if (player.equals("rock") && !computer.equals("paper")) {
+            System.out.println("You Won!");
+        } else if (player.equals("paper") && !computer.equals("scissors")) {
+            System.out.println("You Won!");
+        } else if (player.equals("scissors") && !computer.equals("rock")) {
             System.out.println("You Won!");
         } else {
             System.out.println("You Lost.");
         }
+
     }
 
     public static String playerSelect() {
         Scanner scan = new Scanner(System.in);
         System.out.print("Write your selection: ");
-
-        return scan.nextLine();
+        String selection = scan.nextLine();
+        scan.close();
+        return selection;
     }
 
     public static String computerSelect() {
         int randomNum = (int) (Math.random() * 3) + 1;
-        String selection = null;
         switch (randomNum) {
             case 1:
                 return "rock";
@@ -34,7 +41,8 @@ public class RockPaperScissors {
                 return "paper";
 
             case 3:
-                return "scissor";
+                return "scissors";
+
             default:
                 return "Error!";
         }
