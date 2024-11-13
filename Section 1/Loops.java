@@ -31,26 +31,26 @@ public class Loops {
         // System.out.print(i + " ");
 
         // }
-        getNumbersAndWrite();
+        // getNumbersAndWrite();
     }
 
-    public static void getNumbersAndWrite() {
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Number to count by: ");
-        int by = scan.nextInt();
-        System.out.println("Number to start from: ");
-        int from = scan.nextInt();
-        System.out.println("Number to count to: ");
-        int to = scan.nextInt();
-        writeNumbers(by, from, to);
+    // public static void getNumbersAndWrite() {
+    // Scanner scan = new Scanner(System.in);
+    // System.out.println("Number to count by: ");
+    // int by = scan.nextInt();
+    // System.out.println("Number to start from: ");
+    // int from = scan.nextInt();
+    // System.out.println("Number to count to: ");
+    // int to = scan.nextInt();
+    // writeNumbers(by, from, to);
 
-    }
+    // }
 
-    public static void writeNumbers(int byNumber, int fromNumber, int toNumber) {
-        for (int i = fromNumber; i <= toNumber; i += byNumber) {
-            System.out.print(fromNumber + " ");
-        }
-    }
+    // public static void writeNumbers(int by, int from, int to) {
+    // for (int i = from; i <= to; i += by) {
+    // System.out.print(i + " ");
+    // }
+    // }
     // public static void getSentence() {
     // Scanner scan = new Scanner(System.in);
     // System.out.println("What is the sentence you want to write?");
