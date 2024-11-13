@@ -1,4 +1,4 @@
-// import java.util.Scanner;
+import java.util.Scanner;
 
 public class DiceJack {
 
@@ -9,7 +9,7 @@ public class DiceJack {
         System.out.println("Your Sum: " + player);
         System.out.println("Dice Sum: " + dice);
         System.out.println(player - dice);
-        if (player - dice >= 3 && player > dice) {
+        if (player - dice <= 3 && player > dice) {
             System.out.println("You Won!");
         } else {
             System.out.println("You Lost.");
@@ -18,14 +18,14 @@ public class DiceJack {
     }
 
     public static int takeNumbers() {
-        // Scanner scan = new Scanner(System.in);
-        // System.out.println("Enter first number");
-        int num1 = 4;
-        // System.out.println("Enter second number");
-        int num2 = 5;
-        // System.out.println("Enter third number");
-        int num3 = 3;
-        // scan.close();
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter first number");
+        int num1 = scan.nextInt();
+        System.out.println("Enter second number");
+        int num2 = scan.nextInt();
+        System.out.println("Enter third number");
+        int num3 = scan.nextInt();
+        scan.close();
         return (num1 + num2 + num3);
 
     }
