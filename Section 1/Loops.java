@@ -66,6 +66,7 @@ public class Loops {
                 System.out.println("Try Again.");
             } else {
                 System.out.println("You guess it right!!");
+                scan.close();
             }
         }
 
