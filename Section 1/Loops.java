@@ -11,11 +11,16 @@ public class Loops {
         // items.forEach(e){
         // e
         // }
-
-        for (int i = 1; i < 11; i++) {
-            if (i % 2 == 0) {
-                System.out.println(i);
+        int counter = 1;
+        for (int i = 1; i < 30; i++) {
+            if (counter != 11) {
+                if (i % 2 == 0) {
+                    System.out.println(i);
+                    System.out.println("Counter: " + counter);
+                    counter++;
+                }
             }
+
         }
 
     }
