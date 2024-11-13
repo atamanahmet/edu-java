@@ -25,7 +25,6 @@ public class Loops2 {
         int points = 0;
         int dice = rollDice();
         while (scan.hasNextLine()) {
-            System.out.println("Press Enter to Roll!");
             scan.nextLine();
             dice = rollDice();
             System.out.println("Dice: " + dice);
@@ -38,6 +37,7 @@ public class Loops2 {
                 points++;
                 System.out.println("Score: " + points);
             }
+            System.out.println("\nPress Enter to Roll!");
         }
         System.out.println("Your Final Score: " + points);
 
