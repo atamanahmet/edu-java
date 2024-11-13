@@ -36,6 +36,7 @@ public class Loops {
         System.out.println("How many time you want to write?");
         int count = scan.nextInt();
         writeSentence(content, count);
+        scan.close();
     }
 
     public static void writeSentence(String stringToWrite, int writeCount) {
