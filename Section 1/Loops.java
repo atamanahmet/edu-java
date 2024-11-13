@@ -33,28 +33,43 @@ public class Loops {
         // }
         // getNumbersAndWrite();
 
-        for (int i = 0; i < 20; i++) {
-            if (i % 3 == 0 && i % 5 == 0) {
-                System.out.println(i + " - FizzBuzz");
-            } else if (i % 3 == 0) {
-                System.out.println(i + " - fizz");
-            } else if (i % 5 == 0) {
-                System.out.println(i + " - buzz");
+        // for (int i = 0; i < 20; i++) {
+        // if (i % 3 == 0 && i % 5 == 0) {
+        // System.out.println(i + " - FizzBuzz");
+        // } else if (i % 3 == 0) {
+        // System.out.println(i + " - fizz");
+        // } else if (i % 5 == 0) {
+        // System.out.println(i + " - buzz");
+        // }
+        // }
+        // }
+
+        // public static void getNumbersAndWrite() {
+        // Scanner scan = new Scanner(System.in);
+        // System.out.println("Number to count by: ");
+        // int by = scan.nextInt();
+        // System.out.println("Number to start from: ");
+        // int from = scan.nextInt();
+        // System.out.println("Number to count to: ");
+        // int to = scan.nextInt();
+        // writeNumbers(by, from, to);
+        boolean isWin = false;
+        Scanner scan = new Scanner(System.in);
+        int randomNum = (int) (Math.random() * 5) + 1;
+        System.out.println("I choose a number between 1 and 5. Guess it!: ");
+        System.out.println(randomNum);
+        while (isWin == false) {
+
+            int choice = scan.nextInt();
+            isWin = choice == randomNum ? true : false;
+            if (!isWin) {
+                System.out.println("Try Again.");
+            } else {
+                System.out.println("You guess it right!!");
             }
         }
+
     }
-
-    // public static void getNumbersAndWrite() {
-    // Scanner scan = new Scanner(System.in);
-    // System.out.println("Number to count by: ");
-    // int by = scan.nextInt();
-    // System.out.println("Number to start from: ");
-    // int from = scan.nextInt();
-    // System.out.println("Number to count to: ");
-    // int to = scan.nextInt();
-    // writeNumbers(by, from, to);
-
-    // }
 
     // public static void writeNumbers(int by, int from, int to) {
     // for (int i = from; i <= to; i += by) {
