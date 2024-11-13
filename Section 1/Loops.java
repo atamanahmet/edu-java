@@ -53,6 +53,7 @@ public class Loops {
         // System.out.println("Number to count to: ");
         // int to = scan.nextInt();
         // writeNumbers(by, from, to);
+
         boolean isWin = false;
         Scanner scan = new Scanner(System.in);
         int randomNum = (int) (Math.random() * 5) + 1;
