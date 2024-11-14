@@ -43,7 +43,7 @@ public class Pokerito {
 
     public static int pickCard() {
 
-        int cardIndex = (int) (Math.random() * 12) + 1;
+        int cardIndex = (int) (Math.random() * 13);
 
         return cardIndex;
     }
@@ -73,7 +73,7 @@ public class Pokerito {
     public static String[] pickFiveCards(String[] cardArray) {
         String[] river = new String[5];
         for (int i = 0; i < 5; i++) {
-            int cardIndex = (int) (Math.random() * 12) + 1;
+            int cardIndex = (int) (Math.random() * 13);
             river[i] = cardArray[cardIndex];
             System.out.print(river[i]);
 
@@ -84,41 +84,40 @@ public class Pokerito {
 
 }
 
-// 1:
+// 1:" _______\n |A _ |\n | ( ) |\n |(_'_)|\n | | | |\n |____V|\n"
 
-// 2:
+// 2:" _____\n |2 |\n | o |\n | |\n | o |\n |____Z|\n"
 
-// 3:
+// 3:" _______\n |3 |\n | o o |\n | |\n | o o |\n |____E|\n"
 
-// 4:
+// 4:" _______\n |4 |\n | o o |\n | |\n | o o |\n |____h|\n"
 
-// 5:
-;
+// 5:" _______ \n |5 |\n | o o |\n | o |\n | o o |\n |____S|\n"
 
 // 6:
-// " _______\n |6 |\n | o o |\n | o o |\n | o o |\n |____6|\n";
+// " _______\n |6 |\n | o o |\n | o o |\n | o o |\n |____6|\n"
 
 // 7:
 
-// " _______\n |7 |\n | o o |\n |o o o|\n | o o |\n |____7|\n";
+// " _______\n |7 |\n | o o |\n |o o o|\n | o o |\n |____7|\n"
 
 // 8:
 
-// " _____ \n |8 |\n |o o o|\n | o o |\n |o o o|\n |____8|\n";
+// " _____ \n |8 |\n |o o o|\n | o o |\n |o o o|\n |____8|\n"
 
 // 9:
-// " _______\n |9 |\n |o o o|\n |o o o|\n |o o o|\n |____9|\n";
+// " _______\n |9 |\n |o o o|\n |o o o|\n |o o o|\n |____9|\n"
 
 // 10:
-// " _______\n |10 o|\n |o o o|\n |o o o|\n |o o o|\n |___10|\n";
+// " _______\n |10 o|\n |o o o|\n |o o o|\n |o o o|\n |___10|\n"
 
 // 11:
 
-// " _______\n |J www|\n | o {)|\n |o o% |\n | | % |\n |__%%[|\n";
+// " _______\n |J www|\n | o {)|\n |o o% |\n | | % |\n |__%%[|\n"
 
 // 12:
 
-// " _______\n |Q www|\n | o {(|\n |o o%%|\n | |%%%|\n |_%%%O|\n";
+// " _______\n |Q www|\n | o {(|\n |o o%%|\n | |%%%|\n |_%%%O|\n"
 
 // 13:
-// " _______\n |K WWW|\n | o {)|\n |o o%%|\n | |%%%|\n |_%%%>|\n";
+// " _______\n |K WWW|\n | o {)|\n |o o%%|\n | |%%%|\n |_%%%>|\n"
