@@ -5,10 +5,10 @@ public class Pokerito {
     public static void main(String[] artgs) {
         Scanner scan = new Scanner(System.in);
         String[] cards = { " _______\n |A _  |\n | ( ) |\n |(_'_)|\n | | | |\n |____V|\n",
-                "   _____\n  |2    |\n  |  o  |\n  |     |\n  |  o  |\n  |____Z|\n",
+                "   _____\n |2    |\n |  o  |\n |     |\n |  o  |\n |____Z|\n",
                 " _______\n |3    |\n | o o |\n |     |\n | o o |\n |____E|\n",
                 " _______\n |4    |\n | o o |\n |     |\n | o o |\n |____h|\n",
-                " _______ \n |5    |\n | o o |\n |  o  |\n | o o |\n |____S|\n",
+                " _______\n |5    |\n | o o |\n |  o  |\n | o o |\n |____S|\n",
                 " _______\n |6    |\n | o o |\n | o o |\n | o o |\n |____6|\n",
                 " _______\n |7    |\n | o o |\n |o o o|\n | o o |\n |____7|\n",
                 " _______\n |8    |\n |o o o|\n | o o |\n |o o o|\n |____8|\n",
@@ -29,7 +29,7 @@ public class Pokerito {
         System.out.println("Here comes the River..\nPress Enter to continue");
         scan.nextLine();
 
-        String[] river = pickFiveCards(cards);
+        String[] river = pickFiveCards(cards, scan);
 
         scan.close();
         isWin(river, userCard, computerCard);
@@ -52,10 +52,10 @@ public class Pokerito {
         int playerScore = 0;
         int cpuScore = 0;
         for (int i = 0; i < riverArray.length; i++) {
-            if (riverArray[i] == player) {
+            if (riverArray[i].equals(player)) {
                 playerScore++;
             }
-            if (riverArray[i] == cpu) {
+            if (riverArray[i].equals(cpu)) {
                 cpuScore++;
             }
         }
@@ -73,12 +73,14 @@ public class Pokerito {
 
     }
 
-    public static String[] pickFiveCards(String[] cardArray) {
+    public static String[] pickFiveCards(String[] cardArray, Scanner scan) {
         String[] river = new String[5];
         for (int i = 0; i < 5; i++) {
+            System.out.println("Enter to Draw");
+            scan.nextLine();
             int cardIndex = (int) (Math.random() * 13);
             river[i] = cardArray[cardIndex];
-            System.out.print(river[i]);
+            System.out.print("Card " + (i + 1) + ":\n" + river[i] + "\n");
 
         }
         return river;
