@@ -4,7 +4,9 @@ public class Pokerito {
 
     public static void main(String[] artgs) {
         Scanner scan = new Scanner(System.in);
-        int[] riverArray = {};
+
+        int[] riverArray = new int[5];
+
         String[] cards = { " _______\n |A _  |\n | ( ) |\n |(_'_)|\n | | | |\n |____V|\n",
                 "   _____\n  |2    |\n  |  o  |\n  |     |\n  |  o  |\n  |____Z|\n",
                 " _______\n |3    |\n | o o |\n |     |\n | o o |\n |____E|\n",
@@ -27,9 +29,10 @@ public class Pokerito {
         System.out.println("Here comes the River..\nPress Enter to continue");
         scan.nextLine();
         pickFiveCards(riverArray);
-        for (int i = 0; i < riverArray.length; i++) {
-            System.out.println(riverArray[i]);
-        }
+
+        // for (int i = 0; i < riverArray.length; i++) {
+        // System.out.println(riverArray[i]);
+        // }
     }
 
     /**
@@ -39,7 +42,7 @@ public class Pokerito {
 
     public static int pickCard() {
 
-        int cardIndex = (int) (Math.random() * 13) + 1;
+        int cardIndex = (int) (Math.random() * 12) + 1;
         return cardIndex;
     }
 
@@ -47,6 +50,8 @@ public class Pokerito {
         for (int i = 0; i < 5; i++) {
             int cardIndex = (int) (Math.random() * 13) + 1;
             passArray[i] = cardIndex;
+            // System.out.println(passArray[i]);
+
         }
 
     }
