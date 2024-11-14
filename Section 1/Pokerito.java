@@ -59,8 +59,10 @@ public class Pokerito {
                 cpuScore++;
             }
         }
+
         System.out.println("Your Match Score: " + playerScore);
         System.out.println("CPU Match Score: " + cpuScore);
+
         if (playerScore == cpuScore) {
             System.out.println("Draw! Try again.");
         } else if (playerScore > cpuScore) {
@@ -68,6 +70,7 @@ public class Pokerito {
         } else if (playerScore < cpuScore) {
             System.out.println("You Lost...");
         }
+
     }
 
     public static String[] pickFiveCards(String[] cardArray) {
