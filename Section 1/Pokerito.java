@@ -4,29 +4,6 @@ public class Pokerito {
 
     public static void main(String[] artgs) {
         Scanner scan = new Scanner(System.in);
-
-        System.out.println("Press Enter to pick a card\n");
-        scan.nextLine();
-        String userCard = pickCard();
-        String computerCard = pickCard();
-        System.out.println("Your card:\n" + userCard);
-        System.out.println("Computer's card:\n" + computerCard);
-        System.out.println("Here comes the River..\nPress Enter to continue");
-        scan.nextLine();
-        pickFiveCards();
-        scan.close();
-
-        // for (int i = 0; i < riverArray.length; i++) {
-        // System.out.println(riverArray[i]);
-        // }
-    }
-
-    /**
-     * @param cardIndex
-     * @return cardIndex
-     */
-
-    public static String pickCard() {
         String[] cards = { " _______\n |A _  |\n | ( ) |\n |(_'_)|\n | | | |\n |____V|\n",
                 "   _____\n  |2    |\n  |  o  |\n  |     |\n  |  o  |\n  |____Z|\n",
                 " _______\n |3    |\n | o o |\n |     |\n | o o |\n |____E|\n",
@@ -40,20 +17,68 @@ public class Pokerito {
                 " _______\n |J www|\n | o {)|\n |o o% |\n | | % |\n |__%%[|\n",
                 " _______\n |Q www|\n | o {(|\n |o o%%|\n | |%%%|\n |_%%%O|\n",
                 " _______\n |K WWW|\n | o {)|\n |o o%%|\n | |%%%|\n |_%%%>|\n" };
-        int cardIndex = (int) (Math.random() * 12) + 1;
 
-        return cards[cardIndex];
+        System.out.println("Press Enter to pick a card\n");
+        scan.nextLine();
+
+        String userCard = cards[pickCard()];
+        String computerCard = cards[pickCard()];
+
+        System.out.println("Your card:\n" + userCard);
+        System.out.println("Computer's card:\n" + computerCard);
+        System.out.println("Here comes the River..\nPress Enter to continue");
+        scan.nextLine();
+
+        String[] river = pickFiveCards(cards);
+
+        scan.close();
+        isWin(river, userCard, computerCard);
+
     }
 
-    public static int[] pickFiveCards() {
-        int[] riverArray = new int[5];
+    /**
+     * @param cardIndex
+     * @return cardIndex
+     */
+
+    public static int pickCard() {
+
+        int cardIndex = (int) (Math.random() * 12) + 1;
+
+        return cardIndex;
+    }
+
+    public static void isWin(String[] riverArray, String player, String cpu) {
+        int playerScore = 0;
+        int cpuScore = 0;
+        for (int i = 0; i < riverArray.length; i++) {
+            if (riverArray[i] == player) {
+                playerScore++;
+            }
+            if (riverArray[i] == cpu) {
+                cpuScore++;
+            }
+        }
+        System.out.println("Your Match Score: " + playerScore);
+        System.out.println("CPU Match Score: " + cpuScore);
+        if (playerScore == cpuScore) {
+            System.out.println("Draw! Try again.");
+        } else if (playerScore > cpuScore) {
+            System.out.println("You Win!!!");
+        } else if (playerScore < cpuScore) {
+            System.out.println("You Lost...");
+        }
+    }
+
+    public static String[] pickFiveCards(String[] cardArray) {
+        String[] river = new String[5];
         for (int i = 0; i < 5; i++) {
-            int cardIndex = (int) (Math.random() * 13) + 1;
-            riverArray[i] = cardIndex;
-            // System.out.println(passArray[i]);
+            int cardIndex = (int) (Math.random() * 12) + 1;
+            river[i] = cardArray[cardIndex];
+            System.out.print(river[i]);
 
         }
-        return riverArray;
+        return river;
 
     }
 
