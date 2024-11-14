@@ -4,19 +4,7 @@ public class Pokerito {
 
     public static void main(String[] artgs) {
         Scanner scan = new Scanner(System.in);
-        String[] cards = { " _______\n |A _  |\n | ( ) |\n |(_'_)|\n | | | |\n |____V|\n",
-                "   _____\n |2    |\n |  o  |\n |     |\n |  o  |\n |____Z|\n",
-                " _______\n |3    |\n | o o |\n |     |\n | o o |\n |____E|\n",
-                " _______\n |4    |\n | o o |\n |     |\n | o o |\n |____h|\n",
-                " _______\n |5    |\n | o o |\n |  o  |\n | o o |\n |____S|\n",
-                " _______\n |6    |\n | o o |\n | o o |\n | o o |\n |____6|\n",
-                " _______\n |7    |\n | o o |\n |o o o|\n | o o |\n |____7|\n",
-                " _______\n |8    |\n |o o o|\n | o o |\n |o o o|\n |____8|\n",
-                " _______\n |9    |\n |o o o|\n |o o o|\n |o o o|\n |____9|\n",
-                " _______\n |10  o|\n |o o o|\n |o o o|\n |o o o|\n |___10|\n",
-                " _______\n |J www|\n | o {)|\n |o o% |\n | | % |\n |__%%[|\n",
-                " _______\n |Q www|\n | o {(|\n |o o%%|\n | |%%%|\n |_%%%O|\n",
-                " _______\n |K WWW|\n | o {)|\n |o o%%|\n | |%%%|\n |_%%%>|\n" };
+        String[] cards = cards();
 
         System.out.println("Press Enter to pick a card\n");
         scan.nextLine();
@@ -39,6 +27,8 @@ public class Pokerito {
     /**
      * @param cardIndex
      * @return cardIndex
+     *         Inside
+     *         generate a random number between 0 and 12 for cards array
      */
 
     public static int pickCard() {
@@ -48,6 +38,17 @@ public class Pokerito {
         return cardIndex;
     }
 
+    /**
+     * 
+     * @param riverArray
+     * @param player
+     * @param cpu
+     *                   Inside
+     *                   compare river to player card and cpu card
+     *                   add points if true
+     *                   check who win
+     *                   write who win
+     */
     public static void isWin(String[] riverArray, String player, String cpu) {
         int playerScore = 0;
         int cpuScore = 0;
@@ -73,6 +74,14 @@ public class Pokerito {
 
     }
 
+    /**
+     * 
+     * @param cardArray
+     * @param scan
+     * @return river
+     *         Inside
+     *         pick random 5 card from cards array
+     */
     public static String[] pickFiveCards(String[] cardArray, Scanner scan) {
         String[] river = new String[5];
         for (int i = 0; i < 5; i++) {
@@ -85,6 +94,24 @@ public class Pokerito {
         }
         return river;
 
+    }
+
+    public static String[] cards() {
+
+        String[] cards = { " _______\n |A _  |\n | ( ) |\n |(_'_)|\n | | | |\n |____V|\n",
+                "   _____\n |2    |\n |  o  |\n |     |\n |  o  |\n |____Z|\n",
+                " _______\n |3    |\n | o o |\n |     |\n | o o |\n |____E|\n",
+                " _______\n |4    |\n | o o |\n |     |\n | o o |\n |____h|\n",
+                " _______\n |5    |\n | o o |\n |  o  |\n | o o |\n |____S|\n",
+                " _______\n |6    |\n | o o |\n | o o |\n | o o |\n |____6|\n",
+                " _______\n |7    |\n | o o |\n |o o o|\n | o o |\n |____7|\n",
+                " _______\n |8    |\n |o o o|\n | o o |\n |o o o|\n |____8|\n",
+                " _______\n |9    |\n |o o o|\n |o o o|\n |o o o|\n |____9|\n",
+                " _______\n |10  o|\n |o o o|\n |o o o|\n |o o o|\n |___10|\n",
+                " _______\n |J www|\n | o {)|\n |o o% |\n | | % |\n |__%%[|\n",
+                " _______\n |Q www|\n | o {(|\n |o o%%|\n | |%%%|\n |_%%%O|\n",
+                " _______\n |K WWW|\n | o {)|\n |o o%%|\n | |%%%|\n |_%%%>|\n" };
+        return cards;
     }
 
 }
