@@ -6,35 +6,43 @@ public class Blackjack {
         String[] cards = cards();
         int userTotal = 0;
         int compTotal = 0;
+        String compSecondCard = "";
+        boolean end = false;
 
         greet();
         scan.nextLine();
-        userTotal = getCards(cards, userTotal, "Your");
-        compTotal = getCards(cards, compTotal, "CPU");
+        userTotal = getCards(cards, userTotal, compSecondCard, "Your");
+        compTotal = getCards(cards, compTotal, compSecondCard, "CPU");
         System.out.println("\nYour total: \n" + userTotal);
-        System.out.println("\nCPU total: \n" + compTotal);
+        if (!end) {
+            System.out.println("\nCPU total: Hidden");
+        } else {
+            System.out.println("\nCPU total: \n" + compTotal);
+        }
+        System.out.println("Hit or Stay?");
 
     }
 
-    public static int getCards(String[] cards, int userTotal, String who) {
+    public static int getCards(String[] cards, int totalPoint, String compSecondCard, String who) {
         if (who.equals("Your")) {
             String pickedCard = pickCard(cards);
             String pickedCard2 = pickCard(cards);
-            System.out.println("\n" + who + " Hand: \n" + pickedCard + " " + pickedCard2);
-            userTotal += calcPoints(pickedCard);
-            userTotal += calcPoints(pickedCard2);
+            System.out.println("\n" + who + " Hand: \n" + pickedCard + pickedCard2);
+            totalPoint += calcPoints(pickedCard);
+            totalPoint += calcPoints(pickedCard2);
 
-            return userTotal;
+            return totalPoint;
         } else {
 
             String pickedCard = pickCard(cards);
             String pickedCard2 = pickCard(cards);
-            System.out.println("\n" + who + " Hand: \n" + pickedCard + " " +
-                    pickedCard2);
-            userTotal += calcPoints(pickedCard);
-            userTotal += calcPoints(pickedCard2);
+            compSecondCard = pickedCard2;
+            System.out.println("\n" + who + " Hand: \n" + pickedCard +
+                    cards[13]);
+            totalPoint += calcPoints(pickedCard);
+            totalPoint += calcPoints(pickedCard2);
 
-            return userTotal;
+            return totalPoint;
         }
 
     }
@@ -44,14 +52,19 @@ public class Blackjack {
         int cardValue;
         if (value == 'A' ||
                 value == 'J' ||
-                value == 'K' ||
-                value == 'Q') {
+                value == 'K'
+                || value == 'Q') {
             cardValue = 10;
         } else {
             int number = value - '0';
-            cardValue = number;
+            if (number == 1) {
+                cardValue = 10;
+            } else {
+                cardValue = number;
+            }
+
         }
-        // System.out.println("Card value: " + cardValue);
+
         return cardValue;
 
     }
@@ -75,8 +88,8 @@ public class Blackjack {
         String jack = " _______\n |J www|\n | o {)|\n |o o% |\n | | % |\n |__%%[|\n";
         String queen = " _______\n |Q www|\n | o {(|\n |o o%%|\n | |%%%|\n |_%%%O|\n";
         String king = " _______\n |K WWW|\n | o {)|\n |o o%%|\n | |%%%|\n |_%%%>|\n";
-
-        String[] cards = { ace, two, three, four, five, six, seven, eight, nine, ten, jack, queen, king };
+        String empty = " _______\n |     |\n | * * |\n |  *  |\n | * * |\n |_____|\n";
+        String[] cards = { ace, two, three, four, five, six, seven, eight, nine, ten, jack, queen, king, empty };
         return cards;
     }
 
