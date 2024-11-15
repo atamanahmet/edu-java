@@ -35,6 +35,17 @@ public class Blackjack {
                 System.out.println("Your total: " + userTotal);
 
             } else if (selection.toLowerCase().equals("stay")) {
+                while (compTotal < 17) {
+                    System.out.println("\nDealer's draw");
+                    System.out.println("Press Enter to continue");
+                    scan.nextLine();
+
+                    String newCard = pickCard(cards);
+
+                    System.out.println("\nDealer gets a: \n" + newCard);
+                    System.out.println("Dealer's deck is :\n" + compCard + compCard2 + newCard);
+                    compTotal += calcPoints(newCard);
+                }
                 isEnd = true;
             }
             if (userTotal >= 21) {
@@ -43,20 +54,20 @@ public class Blackjack {
 
         }
 
-        // if (!isEnd) {
-        // System.out.println("\nYour total: " + userTotal);
-        // System.out.println("\nCPU total: Hidden");
-        // } else {
-
         System.out.println("\nGame Over!");
         System.out.println("\nYour total: " + userTotal);
         System.out.println("CPU total: " + compTotal);
         if (userTotal == compTotal && userTotal < 22 && compTotal < 22) {
             System.out.println("\n Draw!");
-        } else if (userTotal > compTotal && userTotal < 22) {
-            System.out.println("You Win!");
-        } else if (compTotal > userTotal && compTotal < 22 && userTotal > 21) {
-            System.out.println("\n You Lost...");
+            System.exit(0);
+        } else if ((userTotal > compTotal && userTotal < 22) || (compTotal > 21 && userTotal <= 21)) {
+            System.out.println("\nYou Win!");
+            System.exit(0);
+        }
+
+        else if (compTotal > userTotal && compTotal < 22 || userTotal > 21 && compTotal <= 21) {
+            System.out.println("\nBust!\nYou Lost...");
+            System.exit(0);
         }
 
     }
