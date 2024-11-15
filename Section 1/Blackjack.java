@@ -29,7 +29,8 @@ public class Blackjack {
 
             String pickedCard = pickCard(cards);
             String pickedCard2 = pickCard(cards);
-            System.out.println("\n" + who + " Hand: \n" + pickedCard + " " + pickedCard2);
+            System.out.println("\n" + who + " Hand: \n" + pickedCard + " " +
+                    pickedCard2);
             userTotal += calcPoints(pickedCard);
             userTotal += calcPoints(pickedCard2);
 
