@@ -4,29 +4,45 @@ public class Blackjack {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         String[] cards = cards();
-        int point = 0;
+        int userTotal = 0;
+        int compTotal = 0;
 
         // System.out.println(cards[0]);
         // System.out.println(cards[5].charAt(11));
-        String pickedCard = pickCard(cards);
-        char pickedCardValue = pickedCard.charAt(11);
 
         greet();
         scan.nextLine();
-        System.out.println(pickedCard);
-        if (pickedCardValue == 'A' ||
-                pickedCardValue == 'J' ||
-                pickedCardValue == 'K' ||
-                pickedCardValue == 'Q') {
-            point += 10;
+        userTotal = getCards(cards, userTotal, "Your");
+        compTotal = getCards(cards, compTotal, "CPU");
+        System.out.println("\nYour total: \n" + userTotal);
+        System.out.println("\nCPU total: \n" + compTotal);
+
+    }
+
+    public static int getCards(String[] cards, int userTotal, String who) {
+        String pickedCard = pickCard(cards);
+        String pickedCard2 = pickCard(cards);
+        System.out.println("\n" + who + " Hand: \n" + pickedCard + " " + pickedCard2);
+        userTotal += calcPoints(pickedCard);
+        userTotal += calcPoints(pickedCard2);
+
+        return userTotal;
+    }
+
+    public static int calcPoints(String pickedCard) {
+        char value = pickedCard.charAt(11);
+        int cardValue;
+        if (value == 'A' ||
+                value == 'J' ||
+                value == 'K' ||
+                value == 'Q') {
+            cardValue = 10;
         } else {
-            int number = pickedCardValue - '0';
-            point += number;
-            // System.out.println("number=? " + number);
+            int number = value - '0';
+            cardValue = number;
         }
-        // System.out.println(pickedCardValue);
-        System.out.println("Value of card: " + pickedCardValue);
-        System.out.println("Your: " + point);
+        // System.out.println("Card value: " + cardValue);
+        return cardValue;
 
     }
 
