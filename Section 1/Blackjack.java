@@ -24,22 +24,40 @@ public class Blackjack {
 
         System.out.println("\nYour total: \n" + userTotal);
         while (!isEnd) {
-            System.out.println("\nHit or Stay?");
-            if (scan.nextLine().toLowerCase().equals("hit")) {
-                pickCard(cards);
 
-                System.out.println(userCard);
-            } else if (scan.nextLine().toLowerCase().equals("stay")) {
+            System.out.println("\nHit or Stay?");
+            String selection = scan.nextLine();
+
+            if (selection.toLowerCase().equals("hit")) {
+                String newCard = pickCard(cards);
+                System.out.println("\nYou draw:\n " + userCard);
+                userTotal += calcPoints(newCard);
+                System.out.println("\nYour total: " + userTotal);
+
+            } else if (selection.toLowerCase().equals("stay")) {
                 isEnd = true;
             }
+            if (userTotal >= 21) {
+                isEnd = true;
+            }
+
         }
 
-        if (!isEnd) {
-            System.out.println("\nCPU total: Hidden");
-        } else {
-            System.out.println("\nCPU total: \n" + compTotal);
+        // if (!isEnd) {
+        // System.out.println("\nYour total: " + userTotal);
+        // System.out.println("\nCPU total: Hidden");
+        // } else {
+
+        System.out.println("\nGame Over!");
+        System.out.println("\nYour total: \n" + userTotal);
+        System.out.println("CPU total: \n" + compTotal);
+        if (userTotal == compTotal && userTotal < 22 && compTotal < 22) {
+            System.out.println("\n Draw!");
+        } else if (userTotal > compTotal && userTotal < 22) {
+            System.out.println("You Win!");
+        } else if (compTotal > userTotal && compTotal < 22 && userTotal > 21) {
+            System.out.println("\n You Lost...");
         }
-        System.out.println("\nHit or Stay?");
 
     }
 
