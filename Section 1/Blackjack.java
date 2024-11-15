@@ -51,9 +51,8 @@ public class Blackjack {
             if (userTotal >= 21) {
                 isEnd = true;
             }
-
         }
-
+        scan.close();
         System.out.println("\nGame Over!");
         System.out.println("\nYour total: " + userTotal);
         System.out.println("CPU total: " + compTotal);
