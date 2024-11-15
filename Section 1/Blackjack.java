@@ -7,9 +7,6 @@ public class Blackjack {
         int userTotal = 0;
         int compTotal = 0;
 
-        // System.out.println(cards[0]);
-        // System.out.println(cards[5].charAt(11));
-
         greet();
         scan.nextLine();
         userTotal = getCards(cards, userTotal, "Your");
@@ -20,13 +17,25 @@ public class Blackjack {
     }
 
     public static int getCards(String[] cards, int userTotal, String who) {
-        String pickedCard = pickCard(cards);
-        String pickedCard2 = pickCard(cards);
-        System.out.println("\n" + who + " Hand: \n" + pickedCard + " " + pickedCard2);
-        userTotal += calcPoints(pickedCard);
-        userTotal += calcPoints(pickedCard2);
+        if (who.equals("Your")) {
+            String pickedCard = pickCard(cards);
+            String pickedCard2 = pickCard(cards);
+            System.out.println("\n" + who + " Hand: \n" + pickedCard + " " + pickedCard2);
+            userTotal += calcPoints(pickedCard);
+            userTotal += calcPoints(pickedCard2);
 
-        return userTotal;
+            return userTotal;
+        } else {
+
+            String pickedCard = pickCard(cards);
+            String pickedCard2 = pickCard(cards);
+            System.out.println("\n" + who + " Hand: \n" + pickedCard + " " + pickedCard2);
+            userTotal += calcPoints(pickedCard);
+            userTotal += calcPoints(pickedCard2);
+
+            return userTotal;
+        }
+
     }
 
     public static int calcPoints(String pickedCard) {
