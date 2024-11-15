@@ -20,6 +20,11 @@ public class Blackjack {
             System.out.println("\nCPU total: \n" + compTotal);
         }
         System.out.println("Hit or Stay?");
+        if (scan.nextLine().toLowerCase().equals("hit")) {
+
+        } else if (scan.nextLine().toLowerCase().equals("stay")) {
+            end = true;
+        }
 
     }
 
