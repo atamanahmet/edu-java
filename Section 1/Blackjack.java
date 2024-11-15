@@ -6,29 +6,44 @@ public class Blackjack {
         String[] cards = cards();
         int userTotal = 0;
         int compTotal = 0;
-        String compSecondCard = "";
-        boolean end = false;
+        boolean isEnd = false;
 
         greet();
         scan.nextLine();
-        userTotal = getCards(cards, userTotal, compSecondCard, "Your");
-        compTotal = getCards(cards, compTotal, compSecondCard, "CPU");
+
+        //
+        String userCard = pickCard(cards);
+        String userCard2 = pickCard(cards);
+        System.out.println("\nYour Hand: \n" + userCard + userCard2);
+        userTotal += calcPoints(userCard) + calcPoints(userCard2);
+        String compCard = pickCard(cards);
+        String compCard2 = pickCard(cards);
+        System.out.println("\nCPU Hand: \n" + compCard +
+                cards[13]);
+        compTotal += calcPoints(compCard) + calcPoints(compCard2);
+
         System.out.println("\nYour total: \n" + userTotal);
-        if (!end) {
+        while (!isEnd) {
+            System.out.println("\nHit or Stay?");
+            if (scan.nextLine().toLowerCase().equals("hit")) {
+                pickCard(cards);
+
+                System.out.println(userCard);
+            } else if (scan.nextLine().toLowerCase().equals("stay")) {
+                isEnd = true;
+            }
+        }
+
+        if (!isEnd) {
             System.out.println("\nCPU total: Hidden");
         } else {
             System.out.println("\nCPU total: \n" + compTotal);
         }
-        System.out.println("Hit or Stay?");
-        if (scan.nextLine().toLowerCase().equals("hit")) {
-
-        } else if (scan.nextLine().toLowerCase().equals("stay")) {
-            end = true;
-        }
+        System.out.println("\nHit or Stay?");
 
     }
 
-    public static int getCards(String[] cards, int totalPoint, String compSecondCard, String who) {
+    public static int getFirstCards(String[] cards, int totalPoint, String compSecondCard, String who) {
         if (who.equals("Your")) {
             String pickedCard = pickCard(cards);
             String pickedCard2 = pickCard(cards);
