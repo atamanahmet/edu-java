@@ -92,7 +92,6 @@ public class Blackjack {
 
             return totalPoint;
         }
-
     }
 
     public static int calcPoints(String pickedCard) {
@@ -110,11 +109,8 @@ public class Blackjack {
             } else {
                 cardValue = number;
             }
-
         }
-
         return cardValue;
-
     }
 
     public static String pickCard(String[] cards) {
