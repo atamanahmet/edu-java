@@ -20,5 +20,6 @@ public class Arrays {
             System.out.println("\t" + apples[i] + ": " + prices[i]);
 
         }
+
     }
 }
