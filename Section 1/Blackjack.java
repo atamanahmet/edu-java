@@ -1,17 +1,18 @@
 import java.util.Scanner;
 
 public class Blackjack {
+    public static Scanner scan = new Scanner(System.in);
+
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
+
         String[] cards = cards();
         int userTotal = 0;
         int compTotal = 0;
         boolean isEnd = false;
 
-        greet();
+        System.out.println("\nBlackjack 0.1\nPress Enter to Draw card\n");
         scan.nextLine();
 
-        //
         String userCard = pickCard(cards);
         String userCard2 = pickCard(cards);
         System.out.println("\nYour Hand: \n" + userCard + userCard2);
@@ -36,14 +37,13 @@ public class Blackjack {
 
             } else if (selection.toLowerCase().equals("stay")) {
                 while (compTotal < 17) {
-                    System.out.println("\nDealer's draw");
-                    System.out.println("Press Enter to continue");
+                    System.out.println("\nDealer's draw\nPress Enter to continue");
                     scan.nextLine();
 
                     String newCard = pickCard(cards);
 
-                    System.out.println("\nDealer gets a: \n" + newCard);
-                    System.out.println("Dealer's deck is :\n" + compCard + compCard2 + newCard);
+                    System.out.println("\nDealer gets a: \n" + newCard + "\nDealer's deck is :\n" + compCard + compCard2
+                            + newCard);
                     compTotal += calcPoints(newCard);
                 }
                 isEnd = true;
@@ -136,7 +136,4 @@ public class Blackjack {
         return cards;
     }
 
-    public static void greet() {
-        System.out.println("\nBlackjack 0.1\nPress Enter to Draw card\n");
-    }
 }
