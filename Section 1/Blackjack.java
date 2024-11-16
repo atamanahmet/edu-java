@@ -68,7 +68,6 @@ public class Blackjack {
             System.out.println("\nBust!\nYou Lost...");
             System.exit(0);
         }
-
     }
 
     public static int getFirstCards(String[] cards, int totalPoint, String compSecondCard, String who) {
