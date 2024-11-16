@@ -39,9 +39,7 @@ public class Blackjack {
                 while (compTotal < 17) {
                     System.out.println("\nDealer's draw\nPress Enter to continue");
                     scan.nextLine();
-
                     String newCard = pickCard(cards);
-
                     System.out.println("\nDealer gets a: \n" + newCard + "\nDealer's deck is :\n" + compCard + compCard2
                             + newCard);
                     compTotal += calcPoints(newCard);
