@@ -20,6 +20,29 @@ public class Arrays {
             System.out.println("\t" + apples[i] + ": " + prices[i]);
 
         }
+        double[] afterTaxPrices = new double[prices.length];
+        for (int i = 0; i < prices.length; i++) {
+            afterTaxPrices[i] = prices[i] + prices[i] * 13 / 100;
+        }
+        System.out.println("After tax prices: ");
+        for (int i = 0; i < afterTaxPrices.length; i++) {
 
+        }
+        System.out.println(Arrays.toString(afterTaxPrices));
+        String[] record = { "WIN", "WIN", "WIN", "LOSS", "WIN", "WIN", "LOSS" };
+        int wins = 0;
+        int losses = 0;
+
+        for (String item : record) {
+            if (item.equalsIgnoreCase("win")) {
+                wins++;
+            } else if (item.equalsIgnoreCase("loss")) {
+                losses++;
+            } else {
+                System.out.println("Wrong data. Check array");
+            }
+        }
+        System.out.println("Wins: " + wins);
+        System.out.println("Losses: " + losses);
     }
 }
