@@ -1,4 +1,6 @@
-public class Arrays {
+import java.util.Arrays;
+
+public class ArraysEdu {
     public static void main(String[] args) {
         int[] numbers = { 14775, 7928, 27102, 21787, 21063, 38096, 42711, 32863, 23707, 48328, 555888 };
         int biggestNumber = 0;
@@ -26,9 +28,11 @@ public class Arrays {
         }
         System.out.println("After tax prices: ");
         for (int i = 0; i < afterTaxPrices.length; i++) {
-
+            System.out.println(afterTaxPrices[i]);
         }
+
         System.out.println(Arrays.toString(afterTaxPrices));
+
         String[] record = { "WIN", "WIN", "WIN", "LOSS", "WIN", "WIN", "LOSS" };
         int wins = 0;
         int losses = 0;
