@@ -4,6 +4,11 @@ public class ArraysEdu2 {
     public static Scanner scan = new Scanner(System.in);
 
     public static void main(String[] args) {
+
+        scan.close();
+    }
+
+    public static String[] afterTaxPriceCalc() {
         String[] toppings = new String[3];
         System.out.println("How many pizza toppings do you want?");
         for (int i = 0; i < toppings.length; i++) {
@@ -15,6 +20,11 @@ public class ArraysEdu2 {
             toppings[i] = toppings[i].substring(0, 1).toUpperCase() + toppings[i].substring(1);
             System.out.println(i + ". " + toppings[i]);
         }
+        return toppings;
+    }
+
+    public static double[] celcisuToFahrenheit() {
+
     }
 
 }
