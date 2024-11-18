@@ -1,5 +1,5 @@
 import java.util.Scanner;
-import java.util.Arrays;
+// import java.util.Arrays;
 
 public class JavaPedia {
     public static Scanner scan = new Scanner(System.in);
