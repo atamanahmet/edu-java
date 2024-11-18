@@ -1,13 +1,16 @@
 import java.util.Scanner;
+import java.util.Arrays;
 
 public class ArraysEdu2 {
     public static Scanner scan = new Scanner(System.in);
 
     public static void main(String[] args) {
         double[] celciusArray = { 100, 0, 40, 27, 38, 20 };
-        double[] fahrenheitArray = {};
+        double[] fahrenheitArray = new double[celciusArray.length];
+        System.out.println(Arrays.toString(celciusArray));
         // getToppings();
         celciusToFahrenheit(celciusArray, fahrenheitArray);
+        printArray(celciusArray);
         printArray(fahrenheitArray);
         // scan.close();
     }
@@ -28,10 +31,9 @@ public class ArraysEdu2 {
     // return toppings;
     // }
 
-    public static double[] celciusToFahrenheit(double[] fahrenheitArray, double[] celciusArray) {
+    public static double[] celciusToFahrenheit(double[] celciusArray, double[] fahrenheitArray) {
         for (int i = 0; i < celciusArray.length; i++) {
             fahrenheitArray[i] = (celciusArray[i] / 5) + 32;
-            System.out.println(fahrenheitArray[i]);
         }
         return fahrenheitArray;
     }
