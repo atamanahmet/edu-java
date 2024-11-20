@@ -36,32 +36,23 @@ public class JavaPedia {
 
         for (int i = 0; i < db.length; i++) {
             System.out.println("\n\tFigure " + (i + 1) + "\n");
-            for (int j = 0; j < db[i].length; j++) {
-                switch (j) {
-                    case 0:
-                        System.out.print("\t -Name: ");
-                        db[i][j] = scan.nextLine();
-                        break;
-                    case 1:
-                        System.out.print("\t -Date of Birth: ");
-                        db[i][j] = scan.nextLine();
-                        break;
-                    case 2:
-                        System.out.print("\t -Occupation: ");
-                        db[i][j] = scan.nextLine();
-                        System.out.println("");
 
-                        break;
+            System.out.print("\t -Name: ");
+            db[i][0] = scan.nextLine();
 
-                }
+            System.out.print("\t -Date of Birth: ");
+            db[i][1] = scan.nextLine();
 
-            }
+            System.out.print("\t -Occupation: ");
+            db[i][2] = scan.nextLine();
+            System.out.println("");
 
         }
+
         System.out.println("Your entries: ");
         for (String[] strings : db) {
-            System.out.print(strings[0] + " " + strings[1] + " " + strings[2]);
+            System.out.print(strings[0] + " " + strings[1] + " " + strings[2] + "\n");
         }
-
     }
+
 }
