@@ -50,8 +50,8 @@ public class JavaPedia {
         }
 
         System.out.println("Your entries: ");
-        for (String[] strings : db) {
-            System.out.print(strings[0] + " " + strings[1] + " " + strings[2] + "\n");
+        for (String[] entry : db) {
+            System.out.print(entry[0] + " " + entry[1] + " " + entry[2] + "\n");
         }
     }
 
