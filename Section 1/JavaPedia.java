@@ -15,19 +15,17 @@ public class JavaPedia {
     }
 
     public static void printEntry(String[][] db) {
+
         System.out.println("\nWho do you want information on?");
         String selection = scan.nextLine();
         for (int i = 0; i < db.length; i++) {
             if (selection.equalsIgnoreCase(db[i][0])) {
+
                 System.out.println("\n\t " + db[i][0].toUpperCase() + ":" + "\n");
                 System.out.print("\t-Name: " + db[i][0] + "\n");
-
                 System.out.print("\t-Date of Birth: " + db[i][1] + "\n");
-
                 System.out.print("\t-Occupation: " + db[i][2] + "\n");
-
             }
-
         }
         scan.close();
     }
@@ -46,7 +44,6 @@ public class JavaPedia {
             System.out.print("\t -Occupation: ");
             db[i][2] = scan.nextLine();
             System.out.println("");
-
         }
 
         System.out.println("Your entries: ");
