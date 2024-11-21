@@ -17,7 +17,6 @@ public class TickTackToe {
         }
         printBoard(board);
         getSelection(turnCounter, board, isWin, empty);
-
     }
 
     public static void printBoard(char[][] array) {
@@ -27,13 +26,10 @@ public class TickTackToe {
                 System.out.print(array[i][j] + " ");
             }
             System.out.println("\n");
-
         }
-
     }
 
-    public static void getSelection(int counter, char[][] boardArray, boolean isWinCheck, char empty) {
-
+    public static void getSelection(int counter, char[][] board, boolean isWinCheck, char empty) {
         char turn = '!';
         while (!isWinCheck) {
             switch (counter % 2) {
@@ -47,27 +43,37 @@ public class TickTackToe {
 
                     break;
             }
+
             System.out.println("\nTurn: " + turn);
             System.out.println("Pick a row and column number: ");
 
-            String[] strToChar = scan.nextLine().split(" ");
-
-            int[] selection = new int[2];
-            for (int i = 0; i < selection.length; i++) {
-                selection[i] = (int) strToChar[i].charAt(0);
+            int[] selection = getSelection();
+            while (board[selection[0]][selection[1]] != empty) {
+                System.out.println("Area allready occupied. Try diffrent area");
+                System.out.println("Pick a row and column number: ");
+                selection = getSelection();
             }
-            System.out.println(selection[0] + selection[1]);
 
-            boardArray[selection[0] - '0'][selection[1] - '0'] = turn;
+            board[selection[0]][selection[1]] = turn;
             if (counter == 9) {
                 System.out.println("Game Over. Draw");
                 System.exit(0);
             }
             counter++;
-            printBoard(boardArray);
-            isWin(boardArray, turn, empty);
+            printBoard(board);
+            isWin(board, turn, empty);
         }
+    }
 
+    public static int[] getSelection() {
+        String[] strToInt = scan.nextLine().split(" ");
+
+        int[] input = new int[2];
+        for (int i = 0; i < input.length; i++) {
+            // input[i] = (int) strToInt[i].charAt(0);
+            input[i] = Integer.parseInt(strToInt[i]);
+        }
+        return input;
     }
 
     public static void isWin(char[][] array, char turn, char empty) {
@@ -78,15 +84,11 @@ public class TickTackToe {
                 || (array[2][0] == array[1][1] && array[2][0] == array[0][2] && array[2][0] != empty)
                 || (array[0][0] == array[1][0] && array[0][0] == array[2][0] && array[0][0] != empty)
                 || (array[0][1] == array[1][1] && array[0][1] == array[2][1] && array[0][1] != empty)
-                || (array[0][2] == array[1][2] && array[0][2] == array[2][2] && array[0][2] != empty)
-
-        ) {
+                || (array[0][2] == array[1][2] && array[0][2] == array[2][2] && array[0][2] != empty)) {
             System.out.println("\nPlayer " + turn + " WIN!");
             System.exit(0);
         }
-
     }
-
 }
 
 // --0 1 2
