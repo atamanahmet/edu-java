@@ -1,5 +1,5 @@
 import java.util.Scanner;
-import java.util.Arrays;
+// import java.util.Arrays;
 
 public class TickTackToe {
     public static Scanner scan = new Scanner(System.in);
@@ -16,7 +16,7 @@ public class TickTackToe {
             }
         }
         printBoard(board);
-        getSelection(turnCounter, board, isWin);
+        getSelection(turnCounter, board, isWin, empty);
 
     }
 
@@ -32,7 +32,7 @@ public class TickTackToe {
 
     }
 
-    public static void getSelection(int counter, char[][] boardArray, boolean isWinCheck) {
+    public static void getSelection(int counter, char[][] boardArray, boolean isWinCheck, char empty) {
 
         char turn = '!';
         while (!isWinCheck) {
@@ -59,27 +59,33 @@ public class TickTackToe {
             }
 
             boardArray[selection[0] - '0'][selection[1] - '0'] = turn;
-            if (counter == 8) {
+            if (counter == 9) {
                 System.out.println("Game Over. Draw");
                 System.exit(0);
             }
             counter++;
             printBoard(boardArray);
-
+            isWin(boardArray, turn, empty);
         }
 
     }
 
-    // public static void isWin(char[][] array) {
-    // if (array[0][0].equals(array[0][1]) && array[0][0].equals(array[0][2])
-    // || array[1][0].equals(array[1][1]) && array[1][0].equals(array[1][2])
-    // || array[2][0].equals(array[2][1]) && array[2][0].equals(array[2][2])
-    // || array[0][0].equals(array[1][1]) && array[2][0].equals(array[0][2])
-    // || array[2][0].equals(array[1][1]) && array[2][0].equals(array[0][2])) {
-    // System.out.println("\nPlayer " + array[0] + " WIN!");
-    // }
+    public static void isWin(char[][] array, char turn, char empty) {
+        if ((array[0][0] == array[0][1] && array[0][0] == array[0][2] && array[0][0] != '_')
+                || (array[1][0] == array[1][1] && array[1][0] == array[1][2] && array[1][0] != empty)
+                || (array[2][0] == array[2][1] && array[2][0] == array[2][2] && array[2][0] != empty)
+                || (array[0][0] == array[1][1] && array[0][0] == array[2][2] && array[0][0] != empty)
+                || (array[2][0] == array[1][1] && array[2][0] == array[0][2] && array[2][0] != empty)
+                || (array[0][0] == array[1][0] && array[0][0] == array[2][0] && array[0][0] != empty)
+                || (array[0][1] == array[1][1] && array[0][1] == array[2][1] && array[0][1] != empty)
+                || (array[0][2] == array[1][2] && array[0][2] == array[2][2] && array[0][2] != empty)
 
-    // }
+        ) {
+            System.out.println("\nPlayer " + turn + " WIN!");
+            System.exit(0);
+        }
+
+    }
 
 }
 
