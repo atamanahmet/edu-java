@@ -52,11 +52,11 @@ public class TickTackToe {
 
             String[] strToChar = scan.nextLine().split(" ");
 
-            char[] selection = new char[2];
-
+            int[] selection = new int[2];
             for (int i = 0; i < selection.length; i++) {
-                selection[i] = strToChar[i].charAt(0);
+                selection[i] = (int) strToChar[i].charAt(0);
             }
+            System.out.println(selection[0] + selection[1]);
 
             boardArray[selection[0] - '0'][selection[1] - '0'] = turn;
             if (counter == 9) {
