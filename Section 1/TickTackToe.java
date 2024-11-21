@@ -55,7 +55,7 @@ public class TickTackToe {
             char[] selection = new char[2];
 
             for (int i = 0; i < selection.length; i++) {
-                selection[i] = (char) strToChar[i].charAt(0);
+                selection[i] = strToChar[i].charAt(0);
             }
 
             boardArray[selection[0] - '0'][selection[1] - '0'] = turn;
