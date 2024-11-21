@@ -62,7 +62,7 @@ public class TickTackToe {
             counter++;
             printBoard(board);
             int winCounter = isWin(board, turn, empty);
-            if (winCounter == 3) {
+            if (winCounter == 3 || winCounter == -3) {
                 System.out.println("\nPlayer " + turn + " WIN!");
                 System.exit(0);
             }
@@ -80,6 +80,7 @@ public class TickTackToe {
 
     public static int isWin(char[][] array, char turn, char empty) {
         int winCounter = 0;
+        // Check row match
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
                 if (array[i][j] == 'X') {
@@ -94,11 +95,15 @@ public class TickTackToe {
                 winCounter = 0;
             }
         }
+        // Check column match
         for (int i = 0; i < array.length; i++) {
-            if (array[i][i] == 'X') {
-                winCounter++;
-            } else if (array[i][i] == 'O') {
-                winCounter--;
+            for (int j = 0; j < array[i].length; j++) {
+                if (array[j][i] == 'X') {
+                    winCounter++;
+                } else if (array[j][i] == 'O') {
+                    winCounter--;
+                }
+
             }
             if (winCounter == 3 || winCounter == -3) {
                 return winCounter;
@@ -106,6 +111,25 @@ public class TickTackToe {
                 winCounter = 0;
             }
         }
+        // --0 1 2
+        // 0 X X X
+        // 1 X X X
+        // 2 X X X
+        // Check diagonally (from 0-0) match
+        for (int i = 0; i < array.length; i++) {
+            if (array[i][i] == 'X') {
+                winCounter++;
+            } else if (array[i][i] == 'O') {
+                winCounter--;
+            }
+
+        }
+        if (winCounter == 3 || winCounter == -3) {
+            return winCounter;
+        } else {
+            winCounter = 0;
+        }
+        // Check diagonally (from 0-2) match
         for (int i = 0; i < array.length; i++) {
             for (int j = 2; j < -1; j--) {
                 if (array[i][j] == 'X') {
@@ -121,6 +145,7 @@ public class TickTackToe {
             }
         }
         return winCounter;
+
         // if ((array[0][0] == array[0][1] && array[0][0] == array[0][2] && array[0][0]
         // != '_')
         // || (array[1][0] == array[1][1] && array[1][0] == array[1][2] && array[1][0]
