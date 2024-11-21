@@ -67,10 +67,8 @@ public class TickTackToe {
 
     public static int[] getSelection() {
         String[] strToInt = scan.nextLine().split(" ");
-
         int[] input = new int[2];
         for (int i = 0; i < input.length; i++) {
-            // input[i] = (int) strToInt[i].charAt(0);
             input[i] = Integer.parseInt(strToInt[i]);
         }
         return input;
