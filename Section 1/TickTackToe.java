@@ -126,7 +126,7 @@ public class TickTackToe {
         } else {
             winCounter = 0;
         }
-        // Check diagonally (from 0-2) match
+        // Check diagonally (from right) match
         for (int i = 0; i < array.length; i++) {
             for (int j = 2; j < -1; j--) {
                 if (array[i][j] == 'X') {
