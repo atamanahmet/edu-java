@@ -10,6 +10,7 @@ public class TickTackToe {
         int turnCounter = 0;
         char[][] board = new char[3][3];
 
+        // Fill board with empty value;
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board[i].length; j++) {
                 board[i][j] = empty;
@@ -103,7 +104,6 @@ public class TickTackToe {
                 } else if (array[j][i] == 'O') {
                     winCounter--;
                 }
-
             }
             if (winCounter == 3 || winCounter == -3) {
                 return winCounter;
@@ -111,10 +111,7 @@ public class TickTackToe {
                 winCounter = 0;
             }
         }
-        // --0 1 2
-        // 0 X X X
-        // 1 X X X
-        // 2 X X X
+
         // Check diagonally (from 0-0) match
         for (int i = 0; i < array.length; i++) {
             if (array[i][i] == 'X') {
