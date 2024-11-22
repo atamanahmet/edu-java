@@ -69,7 +69,7 @@ public class Hangman {
 
     public static void main(String[] args) {
         boolean isWin = false;
-        String word = "eagle";
+        String word = randomWord(words);
         boolean isTrue;
         String prevGuesses = "";
         System.out.println(word.length());
