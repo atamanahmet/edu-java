@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class Hangman {
     public static int wrongCounter = 0;
+    public static int rightSelectionCounter = 0;
     public static Scanner scan = new Scanner(System.in);
     public static String[] words = { "ant", "baboon", "badger", "bat", "bear", "beaver", "camel", "cat", "clam",
             "cobra", "cougar", "coyote", "crow", "deer", "dog", "donkey", "duck", "eagle", "ferret", "fox", "frog",
@@ -68,10 +69,9 @@ public class Hangman {
 
     public static void main(String[] args) {
         boolean isWin = false;
-        String word = randomWord(words);
+        String word = "eagle";
         boolean isTrue;
         String prevGuesses = "";
-        System.out.println(word);
         System.out.println(word.length());
         String hidden = "";
 
@@ -80,9 +80,11 @@ public class Hangman {
 
         }
         System.out.println(hidden);
+        int guessCounter = 0;
         while (!isWin) {
             if (wrongCounter == 6) {
                 System.out.println(gallows[wrongCounter]);
+                System.out.println("Word was: " + word);
                 System.out.println("Game Over. You Hanged!");
                 System.exit(0);
             }
@@ -90,7 +92,7 @@ public class Hangman {
             System.out.println(gallows[wrongCounter]);
             System.out.println("Word: \t" + hidden);
             System.out.println("\nMisses: " + prevGuesses);
-            System.out.println(word);
+            // System.out.println(word);
             System.out.print("\nGuess: ");
             char guess = scan.nextLine().charAt(0);
             for (int i = 0; i < word.length(); i++) {
@@ -103,16 +105,16 @@ public class Hangman {
                 wrongCounter++;
                 prevGuesses += guess;
             }
-            for (int i = 0; i < word.length(); i++) {
-                if (hidden.charAt(i) != word.charAt(i)) {
-                    isWin = false;
-                } else if (hidden.charAt(i) == word.charAt(i)) {
-                    isWin = true;
-                }
+            guessCounter++;
+            if (hidden.equals(word)) {
+                isWin = true;
+                System.out.println(gallows[wrongCounter]);
+                System.out.println("Word: \t" + hidden);
+                System.out.println("You guessed it in " + guessCounter + " turn");
+                System.out.println("\nYou Win!");
             }
 
         }
-        System.out.println("You Win!");
 
     }
 
