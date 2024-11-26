@@ -26,9 +26,17 @@ public class Objects {
         // System.out.println(Arrays.toString(ataman.passport));
         // System.out.println(ataman.seatNumber);
 
-        CarObject corsa = new CarObject("Opel", "White", 2023, 9000);
+        // CarObject corsa = new CarObject("Opel", "White", 2023, 9000);
 
-        System.out.println(corsa);
+        // System.out.println(corsa);
+        // Person ataman = new Person("Ahmet", "Turkey", "01/01/1992", 17);
+        // System.out.println(ataman.toString());
 
+        CarObject corsa = new CarObject("Opel", "White", 2023, 8700);
+        // System.out.println(corsa.toString());
+        System.out.println(corsa.getBrand());
+        corsa.setBrand("Ford");
+        System.out.println(corsa.getBrand());
+        System.out.println(corsa.toString());
     }
 }
