@@ -1,4 +1,4 @@
-import java.util.Arrays;
+// import java.util.Arrays;
 
 public class Objects {
     public static void main(String[] args) {
@@ -12,18 +12,23 @@ public class Objects {
         // // System.out.println(String.valueOf(car2));
         // System.out.println(car2.brand + " " + car2.year);
         // car1.drive();
-        Person ataman = new Person();
-        ataman.name = "ahmet";
-        ataman.nationality = "Turkey";
-        ataman.dateOfBirth = "1992";
-        ataman.passport = new String[] { ataman.name, ataman.nationality, ataman.dateOfBirth };
-        ataman.seatNumber = 18;
+        // Person ataman = new Person();
+        // ataman.name = "ahmet";
+        // ataman.nationality = "Turkey";
+        // ataman.dateOfBirth = "1992";
+        // ataman.passport = new String[] { ataman.name, ataman.nationality,
+        // ataman.dateOfBirth };
+        // ataman.seatNumber = 18;
+        // // System.out.println(Arrays.toString(ataman.passport));
+        // System.out.println(ataman.name);
+        // System.out.println(ataman.nationality);
+        // System.out.println(ataman.dateOfBirth);
         // System.out.println(Arrays.toString(ataman.passport));
-        System.out.println(ataman.name);
-        System.out.println(ataman.nationality);
-        System.out.println(ataman.dateOfBirth);
-        System.out.println(Arrays.toString(ataman.passport));
-        System.out.println(ataman.seatNumber);
+        // System.out.println(ataman.seatNumber);
+
+        CarObject corsa = new CarObject("Opel", "White", 2023, 9000);
+
+        System.out.println(corsa);
 
     }
 }
