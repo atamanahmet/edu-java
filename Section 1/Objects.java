@@ -16,9 +16,7 @@ public class Objects {
         ataman.name = "ahmet";
         ataman.nationality = "Turkey";
         ataman.dateOfBirth = "1992";
-        ataman.passport[0] = ataman.name;
-        ataman.passport[1] = ataman.nationality;
-        ataman.passport[2] = ataman.dateOfBirth;
+        ataman.passport = new String[] { ataman.name, ataman.nationality, ataman.dateOfBirth };
         ataman.seatNumber = 18;
         // System.out.println(Arrays.toString(ataman.passport));
         System.out.println(ataman.name);
