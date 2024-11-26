@@ -53,4 +53,12 @@ public class Car {
     public void setKm(int km) {
         this.km = km;
     }
+
+    public void applyInsurance(double price) {
+        if (price >= 10000) {
+            System.out.println("Insurance available.");
+        } else if (price < 10000) {
+            System.out.println("Not eligable.");
+        }
+    }
 }

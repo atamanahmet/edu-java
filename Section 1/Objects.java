@@ -52,5 +52,7 @@ public class Objects {
         System.out.println(corsa.toString());
         System.out.println("New brand: \n");
         System.out.println(corsa2.toString());
+
+        corsa.applyInsurance(10000);
     }
 }
