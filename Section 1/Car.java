@@ -1,14 +1,18 @@
-public class CarObject {
+public class Car {
     private String brand;
     private String color;
     private int year;
     private int km;
 
-    public CarObject(String brand, String color, int year, int km) {
+    public Car(String brand, String color, int year, int km) {
         this.brand = brand;
         this.color = color;
         this.year = year;
         this.km = km;
+    }
+
+    public Car(Car source) {
+
     }
 
     public String toString() {

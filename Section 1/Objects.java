@@ -2,8 +2,8 @@
 
 public class Objects {
     public static void main(String[] args) {
-        // CarObject car1 = new CarObject();
-        // CarObject car2 = new CarObject();
+        // Car car1 = new Car();
+        // Car car2 = new Car();
         // System.out.println(car1.brand);
         // car1.brand = "Opel";
         // System.out.println(car1.brand);
@@ -26,13 +26,13 @@ public class Objects {
         // System.out.println(Arrays.toString(ataman.passport));
         // System.out.println(ataman.seatNumber);
 
-        // CarObject corsa = new CarObject("Opel", "White", 2023, 9000);
+        // Car corsa = new Car("Opel", "White", 2023, 9000);
 
         // System.out.println(corsa);
         // Person ataman = new Person("Ahmet", "Turkey", "01/01/1992", 17);
         // System.out.println(ataman.toString());
 
-        // CarObject corsa = new CarObject("Opel", "White", 2023, 8700);
+        // Car corsa = new Car("Opel", "White", 2023, 8700);
         // // System.out.println(corsa.toString());
         // System.out.println(corsa.getBrand());
         // corsa.setBrand("Ford");
