@@ -32,11 +32,17 @@ public class Objects {
         // Person ataman = new Person("Ahmet", "Turkey", "01/01/1992", 17);
         // System.out.println(ataman.toString());
 
-        CarObject corsa = new CarObject("Opel", "White", 2023, 8700);
+        // CarObject corsa = new CarObject("Opel", "White", 2023, 8700);
+        // // System.out.println(corsa.toString());
+        // System.out.println(corsa.getBrand());
+        // corsa.setBrand("Ford");
+        // System.out.println(corsa.getBrand());
         // System.out.println(corsa.toString());
-        System.out.println(corsa.getBrand());
-        corsa.setBrand("Ford");
-        System.out.println(corsa.getBrand());
-        System.out.println(corsa.toString());
+
+        Person ataman = new Person("Ahmet", "Turkish", "1/1/92", 17);
+        // System.out.println(ataman.toString());
+        System.out
+                .println("Name: " + ataman.getName() + "\nNationality: " + ataman.getNationality() + "\nDate of Birth: "
+                        + ataman.getDateOfBirth() + "\nSeat Number: " + ataman.getSeatNumber());
     }
 }
