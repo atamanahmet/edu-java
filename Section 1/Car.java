@@ -12,7 +12,10 @@ public class Car {
     }
 
     public Car(Car source) {
-
+        this.brand = source.brand;
+        this.color = source.color;
+        this.year = source.year;
+        this.km = source.km;
     }
 
     public String toString() {

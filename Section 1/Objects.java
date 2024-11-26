@@ -39,10 +39,18 @@ public class Objects {
         // System.out.println(corsa.getBrand());
         // System.out.println(corsa.toString());
 
-        Person ataman = new Person("Ahmet", "Turkish", "1/1/92", 17);
-        // System.out.println(ataman.toString());
-        System.out
-                .println("Name: " + ataman.getName() + "\nNationality: " + ataman.getNationality() + "\nDate of Birth: "
-                        + ataman.getDateOfBirth() + "\nSeat Number: " + ataman.getSeatNumber());
+        // Person ataman = new Person("Ahmet", "Turkish", "1/1/92", 17);
+        // // System.out.println(ataman.toString());
+        // System.out
+        // .println("Name: " + ataman.getName() + "\nNationality: " +
+        // ataman.getNationality() + "\nDate of Birth: "
+        // + ataman.getDateOfBirth() + "\nSeat Number: " + ataman.getSeatNumber());
+
+        Car corsa = new Car("Opel", "White", 2023, 9000);
+        Car corsa2 = new Car(corsa);
+        corsa2.setBrand("Chevrolet");
+        System.out.println(corsa.toString());
+        System.out.println("New brand: \n");
+        System.out.println(corsa2.toString());
     }
 }
