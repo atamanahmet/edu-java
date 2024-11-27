@@ -11,7 +11,7 @@ public class Main {
                 new Car("Honda", 7000, 2019, "orange", new String[] { "tires", "filter" }),
                 new Car("Mercedes", 12000, 2015, "jet black", new String[] { "tires", "filter", "transmission" })
         };
-        // System.out.println(cars[1]);
+
         Dealership dealership = new Dealership(cars);
         System.out.println("\n ****** JAVA DEALERSHIP! ****** \n");
         System.out.println("Feel free to browse through our collection of cars.\n");
