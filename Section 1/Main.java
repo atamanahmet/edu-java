@@ -22,5 +22,19 @@ public class Main {
         System.out.println("You selected: \n");
         System.out.println(dealership.getCar(index));
 
+        Car newCar = new Car("Bmw", 5000, 2020, "white", new String[] { "tires", "keys" });
+
+        Car[] newCarArray = dealership.addNewCar(cars, newCar);
+        System.out.println("\nYou added following car to the database: \n" + newCarArray[cars.length]);
+        System.out.println("\nNew Car List: \n" + printAgain(newCarArray));
+
+    }
+
+    public static String printAgain(Car[] newCarArray) {
+        String temp = "";
+        for (int i = 0; i < newCarArray.length; i++) {
+            temp += "\nParking Spot: " + i + "" + newCarArray[i].toString() + "\n";
+        }
+        return temp;
     }
 }

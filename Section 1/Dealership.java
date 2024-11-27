@@ -17,8 +17,25 @@ public class Dealership {
         return temp;
     }
 
-    public String getCar(int index) {
-        return this.cars[index].toString();
+    public Car getCar(int index) {
+        Car copy = new Car(cars[index]);
+        return copy;
     }
+
+    public Car[] addNewCar(Car[] cars, Car newCar) {
+
+        Car[] newArray = new Car[cars.length + 1];
+        for (int i = 0; i < cars.length; i++) {
+            newArray[i] = new Car(cars[i]);
+        }
+        Car copy = new Car(newCar);
+        newArray[cars.length] = copy;
+        return newArray;
+    }
+
+    // public void setCar(int index, Car newCar) {
+    // Car copy = new Car(cars[index]);
+    // this.cars[index] = copy;
+    // }
 
 }
