@@ -1,14 +1,27 @@
+import java.util.Arrays;
+
 public class Car {
     private String brand;
     private String color;
     private int year;
     private int km;
+    private String[] spareParts;
 
-    public Car(String brand, String color, int year, int km) {
+    public Car(String brand, String color, int year, int km, String[] spareParts) {
         this.brand = brand;
         this.color = color;
         this.year = year;
         this.km = km;
+        this.spareParts = spareParts;
+
+    }
+
+    public String[] getSpareParts() {
+        return this.spareParts;
+    }
+
+    public void setSpareParts(String[] spareParts) {
+        this.spareParts = spareParts;
     }
 
     public Car(Car source) {
@@ -18,9 +31,10 @@ public class Car {
         this.km = source.km;
     }
 
-    public String toString() {
-        return brand + "\n" + color + "\n" + year + "\n" + km;
-    }
+    // public String toString() {
+    // return brand + "\n" + color + "\n" + year + "\n" + km + "\n" +
+    // Arrays.toString(spareParts);
+    // }
 
     public String getBrand() {
         return brand;

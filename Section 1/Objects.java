@@ -45,14 +45,16 @@ public class Objects {
         // .println("Name: " + ataman.getName() + "\nNationality: " +
         // ataman.getNationality() + "\nDate of Birth: "
         // + ataman.getDateOfBirth() + "\nSeat Number: " + ataman.getSeatNumber());
-
-        Car corsa = new Car("Opel", "White", 2023, 9000);
-        Car corsa2 = new Car(corsa);
-        corsa2.setBrand("Chevrolet");
+        String[] parts = new String[] { "Tire", "Keys" };
+        Car corsa = new Car("Opel", "White", 2023, 9000, parts);
         System.out.println(corsa.toString());
-        System.out.println("New brand: \n");
-        System.out.println(corsa2.toString());
 
-        corsa.applyInsurance(10000);
+        // Car corsa2 = new Car(corsa);
+        // corsa2.setBrand("Chevrolet");
+        // System.out.println(corsa.toString());
+        // System.out.println("New brand: \n");
+        // System.out.println(corsa2.toString());
+
+        // corsa.applyInsurance(10000);
     }
 }
