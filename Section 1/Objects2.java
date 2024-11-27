@@ -8,8 +8,9 @@ public class Objects2 {
         ataman.applyPassport();
         System.out.println(ataman.toString());
         System.out.println(ataman);
-        // int a = 1000;
-        // int b = 1000;
-        // System.out.println(a == b);
+        Integer a = 1270;
+        Integer b = 1270;
+        System.out.println(a == b);
+        System.out.println(a.equals(b));
     }
 }
