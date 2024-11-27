@@ -12,11 +12,13 @@ public class Dealership {
     public String toString() {
         String temp = "";
         for (int i = 0; i < this.cars.length; i++) {
-            temp += "Parking Spot: " + i + "\n";
-            String carDescription = this.cars[i].toString();
-            temp += carDescription + "\n";
+            temp += "\nParking Spot: " + i + "" + cars[i].toString() + "\n";
         }
         return temp;
+    }
+
+    public String getCar(int index) {
+        return this.cars[index].toString();
     }
 
 }
