@@ -7,7 +7,7 @@ public class Car {
     private int km;
     private String[] spareParts;
 
-    public Car(String brand, String color, int year, int km, String[] spareParts) {
+    public Car(String brand, int km, int year, String color, String[] spareParts) {
         this.brand = brand;
         this.color = color;
         this.year = year;
@@ -33,7 +33,7 @@ public class Car {
     }
 
     public String toString() {
-        return brand + "\n" + color + "\n" + year + "\n" + km + "\n" +
+        return "\nBrand: " + brand + "\nColor: " + color + "\nYear: " + year + "\nKm: " + km + "\nSpare Parts: " +
                 Arrays.toString(spareParts);
     }
 
