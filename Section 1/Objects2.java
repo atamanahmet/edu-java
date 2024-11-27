@@ -5,5 +5,7 @@ public class Objects2 {
 
         Users ataman = new Users("Ahmet", "Turkish", 31, 17);
         System.out.println(ataman.toString());
+        ataman.applyPassport();
+        System.out.println(ataman.toString());
     }
 }
