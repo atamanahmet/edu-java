@@ -48,14 +48,10 @@ public class Objects {
         String[] parts = new String[] { "Tire", "Keys" };
         Car corsa = new Car("Opel", "White", 2023, 9000, parts);
         System.out.println(corsa.toString());
+        Car opel2 = new Car(corsa);
+        System.out.println(opel2.toString());
         parts[0] = "Fire Extinguisher";
-        int x = 10;
-        int y = x;
-        System.out.println(x);
-        System.out.println(y);
-        x = 5;
-        System.out.println(x);
-        System.out.println(y);
+
         // Car corsa2 = new Car(corsa);
         // corsa2.setBrand("Chevrolet");
         // System.out.println(corsa.toString());

@@ -29,6 +29,7 @@ public class Car {
         this.color = source.color;
         this.year = source.year;
         this.km = source.km;
+        this.spareParts = Arrays.copyOf(source.spareParts, source.spareParts.length);
     }
 
     public String toString() {
