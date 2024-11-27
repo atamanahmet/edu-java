@@ -12,7 +12,7 @@ public class Car {
         this.color = color;
         this.year = year;
         this.km = km;
-        this.spareParts = spareParts;
+        this.spareParts = Arrays.copyOf(spareParts, spareParts.length);
 
     }
 
@@ -31,25 +31,25 @@ public class Car {
         this.km = source.km;
     }
 
-    // public String toString() {
-    // return brand + "\n" + color + "\n" + year + "\n" + km + "\n" +
-    // Arrays.toString(spareParts);
-    // }
+    public String toString() {
+        return brand + "\n" + color + "\n" + year + "\n" + km + "\n" +
+                Arrays.toString(spareParts);
+    }
 
     public String getBrand() {
-        return brand;
+        return this.brand;
     }
 
     public String getColor() {
-        return color;
+        return this.color;
     }
 
     public int getYear() {
-        return year;
+        return this.year;
     }
 
     public int getKm() {
-        return km;
+        return this.km;
     }
 
     public void setBrand(String brand) {
