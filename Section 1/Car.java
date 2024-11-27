@@ -17,11 +17,11 @@ public class Car {
     }
 
     public String[] getSpareParts() {
-        return this.spareParts;
+        return Arrays.copyOf(this.spareParts, this.spareParts.length);
     }
 
     public void setSpareParts(String[] spareParts) {
-        this.spareParts = spareParts;
+        this.spareParts = Arrays.copyOf(spareParts, spareParts.length);
     }
 
     public Car(Car source) {

@@ -1,0 +1,1 @@
+dont assign arrays to together. Copy arrays with Arrays.copyOf(array, array.length);
