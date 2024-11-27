@@ -60,7 +60,7 @@ public class Users {
     }
 
     public String toString() {
-        return "Name: " + name + "\n" + "Nationality: " + nationality + "\n" + "Date of Birth: " + age + "\n"
+        return "\nName: " + name + "\n" + "Nationality: " + nationality + "\n" + "Date of Birth: " + age + "\n"
                 + "Seat Number: " + seatNumber + "\nPassport Info: " + Arrays.toString(passport) + "\nHas Passport? "
                 + hasPassport;
     }

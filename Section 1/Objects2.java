@@ -7,5 +7,6 @@ public class Objects2 {
         System.out.println(ataman.toString());
         ataman.applyPassport();
         System.out.println(ataman.toString());
+        System.out.println(ataman);
     }
 }
