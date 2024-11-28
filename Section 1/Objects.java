@@ -46,10 +46,10 @@ public class Objects {
         // ataman.getNationality() + "\nDate of Birth: "
         // + ataman.getDateOfBirth() + "\nSeat Number: " + ataman.getSeatNumber());
         String[] parts = new String[] { "Tire", "Keys" };
-        Car corsa = new Car("Opel", "White", 2023, 9000, parts);
-        System.out.println(corsa.toString());
-        Car opel2 = new Car(corsa);
-        System.out.println(opel2.toString());
+        // Car corsa = new Car("Opel", "White", 2023, 9000, parts);
+        // System.out.println(corsa.toString());
+        // Car opel2 = new Car(corsa);
+        // System.out.println(opel2.toString());
         parts[0] = "Fire Extinguisher";
 
         // Car corsa2 = new Car(corsa);

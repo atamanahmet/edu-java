@@ -15,10 +15,18 @@ public class Person {
         this.seatNumber = seatNumber;
     }
 
-    public String toString() {
-        return "Name: " + name + "\n" + "Nationality: " + nationality + "\n" + "Date of Birth: " + dateOfBirth + "\n"
-                + "Seat Number: " + seatNumber;
+    public Person(Person source) {
+        this.name = source.name;
+        this.nationality = source.nationality;
+        this.dateOfBirth = source.dateOfBirth;
+        this.seatNumber = source.seatNumber;
     }
+
+    // public String toString() {
+    // return "Name: " + name + "\n" + "Nationality: " + nationality + "\n" + "Date
+    // of Birth: " + dateOfBirth + "\n"
+    // + "Seat Number: " + seatNumber + "asd";
+    // }
 
     public String getName() {
         return this.name;
