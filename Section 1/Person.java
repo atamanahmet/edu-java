@@ -22,11 +22,10 @@ public class Person {
         this.seatNumber = source.seatNumber;
     }
 
-    // public String toString() {
-    // return "Name: " + name + "\n" + "Nationality: " + nationality + "\n" + "Date
-    // of Birth: " + dateOfBirth + "\n"
-    // + "Seat Number: " + seatNumber + "asd";
-    // }
+    public String toString() {
+        return "Name: " + name + "\n" + "Nationality: " + nationality + "\n" + "Date of Birth: " + dateOfBirth + "\n"
+                + "Seat Number: " + seatNumber;
+    }
 
     public String getName() {
         return this.name;
