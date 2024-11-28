@@ -2,26 +2,21 @@ import java.util.Arrays;
 
 public class Airline {
 
-    private Person[] people = new Person[11];
+    Person[] people;
 
-    Airline(Person[] person) {
-
-        for (int i = 0; i < people.length; i++) {
-            people[i] = new Person(person[i]);
-        }
+    Airline() {
+        this.people = new Person[11];
     }
 
     public Person getPerson(int index) {
-        return people[index];
+        Person person = people[index];
+
+        return new Person(person);
     }
 
-    // public void setPerson(Person person) {
-    // for (int i = 0; i < people.length; i++) {
-    // if(i.equals(person.seatNumber-1)){
-
-    // }
-    // }
-    // }
+    public void setPerson(Person person) {
+        people[person.getSeatNumber() - 1] = new Person(person);
+    }
 
     public String toString() {
         String buffer = "";

@@ -16,8 +16,16 @@ public class MainAir {
                 new Person("Sun Tzu", "China", "544 BC", 10),
                 new Person("Hammurabi", "Babylon", "1750 BC", 11),
         };
-        Airline airline = new Airline(people);
-        System.out.println(airline.getPerson(0));
+        Airline airline = new Airline();
+        for (int i = 0; i < people.length; i++) {
+            airline.setPerson(people[i]);
+        }
+
+        // System.out.println(airline);
+        System.out.println(airline.getPerson(1) + "\n");
+        System.out.println(airline.getPerson(5) + "\n");
+        System.out.println(airline.getPerson(10) + "\n");
+
     }
 
 }
