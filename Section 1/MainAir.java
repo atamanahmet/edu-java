@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class MainAir {
     public static Person[] people = new Person[] {
             new Person("Cleopatra", "Egypt", "69 BC", 1),
@@ -15,7 +17,7 @@ public class MainAir {
 
     public static void main(String[] args) {
         Airline airline = new Airline(people);
-        System.out.println(airline.toString());
+        System.out.println(airline.getPerson(0));
     }
 
 }
