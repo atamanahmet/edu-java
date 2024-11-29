@@ -177,13 +177,14 @@ public class Helsinki {
         // }
 
         // }
-        christmasTree(7);
+        christmasTree(5);
         // printStars(5);
         // printSpaces(5);
     }
 
     public static void printStars(int number) {
         // part 1 of the exercise
+
         for (int i = 1; i <= number; i++) {
             System.out.print("*");
         }
@@ -211,7 +212,6 @@ public class Helsinki {
             }
             count--;
         }
-
         // }
 
     }
@@ -224,14 +224,18 @@ public class Helsinki {
     public static void christmasTree(int height) {
         // part 3 of the exercise
         int count = height - 1;
-        for (int i = 1; i <= height; i++) {
+        for (int i = 1; i <= height * 2; i += 2) {
             printSpaces(count);
             printStars(i);
-            printSpaces(count);
+
             if (count == 0) {
                 return;
             }
             count--;
+        }
+        for (int i = 0; i < 2; i++) {
+            printSpaces(height - 2);
+            printStars(3);
         }
     }
 
