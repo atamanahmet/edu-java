@@ -177,12 +177,62 @@ public class Helsinki {
         // }
 
         // }
+        christmasTree(7);
+        // printStars(5);
+        // printSpaces(5);
     }
 
+    public static void printStars(int number) {
+        // part 1 of the exercise
+        for (int i = 1; i <= number; i++) {
+            System.out.print("*");
+        }
+        System.out.println("");
+    }
+
+    public static void printSpaces(int number) {
+        // part 1 of the exercise
+        for (int i = 1; i <= number; i++) {
+            System.out.print(" ");
+        }
+    }
+
+    public static void printTriangle(int size) {
+        // part 2 of the exercise
+
+        // for (int j = size; j >= 1; j--) {
+        // printSpaces(size - 1);
+        int count = size - 1;
+        for (int i = 1; i <= size; i++) {
+            printSpaces(count);
+            printStars(i);
+            if (count == 0) {
+                return;
+            }
+            count--;
+        }
+
+        // }
+
+    }
     // public static void printFromNumberToOne(int count) {
     // for (int i = count; i >= 1; i--) {
     // System.out.println(i);
     // }
     // }
+
+    public static void christmasTree(int height) {
+        // part 3 of the exercise
+        int count = height - 1;
+        for (int i = 1; i <= height; i++) {
+            printSpaces(count);
+            printStars(i);
+            printSpaces(count);
+            if (count == 0) {
+                return;
+            }
+            count--;
+        }
+    }
 
 }
