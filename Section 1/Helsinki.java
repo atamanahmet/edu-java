@@ -163,6 +163,18 @@ public class Helsinki {
         // System.out.println(1);
 
         // return;
+        // }
+        // int size = 4;
+        // int counter = 1;
+        // for (int j = 1; j <= size; j++) {
+        // System.out.println("");
+        // for (int i = 1; i <= counter; i++) {
+        // System.out.print("*");
+        // }
+        // counter++;
+        // if (counter > size) {
+        // return;
+        // }
 
         // }
     }
@@ -172,4 +184,5 @@ public class Helsinki {
     // System.out.println(i);
     // }
     // }
+
 }
