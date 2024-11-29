@@ -108,15 +108,67 @@ public class Helsinki {
         // double result = (sum * 1.0) / counter;
         // System.out.println(result);
         // }
-        System.out.print("Where to? ");
-        int end = Integer.valueOf(scanner.nextLine());
-        System.out.print("Where from? ");
-        int begin = Integer.valueOf(scanner.nextLine());
+        // System.out.print("Where to? ");
+        // int end = Integer.valueOf(scanner.nextLine());
+        // System.out.print("Where from? ");
+        // int begin = Integer.valueOf(scanner.nextLine());
 
-        for (int i = begin; i <= end; i++) {
-            System.out.println(i);
-        }
+        // for (int i = begin; i <= end; i++) {
+        // System.out.println(i);
+        // }
 
+        // System.out.print("First number? ");
+        // int start = Integer.valueOf(scanner.nextLine());
+        // System.out.print("Last number? ");
+        // int end = Integer.valueOf(scanner.nextLine());
+        // int result = 0;
+        // for (int i = start; i <= end; i++) {
+        // result += i;
+        // }
+        // System.out.println("The sum is: " + result);
+
+        // int result = 1;
+        // for (int i = 1; i <= end; i++) {
+        // result *= i;
+        // }
+        // int input = 0;
+        // int sum = 0;
+        // int counter = 0;
+        // int even = 0;
+        // int odd = 0;
+        // System.out.println("Give a number:");
+        // while (true) {
+
+        // input = Integer.valueOf(scanner.nextLine());
+        // if (input == -1) {
+        // break;
+        // }
+        // if (input % 2 == 0) {
+        // even++;
+        // } else {
+        // odd++;
+        // }
+        // counter++;
+        // sum += input;
+        // }
+        // System.out.println("Thx! Bye!");
+        // System.out.println("Sum: " + sum);
+        // System.out.println("Numbers: " + counter);
+        // System.out.println("Average: " + (sum * 1.0) / counter);
+        // System.out.println("Even: " + even);
+        // System.out.println("Odd: " + odd);
+        // System.out.println("How many times?");
+        // printFromNumberToOne(5);
+        // while (true) {
+        // System.out.println(1);
+        // return;
+
+        // }
     }
 
+    // public static void printFromNumberToOne(int count) {
+    // for (int i = count; i >= 1; i--) {
+    // System.out.println(i);
+    // }
+    // }
 }
