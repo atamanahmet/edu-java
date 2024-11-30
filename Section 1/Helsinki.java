@@ -331,16 +331,22 @@ public class Helsinki {
             list.add(newNumber);
         }
         int smallest = 99999;
-        int index = 0;
+        ArrayList<Integer> index = new ArrayList<>();
         for (int i = 0; i < list.size(); i++) {
+            if (smallest == list.get(i)) {
+                index.add(i);
+            }
             if (list.get(i) < smallest) {
                 smallest = list.get(i);
-                index = i;
+                index.add(i);
             }
 
         }
         System.out.println("Smallest number: " + smallest);
-        System.out.println("Found at index: " + index);
+        for (int i = 0; i < index.size(); i++) {
+            System.out.println("Found at index: " + index.get(i));
+
+        }
 
         // implement here a program that reads user input
         // until the user enters 9999
