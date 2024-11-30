@@ -246,12 +246,18 @@ import java.util.Scanner;
 
 public class Helsinki {
     public static void main(String[] args) {
-        ArrayList<String> stringList = new ArrayList<>();
-        String[] array = { "", "", "" };
-        stringList.add("asli");
-        stringList.add("ahmet");
-        stringList.add("asd");
-        array[0] = stringList.get(0);
-        System.out.println(array[0]);
+        // ArrayList<String> stringList = new ArrayList<>();
+        // String[] array = { "", "", "" };
+        // stringList.add("asli");
+        // stringList.add("ahmet");
+        // stringList.add("asd");
+        // array[0] = stringList.get(0);
+        // System.out.println(array[0]);
+        // for(int i= 0;i<numbers.size();i++){
+        // if(numbers.get(i)==-1){
+        // continue;
+        // }
+        // System.out.println(numbers.get(i));
+        // }
     }
 }
