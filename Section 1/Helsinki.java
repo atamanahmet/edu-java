@@ -1,9 +1,9 @@
 // import java.util.Scanner;
 
 // public class Helsinki {
-//     public static Scanner scanner = new Scanner(System.in);
+// public static Scanner scanner = new Scanner(System.in);
 
-//     public static void main(String[] args) {
+// public static void main(String[] args) {
 
 // Write your program here
 // System.out.println("Give points [0-100]:");
@@ -240,24 +240,112 @@
 // }
 
 // }
+// import java.util.ArrayList;
+// import java.util.Arrays;
+// import java.util.Scanner;
+
+// public class Helsinki {
+// public static void main(String[] args) {
+// // ArrayList<String> stringList = new ArrayList<>();
+// // String[] array = { "", "", "" };
+// // stringList.add("asli");
+// // stringList.add("ahmet");
+// // stringList.add("asd");
+// // array[0] = stringList.get(0);
+// // System.out.println(array[0]);
+// // for(int i= 0;i<numbers.size();i++){
+// // if(numbers.get(i)==-1){
+// // continue;
+// // }
+// // System.out.println(numbers.get(i));
+// // }
+// Scanner scanner = new Scanner(System.in);
+
+// ArrayList<Integer> numbers = new ArrayList<>();
+// while (true) {
+// int number = Integer.valueOf(scanner.nextLine());
+// if (number == -1) {
+// break;
+// }
+
+// numbers.add(number);
+// }
+
+// System.out.print("From where? ");
+// int from = Integer.valueOf(scanner.nextLine());
+// System.out.println("");
+// System.out.print("To where? ");
+// int to = Integer.valueOf(scanner.nextLine());
+// System.out.println("");
+// for (int i = from; i <= to; i++) {
+// System.out.println(numbers.get(i));
+// }
+// }
+// }
+
+// import java.util.ArrayList;
+// import java.util.Scanner;
+
+// public class IndexOf {
+
+//     public static void main(String[] args) {
+//         Scanner scanner = new Scanner(System.in);
+
+//         ArrayList<Integer> list = new ArrayList<>();
+//         while (true) {
+//             int input = Integer.valueOf(scanner.nextLine());
+//             if (input == -1) {
+//                 break;
+//             }
+
+//             list.add(input);
+//         }
+
+//         System.out.println("");
+
+//         // implement here finding the indices of a number
+//         System.out.print("Search for? ");
+//         int searchParam = Integer.valueOf(scanner.nextLine());
+//         for (int i = 0; i < list.size(); i++) {
+//             if (searchParam == list.get(i)) {
+//                 System.out.println(list.get(i) + " is at index " + i);
+//             }
+//         }
+//     }
+// }
+
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Helsinki {
+
     public static void main(String[] args) {
-        // ArrayList<String> stringList = new ArrayList<>();
-        // String[] array = { "", "", "" };
-        // stringList.add("asli");
-        // stringList.add("ahmet");
-        // stringList.add("asd");
-        // array[0] = stringList.get(0);
-        // System.out.println(array[0]);
-        // for(int i= 0;i<numbers.size();i++){
-        // if(numbers.get(i)==-1){
-        // continue;
-        // }
-        // System.out.println(numbers.get(i));
-        // }
+        Scanner scanner = new Scanner(System.in);
+
+        ArrayList<Integer> list = new ArrayList<>();
+        while (true) {
+            int newNumber = Integer.valueOf(scanner.nextLine());
+            if (newNumber == 9999) {
+                break;
+            }
+            list.add(newNumber);
+        }
+        int smallest = 99999;
+        int index = 0;
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i) < smallest) {
+                smallest = list.get(i);
+                index = i;
+            }
+
+        }
+        System.out.println("Smallest number: " + smallest);
+        System.out.println("Found at index: " + index);
+
+        // implement here a program that reads user input
+        // until the user enters 9999
+        // after that, the program prints the smallest number
+        // and its index -- the smallest number
+        // might appear multiple times
     }
 }
