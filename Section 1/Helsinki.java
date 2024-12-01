@@ -440,10 +440,17 @@ public class Helsinki {
             } else {
                 System.out.print(number + ", ");
             }
-
             counter++;
-            System.out.println("done");
         }
+    }
+
+    public static int sumOfNumbersInArray(int[] array) {
+        // Write some code here
+        int sum = 0;
+        for (Integer number : array) {
+            sum += number;
+        }
+        return sum;
     }
 
 }
