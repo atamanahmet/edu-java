@@ -431,4 +431,18 @@ public class Helsinki {
         }
     }
 
+    public static void printNeatly(int[] array) {
+        // Write some code in here
+        int counter = 0;
+        for (Integer number : array) {
+            if (counter == array.length - 1) {
+                System.out.print(number);
+            } else {
+                System.out.print(number + ", ");
+            }
+
+            counter++;
+        }
+    }
+
 }
