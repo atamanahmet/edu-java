@@ -455,3 +455,23 @@ import java.util.ArrayList;
 // }
 
 // }
+public class Helsinki {
+    public static Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        // System.out.print("Give a word: ");
+        // String word = scanner.nextLine();
+        // System.out.println(word + word + word);
+        String user1 = "alex";
+        String pass1 = "sunshine";
+        String user2 = "emma";
+        String pass2 = "haskell";
+        System.out.print("Enter username: ");
+        String username = scanner.nextLine();
+        System.out.print("Enter password: ");
+        String password = scanner.nextLine();
+        if (username.equals(user1) && password.equals(pass1) || username.equals(user2) && password.equals(pass2)) {
+            System.out.print("You have successfully logged in!");
+        }
+    }
+}
