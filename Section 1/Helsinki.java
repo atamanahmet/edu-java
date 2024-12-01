@@ -442,6 +442,7 @@ public class Helsinki {
             }
 
             counter++;
+            System.out.println("done");
         }
     }
 
