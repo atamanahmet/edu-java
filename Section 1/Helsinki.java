@@ -462,16 +462,27 @@ public class Helsinki {
         // System.out.print("Give a word: ");
         // String word = scanner.nextLine();
         // System.out.println(word + word + word);
-        String user1 = "alex";
-        String pass1 = "sunshine";
-        String user2 = "emma";
-        String pass2 = "haskell";
-        System.out.print("Enter username: ");
-        String username = scanner.nextLine();
-        System.out.print("Enter password: ");
-        String password = scanner.nextLine();
-        if (username.equals(user1) && password.equals(pass1) || username.equals(user2) && password.equals(pass2)) {
-            System.out.print("You have successfully logged in!");
+        // String user1 = "alex";
+        // String pass1 = "sunshine";
+        // String user2 = "emma";
+        // String pass2 = "haskell";
+        // System.out.print("Enter username: ");
+        // String username = scanner.nextLine();
+        // System.out.print("Enter password: ");
+        // String password = scanner.nextLine();
+        // if (username.equals(user1) && password.equals(pass1) ||
+        // username.equals(user2) && password.equals(pass2)) {
+        // System.out.print("You have successfully logged in!");
+        // }
+        while (true) {
+            String sentence = scanner.nextLine();
+            if (sentence.equals("")) {
+                break;
+            }
+            String[] words = sentence.split(" ");
+            for (String word : words) {
+                System.out.println(word);
+            }
         }
     }
 }
