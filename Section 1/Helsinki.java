@@ -474,15 +474,53 @@ public class Helsinki {
         // username.equals(user2) && password.equals(pass2)) {
         // System.out.print("You have successfully logged in!");
         // }
+        // while (true) {
+        // String sentence = scanner.nextLine();
+        // if (sentence.equals("")) {
+        // break;
+        // }
+        // String[] words = sentence.split(" ");
+        // for (String word : words) {
+        // if (word.contains("av")) {
+        // System.out.println(word);
+        // }
+        // }
+        // }
+        // int biggest = 0;
+        // String name = "";
+        // while (true) {
+        // String input = scanner.nextLine();
+        // if (input.equals("")) {
+        // break;
+        // }
+        // String[] parts = input.split(",");
+        // int age = Integer.valueOf(parts[1]);
+        // if (biggest < age) {
+        // biggest = age;
+        // name = parts[0];
+        // }
+        // }
+
+        // System.out.println("Name of the oldest: " + name);
+        int sum = 0;
+        String name = "";
+        int size = 0;
+        int count = 0;
         while (true) {
-            String sentence = scanner.nextLine();
-            if (sentence.equals("")) {
+            String input = scanner.nextLine();
+            if (input.equals("")) {
                 break;
             }
-            String[] words = sentence.split(" ");
-            for (String word : words) {
-                System.out.println(word);
+            String[] parts = input.split(",");
+            int nameSize = parts[0].length();
+            if (nameSize > size) {
+                name = parts[0];
+                size = nameSize;
             }
+            sum += Integer.valueOf(parts[1]);
+            count++;
         }
+        System.out.print("Longest name: " + name);
+        System.out.print("\nAverage of the birth years: " + (sum * 1.0) / count);
     }
 }
