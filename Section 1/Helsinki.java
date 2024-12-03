@@ -534,37 +534,37 @@ public class Helsinki {
  *
  * @author Fox
  */
-public class  {
+// public class {
 
-    private double balance;
+// private double balance;
 
-    public PaymentCard(double initialBalance) {
-        this.balance = initialBalance;
-    }
+// public PaymentCard(double initialBalance) {
+// this.balance = initialBalance;
+// }
 
-    public void eatAffordably() {
-        if (this.balance - 2.6 >= 0) {
-            this.balance = this.balance - 2.60;
-        }
+// public void eatAffordably() {
+// if (this.balance - 2.6 >= 0) {
+// this.balance = this.balance - 2.60;
+// }
 
-    }
+// }
 
-    public void eatHeartily() {
-        if (this.balance - 4.6 >= 0) {
-            this.balance = this.balance - 4.60;
-        }
+// public void eatHeartily() {
+// if (this.balance - 4.6 >= 0) {
+// this.balance = this.balance - 4.60;
+// }
 
-    }
+// }
 
-    public void addMoney(double newMoney) {
-        if (this.balance + newMoney <= 150 && newMoney >= 0) {
-            this.balance = this.balance + newMoney;
-        } else if (this.balance + newMoney > 150) {
-            this.balance = 150;
-        }
-    }
+// public void addMoney(double newMoney) {
+// if (this.balance + newMoney <= 150 && newMoney >= 0) {
+// this.balance = this.balance + newMoney;
+// } else if (this.balance + newMoney > 150) {
+// this.balance = 150;
+// }
+// }
 
-    public String toString() {
-        return "The card has a balance of " + balance + " euros";
-    }
-}
+// public String toString() {
+// return "The card has a balance of " + balance + " euros";
+// }
+// }
