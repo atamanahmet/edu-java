@@ -52,7 +52,12 @@ public class Main {
         // System.out.println(value * value * value);
         // }
         try (Scanner scanner = new Scanner(Paths.get("test.txt"))) {
-            System.out.println(scanner.nextLine());
+            while (scanner.hasNextLine()) {
+                String row = scanner.nextLine();
+
+                System.out.println(row);
+            }
+
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
