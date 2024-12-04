@@ -17,7 +17,7 @@ public class NumbersFromAFile {
         try (Scanner fileScan = new Scanner(Paths.get(file))) {
             while (fileScan.hasNextLine()) {
                 int number = Integer.valueOf(fileScan.nextLine());
-                if (number <= lowerBound && number >= upperBound) {
+                if (number >= lowerBound && number <= upperBound) {
                     counter++;
                 }
             }
