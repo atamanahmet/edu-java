@@ -68,3 +68,42 @@ public class NumbersFromAFile {
 
 // }
 // }
+
+// Scanner scan = new Scanner(System.in);
+// System.out.println("File:");
+// String file = scan.nextLine();
+// System.out.println("Team:");
+// String team = scan.nextLine();
+// int games = 0;
+// int wins=0;
+// int loss=0;
+// try(Scanner fileScan = new Scanner(Paths.get(file))){
+// while(fileScan.hasNextLine()){
+// String[] buffer = fileScan.nextLine().split(",");
+// if(buffer[0].equals(team)||buffer[1].equals(team)){
+// games++;
+// }
+// if(buffer[0].equals(team)){
+// if(Integer.valueOf(buffer[2])>Integer.valueOf(buffer[3])){
+// wins++;
+// }
+// else{
+// loss++;
+// }
+// }
+// else if (buffer[1].equals(team)){
+// if(Integer.valueOf(buffer[3])>Integer.valueOf(buffer[2])){
+// wins++;
+// }
+// else{
+// loss++;
+// }
+// }
+// }
+// System.out.println("Games: "+games);
+// System.out.println("Wins: "+wins);
+// System.out.println("Losses: "+loss);
+// }
+// catch(Exception e){
+// System.out.println(e.getMessage());
+// }
