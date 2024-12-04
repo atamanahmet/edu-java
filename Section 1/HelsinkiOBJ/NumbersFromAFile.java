@@ -159,3 +159,19 @@
 // }
 // }
 // }
+// public void increase(int number) {
+// if (number < 0) {
+// return;
+// } else {
+// this.startValue = this.startValue + number;
+// }
+
+// }
+
+// public void decrease(int number) {
+// if (number < 0) {
+// return;
+// } else {
+// this.startValue = this.startValue - number;
+// }
+// }
