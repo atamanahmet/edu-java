@@ -175,3 +175,15 @@
 // this.startValue = this.startValue - number;
 // }
 // }
+// public class NumbersFromAFile {
+
+// public static void main(String[] args) {
+// String a = "asd";
+// String b = a;
+// System.out.println(a);
+// System.out.println(b);
+// b = "zxc";
+// System.out.println(a);
+// System.out.println(b);
+// }
+// }
