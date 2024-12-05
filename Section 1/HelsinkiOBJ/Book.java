@@ -9,11 +9,19 @@ public class Book {
         this.publicationYear = publicationYear;
     }
 
-    public String toString() {
-        return this.title + ", " + this.pages + " pages, " + this.publicationYear;
+    public Book(String a) {
+        this.title = a;
     }
 
     public String getTitle() {
         return this.title;
+    }
+
+    public String toString() {
+        return this.title + ", " + this.pages + " pages, " + this.publicationYear;
+    }
+
+    public void setTitle(String x) {
+        this.title = x;
     }
 }
