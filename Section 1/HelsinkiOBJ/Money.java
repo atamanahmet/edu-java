@@ -376,3 +376,83 @@
 // }
 
 // }
+
+public class Money {
+
+    private final int euros;
+    private final int cents;
+
+    public Money(int euros, int cents) {
+
+        if (cents > 99) {
+            euros = euros + cents / 100;
+            cents = cents % 100;
+        }
+
+        this.euros = euros;
+        this.cents = cents;
+    }
+
+    public int euros() {
+        return this.euros;
+    }
+
+    public int cents() {
+        return this.cents;
+    }
+
+    public Money plus(Money addition) {
+        Money newMoney = new Money(addition.euros + this.euros, addition.cents + this.cents);
+        return newMoney;
+    }
+
+    public Money minus(Money decrease) {
+        int newEuros;
+        int newCents;
+
+        if (this.euros - decrease.euros < 0) {
+            newEuros = 0;
+        } else {
+            newEuros = this.euros - decrease.euros;
+        }
+        if (this.cents - decrease.cents < 0) {
+            if (newEuros > 0) {
+                newEuros = newEuros - 1;
+                newCents = this.cents - decrease.cents;
+            } else {
+                newCents = 0;
+            }
+
+        } else {
+            newCents = this.cents - decrease.cents;
+        }
+
+        Money newMoney = new Money(newEuros, newCents);
+        return newMoney;
+    }
+
+    public boolean lessThan(Money compare) {
+        if (this.euros == compare.euros) {
+            if (this.cents < compare.cents) {
+                return true;
+            } else {
+                return false;
+            }
+        } else if (this.euros < compare.euros) {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
+    public String toString() {
+        String zero = "";
+        if (this.cents < 10) {
+            zero = "0";
+        }
+
+        return this.euros + "." + zero + this.cents + "e";
+    }
+
+}
