@@ -251,3 +251,7 @@
 // }
 
 // }
+// public boolean moreExpensiveThan(Apartment compare){
+// return
+// this.squares*this.princePerSquare>compare.squares*compare.princePerSquare;
+// }
