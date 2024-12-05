@@ -418,7 +418,7 @@ public class Money {
         if (this.cents - decrease.cents < 0) {
             if (newEuros > 0) {
                 newEuros = newEuros - 1;
-                newCents = this.cents - decrease.cents;
+                newCents = Math.abs(this.cents - decrease.cents);
             } else {
                 newCents = 0;
             }
