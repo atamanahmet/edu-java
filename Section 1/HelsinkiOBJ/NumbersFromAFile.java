@@ -188,14 +188,14 @@
 // }
 // }
 
-public class NumbersFromAFile {
+// public class NumbersFromAFile {
 
-    public static void main(String[] args) {
-        Book a = new Book("asdasd");
-        Book b = new Book(a.getTitle());
-        a.setTitle(b.getTitle());
-        b.setTitle("jkljkl");
-        System.out.println(a.getTitle());
-        System.out.println(b.getTitle());
-    }
-}
+// public static void main(String[] args) {
+// Book a = new Book("asdasd");
+// Book b = new Book(a.getTitle());
+// a.setTitle(b.getTitle());
+// b.setTitle("jkljkl");
+// System.out.println(a.getTitle());
+// System.out.println(b.getTitle());
+// }
+// }
