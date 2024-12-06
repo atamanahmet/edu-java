@@ -412,19 +412,25 @@ public class Money {
 
         if (this.euros - decrease.euros < 0) {
             newEuros = 0;
+            newCents = 0;
         } else {
             newEuros = this.euros - decrease.euros;
-        }
-        if (this.cents - decrease.cents < 0) {
-            if (newEuros > 0) {
-                newEuros = newEuros - 1;
-                newCents = Math.abs(this.cents - decrease.cents);
-            } else {
-                newCents = 0;
-            }
+            if (this.cents - decrease.cents < 0) {
+                if (newEuros > 0) {
+                    newEuros = newEuros - 1;
+                    if (this.cents == 0) {
+                        newCents = Math.abs(100 - decrease.cents);
+                    } else {
+                        newCents = Math.abs(this.cents - decrease.cents);
+                    }
 
-        } else {
-            newCents = this.cents - decrease.cents;
+                } else {
+                    newCents = 0;
+                }
+
+            } else {
+                newCents = this.cents - decrease.cents;
+            }
         }
 
         Money newMoney = new Money(newEuros, newCents);
