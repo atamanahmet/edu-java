@@ -467,3 +467,24 @@
 // }
 
 // }
+// private ArrayList<String> list = new ArrayList<>();
+
+// public boolean isEmpty() {
+// return list.isEmpty();
+// }
+
+// public void add(String value) {
+// if (!this.list.contains(value)) {
+// this.list.add(value);
+// }
+
+// }
+
+// public ArrayList<String> values() {
+// return this.list;
+// }
+
+// public String take() {
+// String topMost = this.list.get(list.size() - 1);
+// this.list.remove(list.size() - 1);
+// return topMost;
