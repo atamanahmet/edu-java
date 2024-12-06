@@ -488,3 +488,18 @@
 // String topMost = this.list.get(list.size() - 1);
 // this.list.remove(list.size() - 1);
 // return topMost;
+// private ArrayList<Message> messages = new ArrayList<>();
+
+// public MessagingService() {
+
+// }
+
+// public void add(Message message) {
+// if (message.getContent().length() <= 280) {
+// this.messages.add(message);
+// }
+// }
+
+// public ArrayList<Message> getMessages() {
+// return this.messages;
+// }
