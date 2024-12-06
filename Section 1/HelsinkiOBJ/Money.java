@@ -503,23 +503,24 @@
 // public ArrayList<Message> getMessages() {
 // return this.messages;
 // }
-public String toString() {
-    if (this.elements.size() == 0) {
-        return "The collection " + this.name + " is empty.";
-    }
-    String output = "";
-    String elementWord;
-    if (this.elements.size() > 0) {
-        if (this.elements.size() == 1) {
-            elementWord = "element";
-        } else {
-            elementWord = "elements";
-        }
-        output = "The collection " + this.name + " has " + this.elements.size() + " " + elementWord + ":";
-        for (String item : elements) {
-            output = output + "\n" + item;
-        }
+// public String toString() {
+// if (this.elements.size() == 0) {
+// return "The collection " + this.name + " is empty.";
+// }
+// String output = "";
+// String elementWord;
+// if (this.elements.size() > 0) {
+// if (this.elements.size() == 1) {
+// elementWord = "element";
+// } else {
+// elementWord = "elements";
+// }
+// output = "The collection " + this.name + " has " + this.elements.size() + " "
+// + elementWord + ":";
+// for (String item : elements) {
+// output = output + "\n" + item;
+// }
 
-    }
-    return output;
-}
+// }
+// return output;
+// }
