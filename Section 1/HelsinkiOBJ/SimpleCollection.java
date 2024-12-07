@@ -545,15 +545,19 @@ public class SimpleCollection {
         return this.elements;
     }
 
-    public String longest(){
-        if(this.elements.isEmpty()){
+    public String longest() {
+        if (this.elements.isEmpty()) {
             return null;
         }
-        for(int i =0; i<this.elements.size(); i++){
-            if(this.elements.get(0).name.length()<this.elements.get(i+1))
+        String longest = "";
+
+        for (int i = 0; i < this.elements.size(); i++) {
+            if (longest.length() < this.elements.get(i).length()) {
+                longest = this.elements.get(i);
+            }
         }
-        
-        return "";
+
+        return longest;
     }
 
 }
