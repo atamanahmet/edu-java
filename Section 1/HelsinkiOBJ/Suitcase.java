@@ -24,7 +24,7 @@ public class Suitcase {
 
     public void addItem(Item item) {
 
-        if (!this.items.contains(item) && (item.getWeight() + this.currentWeight) < this.maxWeight) {
+        if (!this.items.contains(item) && (item.getWeight() + this.currentWeight) <= this.maxWeight) {
             items.add(item);
             currentWeight += item.getWeight();
         }
@@ -32,6 +32,9 @@ public class Suitcase {
 
     public String toString() {
         String placeHolder = "items";
+        if (items.size() == 0) {
+            return "no " + placeHolder + " (" + currentWeight + " kg)";
+        }
         if (items.size() == 1) {
             placeHolder = "item";
         }
@@ -48,13 +51,21 @@ public class Suitcase {
         return this.currentWeight;
     }
 
+    public ArrayList<Item> getItems() {
+        return this.items;
+    }
+
     public Item heaviestItem() {
-        Item heaviest = this.items.get(0);
-        for (Item item : items) {
-            if (heaviest.getWeight() < item.getWeight()) {
-                heaviest = item;
+        if (!items.isEmpty()) {
+            Item heaviest = this.items.get(0);
+            for (Item item : items) {
+                if (heaviest.getWeight() < item.getWeight()) {
+                    heaviest = item;
+                }
             }
+            return heaviest;
         }
-        return heaviest;
+        return null;
+
     }
 }
