@@ -8,7 +8,8 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         SimpleDictionary dictionary = new SimpleDictionary();
 
-        TextUI ui = new TextUI(scanner, dictionary);
-        ui.start();
+        TextUI textUI = new TextUI(scanner, dictionary);
+        textUI.start();
+        System.out.println(dictionary.translate("pike")); // prints the string "hauki"
     }
 }

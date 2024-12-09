@@ -1,5 +1,5 @@
 
-import java.util.ArrayList;
+// import java.util.ArrayList;
 import java.util.Scanner;
 
 public class TextUI {
@@ -14,8 +14,6 @@ public class TextUI {
 
     public void start() {
         while (true) {
-            String word;
-            String translation;
             System.out.print("Command: ");
             String input = scanner.nextLine();
             if (input.equals("end")) {
@@ -23,13 +21,23 @@ public class TextUI {
                 break;
             }
             if (input.equals("add")) {
-                System.out.println("");
-                System.out.print("Word:");
-                System.out.println("");
-                word = scanner.nextLine();
+
+                System.out.print("Word: ");
+
+                String word = scanner.nextLine();
                 System.out.print("Translation: ");
-                translation = scanner.nextLine();
+                String translation = scanner.nextLine();
                 simpleDictionary.add(word, translation);
+
+            } else if (input.equals("search")) {
+                System.out.print("To be translated: ");
+                String word = scanner.nextLine();
+                String translation = simpleDictionary.translate(word);
+                if (translation == null) {
+                    System.out.println("Word (" + word + ") was not found");
+                } else {
+                    System.out.println("Translation: " + translation);
+                }
 
             } else {
                 System.out.println("Unknown command");
