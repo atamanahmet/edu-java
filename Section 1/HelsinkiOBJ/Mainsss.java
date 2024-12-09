@@ -68,7 +68,7 @@
 //     }
 // }
 
-public class Main {
+public class Mainsss {
 
     public static void main(String[] args) {
         // You can use the main to test your classes!
