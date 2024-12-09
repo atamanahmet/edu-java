@@ -56,32 +56,69 @@
  *
  * @author Fox
  */
+// import java.util.ArrayList;
+
+// public class TodoList {
+
+//     private ArrayList<String> todoList;
+
+//     public TodoList() {
+//         this.todoList = new ArrayList<>();
+//     }
+
+//     public void add(String task) {
+//         this.todoList.add(task);
+//     }
+
+//     public void remove(int index) {
+//         this.todoList.remove(index - 1);
+//     }
+
+//     public ArrayList<String> getTodoList() {
+//         return this.todoList;
+//     }
+
+//     public void print() {
+//         for (int i = 0; i < todoList.size(); i++) {
+//             System.out.println((i + 1) + ": " + todoList.get(i));
+//         }
+//     }
+
+// }
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ *
+ * @author Fox
+ */
 import java.util.ArrayList;
+//import java.util.Scanner;
+import java.util.Random;
 
-public class TodoList {
+public class JokeManager {
+    private ArrayList<String> jokes;
 
-    private ArrayList<String> todoList;
-
-    public TodoList() {
-        this.todoList = new ArrayList<>();
+    public JokeManager() {
+        this.jokes = new ArrayList<>();
     }
 
-    public void add(String task) {
-        this.todoList.add(task);
+    public void addJoke(String joke) {
+        this.jokes.add(joke);
     }
 
-    public void remove(int index) {
-        this.todoList.remove(index + 1);
+    public String drawJokes() {
+        // System.out.println("Drawing jokes:");
+        Random draw = new Random();
+        return jokes.get(draw.nextInt(jokes.size()));
     }
 
-    public ArrayList<String> getTodoList() {
-        return this.todoList;
-    }
-
-    public void print() {
-        for (int i = 0; i < todoList.size(); i++) {
-            System.out.println((i + 1) + ": " + todoList.get(i));
+    public void printJokes() {
+        for (String joke : this.jokes) {
+            System.out.println(joke);
         }
     }
-
 }
