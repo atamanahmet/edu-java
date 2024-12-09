@@ -50,6 +50,10 @@ public class UserInterface {
                 System.out.print("Task: ");
                 String task = scanner.nextLine();
                 list.add(task);
+            } else if (input.equals("completed")) {
+                System.out.print("Which task was completed? ");
+                int selection = Integer.valueOf(scanner.nextLine());
+                list.remove(selection);
             } else if (input.equals("list")) {
                 list.print();
             }

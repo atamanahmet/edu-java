@@ -70,6 +70,10 @@ public class TodoList {
         this.todoList.add(task);
     }
 
+    public void remove(int index) {
+        this.todoList.remove(index + 1);
+    }
+
     public ArrayList<String> getTodoList() {
         return this.todoList;
     }
