@@ -91,6 +91,12 @@
  * and open the template in the editor.
  */
 
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
 /**
  *
  * @author Fox
@@ -100,6 +106,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class JokeManager {
+
     private ArrayList<String> jokes;
 
     public JokeManager() {
@@ -110,10 +117,15 @@ public class JokeManager {
         this.jokes.add(joke);
     }
 
-    public String drawJokes() {
-        // System.out.println("Drawing jokes:");
-        Random draw = new Random();
-        return jokes.get(draw.nextInt(jokes.size()));
+    public String drawJoke() {
+
+        if (jokes.size() > 0) {
+            Random draw = new Random();
+            return jokes.get(draw.nextInt(jokes.size()));
+        } else {
+            return "Jokes are in short supply.";
+        }
+
     }
 
     public void printJokes() {

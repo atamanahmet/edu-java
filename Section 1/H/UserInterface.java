@@ -96,9 +96,9 @@ public class UserInterface {
                 System.out.println("Write the joke to be added:");
                 String joke = scanner.nextLine();
                 jokeManager.addJoke(joke);
-            } else if (input.equals(2)) {
-
-            } else if (input.equals(3)) {
+            } else if (input.equals("2")) {
+                System.out.println(jokeManager.drawJoke());
+            } else if (input.equals("3")) {
                 System.out.println("Printing the jokes.");
                 jokeManager.printJokes();
             }

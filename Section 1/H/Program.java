@@ -22,10 +22,18 @@ public class Program {
 
     public static void main(String[] args) {
         JokeManager manager = new JokeManager();
+        manager.addJoke("Just joking 1");
+        manager.addJoke("Just joking 2");
+        manager.addJoke("Just joking 3");
         Scanner scanner = new Scanner(System.in);
 
         UserInterface ui = new UserInterface(manager, scanner);
         ui.start();
+        // JokeManager manager = new JokeManager();
+        // Scanner scanner = new Scanner(System.in);
+
+        // UserInterface ui = new UserInterface(manager, scanner);
+        // ui.start();
         // Scanner scanner = new Scanner(System.in);
         // ArrayList<String> jokes = new ArrayList<>();
         // System.out.println("What a joke!");
