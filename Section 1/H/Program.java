@@ -21,14 +21,14 @@ import java.util.Scanner;
 public class Program {
 
     public static void main(String[] args) {
-        JokeManager manager = new JokeManager();
-        manager.addJoke("Just joking 1");
-        manager.addJoke("Just joking 2");
-        manager.addJoke("Just joking 3");
-        Scanner scanner = new Scanner(System.in);
+        // JokeManager manager = new JokeManager();
+        // manager.addJoke("Just joking 1");
+        // manager.addJoke("Just joking 2");
+        // manager.addJoke("Just joking 3");
+        // Scanner scanner = new Scanner(System.in);
 
-        UserInterface ui = new UserInterface(manager, scanner);
-        ui.start();
+        // UserInterface ui = new UserInterface(manager, scanner);
+        // ui.start();
         // JokeManager manager = new JokeManager();
         // Scanner scanner = new Scanner(System.in);
 
@@ -67,5 +67,15 @@ public class Program {
         // }
         // }
         // }
+        String input = "string1\n" + "string2\n" + "string3\n" + "exit\n";
+        Scanner scanner = new Scanner(input);
+        while (true) {
+            String line = scanner.nextLine();
+
+            if (line.equals("exit")) {
+                break;
+            }
+            System.out.println(line);
+        }
     }
 }
