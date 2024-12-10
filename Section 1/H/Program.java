@@ -14,6 +14,7 @@
 //     }
 // }
 
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
@@ -77,5 +78,23 @@ public class Program {
         // }
         // System.out.println(line);
         // }
+        ArrayList<String> linkList = new ArrayList<>();
+        ArrayList<Integer> allready = new ArrayList<>();
+        // ArrayList<String> listBuffer = new ArrayList<>();
+        try (Scanner scanner = new Scanner(Paths.get("extracted.txt"));) {
+            while (scanner.hasNextLine()) {
+                String line = scanner.nextLine();
+                if (line.startsWith("https")) {
+                    // String[] buffer = line.split(" ");
+                    // linkList.add(buffer[0]);
+
+                    linkList.add(line);
+                }
+            }
+        } catch (Exception e) {
+            // TODO: handle exception
+            System.out.println(e.getMessage());
+        }
+        System.out.println("All " + linkList.size() + " links extracted: ");
     }
 }
