@@ -96,5 +96,24 @@ public class Program {
             System.out.println(e.getMessage());
         }
         System.out.println("All " + linkList.size() + " links extracted: ");
+        Scanner scanInput = new Scanner(System.in);
+        while (true) {
+            System.out.println("Random? ");
+            String input = scanInput.nextLine();
+            // if (input.equals("")) {
+            //     Random randomNum = new Random();
+            //     int num = randomNum.nextInt(460);
+            //     if (allready.contains(num)) {
+            //         System.out.println("oops. Same Link. Continue?");
+            //         continue;
+            //     } else {
+            //         allready.add(num);
+            //     }
+
+                System.out.println(num + ". Link: ");
+                System.out.println(linkList.get(num));
+            }
+
+        }
     }
 }
