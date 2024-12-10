@@ -68,8 +68,8 @@ public class Program {
         // }
         // }
         // }
-        String input = "string1\n" + "string2\n" + "string3\n" + "exit\n";
-        Scanner scanner2 = new Scanner(input);
+        String input1 = "string1\n" + "string2\n" + "string3\n" + "exit\n";
+        Scanner scanner2 = new Scanner(input1);
         while (true) {
             String line = scanner2.nextLine();
 
