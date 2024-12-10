@@ -68,16 +68,16 @@ public class Program {
         // }
         // }
         // }
-        // String input = "string1\n" + "string2\n" + "string3\n" + "exit\n";
-        // Scanner scanner = new Scanner(input);
-        // while (true) {
-        // String line = scanner.nextLine();
+        String input = "string1\n" + "string2\n" + "string3\n" + "exit\n";
+        Scanner scanner2 = new Scanner(input);
+        while (true) {
+            String line = scanner2.nextLine();
 
-        // if (line.equals("exit")) {
-        // break;
-        // }
-        // System.out.println(line);
-        // }
+            if (line.equals("exit")) {
+                break;
+            }
+            System.out.println(line);
+        }
         ArrayList<String> linkList = new ArrayList<>();
         ArrayList<Integer> allready = new ArrayList<>();
         // ArrayList<String> listBuffer = new ArrayList<>();
