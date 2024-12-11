@@ -14,7 +14,7 @@ public class MainProgram {
     }
 
     public static int smallest(int[] array) {
-        int smallest = 9999999;
+        int smallest = Integer.MAX_VALUE;
         for (int i = 0; i < array.length; i++) {
             if (smallest > array[i]) {
                 smallest = array[i];
@@ -25,7 +25,7 @@ public class MainProgram {
     }
 
     public static int indexOfSmallest(int[] array) {
-        int smallest = 9999999;
+        int smallest = Integer.MAX_VALUE;
         int index = 0;
         for (int i = 0; i < array.length; i++) {
             if (smallest > array[i]) {
@@ -37,7 +37,7 @@ public class MainProgram {
     }
 
     public static int indexOfSmallestFrom(int[] array, int startIndex) {
-        int smallest = 999999999;
+        int smallest = Integer.MAX_VALUE;
         int index = startIndex;
         for (int i = startIndex; i < array.length; i++) {
             if (smallest > array[i]) {
@@ -56,16 +56,9 @@ public class MainProgram {
     }
 
     public static void sort(int[] array) {
-        int smallest = 999999;
-        // int index = 0;
         for (int i = 0; i < array.length; i++) {
-            smallest = 9999999;
-            for (int j = 0; j < array.length; j++) {
-                if (smallest > array[j]) {
-                    smallest = array[j];
-                    swap(array, i, j);
-                }
-            }
+            swap(array, i, indexOfSmallestFrom(array, i));
+
         }
 
     }
