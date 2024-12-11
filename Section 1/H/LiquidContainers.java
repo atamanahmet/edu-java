@@ -1,53 +1,61 @@
-
 import java.util.Scanner;
 
 public class LiquidContainers {
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        int first = 0;
-        int second = 0;
-
-        System.out.println("First: " + first + "/100");
-        System.out.println("Second: " + second + "/100");
+        int firstVolume = 0;
+        int secondVolume = 0;
+        int maxVolume = 100;
 
         while (true) {
-            System.out.print("> ");
 
             String input = scan.nextLine();
             if (input.equals("quit")) {
                 break;
             }
-            String[] inputArray = new String[2];
-            inputArray = input.split(" ");
-            if (inputArray[0].equals("add")) {
-                add(first, Integer.valueOf(inputArray[1]));
-            } else if (inputArray[0].equals("move")) {
-                move(first, second, Integer.valueOf(inputArray[1]));
+
+            String[] parts = input.split(" ");
+            String command = parts[0];
+            int amount = Integer.valueOf(parts[1]);
+
+            System.out.println("First: " + firstVolume + "/" + maxVolume);
+            System.out.println("Second: " + secondVolume + "/" + maxVolume);
+
+            if (command.equals("add") && amount >= 0) {
+                if (firstVolume <= maxVolume) {
+                    firstVolume += amount;
+                    if (firstVolume > maxVolume) {
+                        firstVolume = maxVolume;
+                    }
+
+                }
+            } else if (command.equals("move") && amount >= 0) {
+                if ((firstVolume - amount) >= 0) {
+                    secondVolume += amount;
+                    firstVolume -= amount;
+                    if (secondVolume >= maxVolume) {
+                        secondVolume = maxVolume;
+                    }
+                } else if ((firstVolume - amount) < 0) {
+                    secondVolume += firstVolume;
+                    firstVolume = 0;
+                    if (secondVolume >= maxVolume) {
+                        secondVolume = maxVolume;
+                    }
+                }
+            } else if (command.equals("remove") && amount >= 0) {
+                if ((secondVolume - amount) >= 0) {
+                    secondVolume -= amount;
+                } else if ((secondVolume - amount) < 0) {
+                    secondVolume = 0;
+                }
             }
-        }
-    }
 
-    public static void add(int container, int liquid) {
-        if (container + liquid <= 100) {
-            container += liquid;
-        } else {
-            container = 100;
-        }
-    }
-
-    public static void move(int from, int to, int amount) {
-        if (to + amount <= 100) {
-            to += amount;
-            if (from - amount >= 0) {
-                from -= amount;
-            } else {
-                from = 0;
-            }
-
-        } else {
-            to = 100;
         }
 
+        System.out.println("First: " + firstVolume + "/" + maxVolume);
+        System.out.println("Second: " + secondVolume + "/" + maxVolume);
     }
+
 }
