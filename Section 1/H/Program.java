@@ -113,7 +113,10 @@ public class Program {
                 System.out.println(num + ". Link: ");
                 System.out.println(linkList.get(num));
             }
+            scanInput.close();
+            scanner2.close();
 
         }
+
     }
 }
