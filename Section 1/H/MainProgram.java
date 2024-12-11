@@ -1,3 +1,4 @@
+
 import java.util.Arrays;
 
 public class MainProgram {
@@ -6,14 +7,8 @@ public class MainProgram {
         // write your test code here
         // int[] numbers = {6, 5, 8, 7, 11};
         // System.out.println("Smallest: " + MainProgram.smallest(numbers));
-        int[] numbers = { 3, 2, 5, 4, 8 };
-
-        System.out.println(Arrays.toString(numbers));
-
-        MainProgram.swap(numbers, 1, 0);
-        System.out.println(Arrays.toString(numbers));
-
-        MainProgram.swap(numbers, 0, 3);
+        int[] numbers = { 8, 3, 7, 9, 1, 2, 4 };
+        MainProgram.sort(numbers);
         System.out.println(Arrays.toString(numbers));
 
     }
@@ -55,9 +50,24 @@ public class MainProgram {
 
     public static void swap(int[] array, int index1, int index2) {
         int buffer;
-        buffer = array[1];
-        array[1] = array[2];
-        array[2] = buffer;
+        buffer = array[index1];
+        array[index1] = array[index2];
+        array[index2] = buffer;
+    }
+
+    public static void sort(int[] array) {
+        int smallest = 999999;
+        // int index = 0;
+        for (int i = 0; i < array.length; i++) {
+            smallest = 9999999;
+            for (int j = 0; j < array.length; j++) {
+                if (smallest > array[j]) {
+                    smallest = array[j];
+                    swap(array, i, j);
+                }
+            }
+        }
+
     }
 
 }
