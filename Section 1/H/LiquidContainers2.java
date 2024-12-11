@@ -11,6 +11,9 @@ public class LiquidContainers2 {
             System.out.println("First: " + first.toString());
             System.out.println("Second: " + second.toString());
             String input = scanner.nextLine();
+            if (input.equals("quit")) {
+                break;
+            }
             System.out.println("");
             String[] buffer = input.split(" ");
             int amount = Integer.valueOf(buffer[1]);
@@ -20,8 +23,10 @@ public class LiquidContainers2 {
             } else if (cmd.equals("remove")) {
                 second.remove(amount);
             } else if (cmd.equals("move")) {
+                if (first.contains() > 0)
+                    second.add(first.contains() - amount);
                 first.remove(amount);
-                second.add(amount);
+
             } else {
                 continue;
             }
