@@ -23,7 +23,7 @@ public class Grade {
         if (point >= 0 && point <= 100) {
             this.points.add(point);
             addGrades(point);
-            if (point > 50) {
+            if (point > 49) {
                 this.pointsPassing.add(point);
             }
         }
@@ -77,12 +77,12 @@ public class Grade {
     }
 
     public double passPercentage() {
-        return 100 * 1.0 * pointsPassing.size() / points.size();
+        return (100 * 1.0 * pointsPassing.size()) / points.size();
     }
 
     public void printGrades() {
         System.out.println("Grade distribution:");
-        for (int j = 5; j <= 0; j++) {
+        for (int j = 5; j >= 0; j--) {
             int starCount = 0;
             for (int i = 0; i < grades.size(); i++) {
                 if (grades.get(i) == j) {
@@ -90,7 +90,7 @@ public class Grade {
                 }
             }
             System.out.print(j + ": ");
-            for (int i = 0; i <= starCount; i++) {
+            for (int i = 0; i < starCount; i++) {
                 System.out.print("*");
             }
             System.out.println("");
