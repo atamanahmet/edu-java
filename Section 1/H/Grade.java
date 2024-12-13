@@ -49,11 +49,16 @@ public class Grade {
     }
 
     public int sumOfAllPoints() {
-        int sum = 0;
-        for (int point : points) {
-            sum += point;
+        if (points.isEmpty()) {
+            return 0;
+        } else {
+            int sum = 0;
+            for (int point : points) {
+                sum += point;
+            }
+            return sum;
         }
-        return sum;
+
     }
 
     public String averageOfPassingPoints() {
@@ -69,5 +74,9 @@ public class Grade {
 
     public double averageOfPoints() {
         return sumOfAllPoints() * 1.0 / points.size();
+    }
+
+    public double passPercentage() {
+        return 100 * 1.0 * pointsPassing.size() / points.size();
     }
 }
