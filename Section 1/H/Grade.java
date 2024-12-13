@@ -19,7 +19,7 @@ public class Grade {
     }
 
     public void addPoints(int point) {
-        if (point >= 0 || point <= 100) {
+        if (point >= 0 && point <= 100) {
             this.points.add(point);
         }
 
