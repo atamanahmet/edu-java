@@ -1,7 +1,7 @@
 
 import java.util.ArrayList;
-// import java.util.Arrays;
-// import java.util.Collections;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Searching {
@@ -13,11 +13,12 @@ public class Searching {
         System.out.println("How many books to create?");
         int numberOfBooks = Integer.valueOf(scanner.nextLine());
         for (int i = 0; i < numberOfBooks; i++) {
-            books.add(new Book(i, "name for the book " + i));
+            books.add(new Book(612133, "name for the book " + i));
         }
         for (int i = 0; i < books.size(); i++) {
             System.out.println(books.get(i));
         }
+        // books.add(books.id: 16643; name: name 16643)
 
         System.out.println("Id of the book to search for?");
         int idToSearchFor = Integer.valueOf(scanner.nextLine());
@@ -49,42 +50,36 @@ public class Searching {
     }
 
     public static int linearSearch(ArrayList<Book> books, int searchedId) {
-        for (Book book : books) {
-            int id = book.getId();
+        for (int i = 0; i < books.size(); i++) {
+            int id = books.get(i).getId();
             if (id == searchedId) {
-                return id;
+                return i;
             }
         }
         return -1;
     }
 
+    // @SuppressWarnings("unlikely-arg-type")
     public static int binarySearch(ArrayList<Book> books, long searchedId) {
         int begin = 0;
         int end = books.size() - 1;
         int mid;
 
         while (true) {
-            mid = (end - begin) / 2;
-            int currentId = books.get(mid).getId();
-            if (currentId == searchedId) {
-                return currentId;
+            mid = (end + begin) / 2;
+            long currentId = books.get(mid).getId();
+            if (begin > end) {
+                break;
+            } else if (currentId == searchedId) {
+                System.out.println(books.get(mid));
+                return mid;
             } else if (currentId > searchedId) {
-                end = mid + 1;
+                end = mid - 1;
             } else if (currentId < searchedId) {
-                begin = mid - 1;
+                begin = mid + 1;
             }
         }
-        // return -1;
+        return -1;
 
     }
 }
-// 1 ortadaki rakamı bul
-// ortadaki rakam eşitmi büyük mü küçük mü bak
-// büyükse arama için ortadan sona kadar olanı topla 2ye böl devam et
-// küçükse ortadan 0 a olan aralığı topla 2 ye böl ortadakine bak.
-// ortada numara virgüllüyse floor yap
-//
-
-// 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
-
-// 15-8+1
