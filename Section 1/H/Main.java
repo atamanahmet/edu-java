@@ -13,6 +13,7 @@ public class Main {
         System.out.println("Point average (all): " + grades.averageOfPoints());
         System.out.println("Point average (passing): " + grades.averageOfPassingPoints());
         System.out.println("Pass percentage: " + grades.passPercentage());
+        grades.printGrades();
         // Write your program here -- consider breaking the program into
         // multiple classes.
     }

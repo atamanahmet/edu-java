@@ -79,4 +79,23 @@ public class Grade {
     public double passPercentage() {
         return 100 * 1.0 * pointsPassing.size() / points.size();
     }
+
+    public void printGrades() {
+        System.out.println("Grade distribution:");
+        for (int j = 5; j <= 0; j++) {
+            int starCount = 0;
+            for (int i = 0; i < grades.size(); i++) {
+                if (grades.get(i) == j) {
+                    starCount++;
+                }
+            }
+            System.out.print(j + ": ");
+            for (int i = 0; i <= starCount; i++) {
+                System.out.print("*");
+            }
+            System.out.println("");
+
+        }
+
+    }
 }
