@@ -32,4 +32,8 @@ public class Grade {
         }
         return sum;
     }
+
+    public double averageOfPoints() {
+        return sumOfPoints() * 1.0 / points.size();
+    }
 }

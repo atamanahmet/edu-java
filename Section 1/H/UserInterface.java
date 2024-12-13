@@ -29,6 +29,9 @@ public class UserInterface {
             if (input.equals("-1")) {
                 break;
             }
+            if (input.equals("")) {
+                continue;
+            }
             int point = Integer.valueOf(input);
             grades.addPoints(point);
         }
