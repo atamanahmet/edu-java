@@ -1,50 +1,70 @@
-
-// Don't modfy this class
-import java.util.Objects;
-
 public class Person {
-
     private String name;
-    private int height;
+    private String nationality;
+    private String dateOfBirth;
+    private String[] passport;
+    private int seatNumber;
 
-    public Person(String name, int height) {
+    // public Person(String[] infos) {
+    // this.passport = new String[3];
+    // }
+    public Person(String name, String nationality, String dateOfBirth, int seatNumber) {
         this.name = name;
-        this.height = height;
+        this.nationality = nationality;
+        this.dateOfBirth = dateOfBirth;
+        this.seatNumber = seatNumber;
+    }
+
+    public Person(Person source) {
+        this.name = source.name;
+        this.nationality = source.nationality;
+        this.dateOfBirth = source.dateOfBirth;
+        this.seatNumber = source.seatNumber;
+    }
+
+    public String toString() {
+        return "Name: " + name + "\n" + "Nationality: " + nationality + "\n" + "Date of Birth: " + dateOfBirth + "\n"
+                + "Seat Number: " + seatNumber;
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
-    public int getHeight() {
-        return height;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    @Override
-    public String toString() {
-        return this.name + " (" + this.height + " cm)";
+    public String getNationality() {
+        return this.nationality;
     }
 
-    // Created with the insert code functionality of NetBeans
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Person other = (Person) obj;
-        if (this.height != other.height) {
-            return false;
-        }
-        if (!Objects.equals(this.name, other.name)) {
-            return false;
-        }
-        return true;
+    public void setNationality(String nationality) {
+        this.nationality = nationality;
+    }
+
+    public String getDateOfBirth() {
+        return this.dateOfBirth;
+    }
+
+    public void setDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    public String[] getPassport() {
+        return this.passport;
+    }
+
+    public void setPassport(String[] passport) {
+        this.passport = passport;
+    }
+
+    public int getSeatNumber() {
+        return this.seatNumber;
+    }
+
+    public void setSeatNumber(int seatNumber) {
+        this.seatNumber = seatNumber;
     }
 
 }
