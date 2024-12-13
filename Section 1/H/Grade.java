@@ -21,8 +21,27 @@ public class Grade {
     public void addPoints(int point) {
         if (point >= 0 && point <= 100) {
             this.points.add(point);
+            addGrades(point);
         }
 
+    }
+
+    public void addGrades(int point) {
+        int grade = -1;
+        if (point < 50) {
+            grade = 0;
+        } else if (point < 60) {
+            grade = 1;
+        } else if (point < 70) {
+            grade = 2;
+        } else if (point < 80) {
+            grade = 3;
+        } else if (point < 90) {
+            grade = 4;
+        } else if (point < 100) {
+            grade = 5;
+        }
+        this.grades.add(grade);
     }
 
     public int sumOfPoints() {
