@@ -59,19 +59,30 @@ public class Searching {
     }
 
     public static int binarySearch(ArrayList<Book> books, long searchedId) {
-        boolean smaller;
-        for (int i = books.size() / 2; i < books.size(); i++) {
-            if (searchedId == books.get(i).getId()) {
-                return i;
-            } else if (searchedId > books.get(i).getId()) {
-                smaller = true;
-            } else if (searchedId < books.get(i).getId()) {
-                smaller = false;
+        int begin = 0;
+        int end = books.size();
+        int mid;
+        while (true) {
+            mid = (end - begin) / 2 + begin;
+            if (books.get(mid).getId() == searchedId) {
+                return books.get(mid).getId();
+            } else if (books.get(mid).getId() > searchedId) {
+                end = mid + 1;
+            } else if (books.get(mid).getId() < searchedId) {
+                begin = mid - 1;
             }
         }
-        for (int i = 0; i < books.size(); i++) {
+        // return -1;
 
-        }
-        return -1;
     }
 }
+// 1 ortadaki rakamı bul
+// ortadaki rakam eşitmi büyük mü küçük mü bak
+// büyükse arama için ortadan sona kadar olanı topla 2ye böl devam et
+// küçükse ortadan 0 a olan aralığı topla 2 ye böl ortadakine bak.
+// ortada numara virgüllüyse floor yap
+//
+
+// 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
+
+// 15-8+1
