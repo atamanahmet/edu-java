@@ -60,15 +60,17 @@ public class Searching {
 
     public static int binarySearch(ArrayList<Book> books, long searchedId) {
         int begin = 0;
-        int end = books.size();
+        int end = books.size() - 1;
         int mid;
+
         while (true) {
-            mid = (end - begin) / 2 + begin;
-            if (books.get(mid).getId() == searchedId) {
-                return books.get(mid).getId();
-            } else if (books.get(mid).getId() > searchedId) {
+            mid = (end - begin) / 2;
+            int currentId = books.get(mid).getId();
+            if (currentId == searchedId) {
+                return currentId;
+            } else if (currentId > searchedId) {
                 end = mid + 1;
-            } else if (books.get(mid).getId() < searchedId) {
+            } else if (currentId < searchedId) {
                 begin = mid - 1;
             }
         }
