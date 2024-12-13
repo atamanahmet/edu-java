@@ -14,6 +14,10 @@ public class UserInterface {
     private Scanner scanner;
     private Grade grades;
 
+    public UserInterface() {
+
+    }
+
     public UserInterface(Scanner scanner, Grade grades) {
         this.scanner = scanner;
         this.grades = grades;
