@@ -12,6 +12,7 @@ import java.util.ArrayList;
 
 public class Grade {
     private ArrayList<Integer> points = new ArrayList<>();
+    private ArrayList<Integer> pointsPassing = new ArrayList<>();
     private ArrayList<Integer> grades = new ArrayList<>();
 
     public Grade() {
@@ -22,6 +23,9 @@ public class Grade {
         if (point >= 0 && point <= 100) {
             this.points.add(point);
             addGrades(point);
+            if (point > 50) {
+                this.pointsPassing.add(point);
+            }
         }
 
     }
@@ -44,7 +48,7 @@ public class Grade {
         this.grades.add(grade);
     }
 
-    public int sumOfPoints() {
+    public int sumOfAllPoints() {
         int sum = 0;
         for (int point : points) {
             sum += point;
@@ -52,7 +56,18 @@ public class Grade {
         return sum;
     }
 
+    public String averageOfPassingPoints() {
+        int sum = 0;
+        if (pointsPassing.isEmpty()) {
+            return "-";
+        }
+        for (int point : pointsPassing) {
+            sum += point;
+        }
+        return String.valueOf(sum * 1.0 / pointsPassing.size());
+    }
+
     public double averageOfPoints() {
-        return sumOfPoints() * 1.0 / points.size();
+        return sumOfAllPoints() * 1.0 / points.size();
     }
 }
