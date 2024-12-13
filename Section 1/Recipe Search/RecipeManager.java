@@ -32,4 +32,14 @@ public class RecipeManager {
         }
         return "";
     }
+
+    public void printRecipes() {
+        System.out.println("Recipes:");
+        for (int i = 0; i < recipes.size(); i++) {
+            System.out.println(recipes.get(i).getName() + ", " + recipes.get(i).getCookingTime());
+            for (int j = 0; j < recipes.get(i).getIngredients().size(); j++) {
+                System.out.println(recipes.get(i).getIngredients().get(j));
+            }
+        }
+    }
 }

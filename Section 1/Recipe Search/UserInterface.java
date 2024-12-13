@@ -15,17 +15,18 @@ public class UserInterface {
         String url = scanner.nextLine();
         System.out.println("");
         manager.readFile(url);
+        System.out.println("Commands:\r\n" + //
+                "list - lists the recipes\r\n" + //
+                "stop - stops the program");
         while (true) {
 
-            System.out.println("Commands:\r\n" + //
-                    "list - lists the recipes\r\n" + //
-                    "stop - stops the program");
             String input = scanner.nextLine();
-            if (input.equals("")) {
+            if (input.equals("stop")) {
                 break;
-            }
-            if (input.equals("list")) {
-
+            } else if (input.equals("list")) {
+                manager.printRecipes();
+            } else {
+                continue;
             }
         }
     }

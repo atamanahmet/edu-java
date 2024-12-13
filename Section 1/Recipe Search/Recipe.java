@@ -14,4 +14,20 @@ public class Recipe {
         this.cookingTime = cookingTime;
         this.ingredient = ingredient;
     }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public int getCookingTime() {
+        return this.cookingTime;
+    }
+
+    public void addIngredient(String value) {
+        this.ingredient.add(value);
+    }
+
+    public ArrayList<String> getIngredients() {
+        return this.ingredient;
+    }
 }
