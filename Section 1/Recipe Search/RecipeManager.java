@@ -7,7 +7,6 @@ public class RecipeManager {
     private ArrayList<Recipe> recipes = new ArrayList<>();
 
     public RecipeManager() {
-
     }
 
     public String readFile(String url) {
