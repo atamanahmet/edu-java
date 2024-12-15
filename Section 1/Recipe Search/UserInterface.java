@@ -18,6 +18,7 @@ public class UserInterface {
         System.out.println("Commands:\r\n" + //
                 "list - lists the recipes\r\n" + //
                 "stop - stops the program");
+
         while (true) {
 
             String input = scanner.nextLine();
