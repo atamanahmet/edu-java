@@ -28,11 +28,14 @@ public class BirdManager {
         }
     }
 
-    public void printBird() {
-
-        System.out.println(
-                birdList.get(0).getName() + " (" + birdList.get(0).getLatinName() + "): "
-                        + birdList.get(0).getObservationCount() + " observations");
+    public void printBird(String birdName) {
+        for (Bird bird : birdList) {
+            if (bird.getName().equals(birdName)) {
+                System.out.println(
+                        bird.getName() + " (" + bird.getLatinName() + "): "
+                                + bird.getObservationCount() + " observations");
+            }
+        }
 
     }
 }

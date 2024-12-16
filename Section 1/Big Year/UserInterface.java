@@ -5,8 +5,8 @@ public class UserInterface {
     Scanner scanner = new Scanner(System.in);
     BirdManager birdManager = new BirdManager();
 
-    public UserInterface() {
-
+    public UserInterface(Scanner scan) {
+        this.scanner = scan;
     }
 
     public void getInput() {
@@ -26,7 +26,9 @@ public class UserInterface {
             } else if (input.equals("All")) {
                 birdManager.printBirds();
             } else if (input.equals("One")) {
-                birdManager.printBird();
+                System.out.print("Bird? ");
+                String birdName = scanner.nextLine();
+                birdManager.printBird(birdName);
             } else if (input.equals("Quit")) {
                 break;
             }
