@@ -31,8 +31,8 @@ public class UserInterface {
             } else if (input.equals("find name")) {
                 System.out.print("Searched word: ");
                 String findName = scanner.nextLine().toLowerCase();
-                int index = manager.searchName(findName);
-                manager.printRecipes(index);
+                manager.printRecipes(manager.searchName(findName));
+
             } else if (input.equals("find cooking time")) {
                 System.out.print("Max cooking time: ");
                 int maxCookingTime = Integer.valueOf(scanner.nextLine());
