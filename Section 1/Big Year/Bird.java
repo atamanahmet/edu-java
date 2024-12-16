@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+// import java.util.ArrayList;
 
 public class Bird {
     private String name;
@@ -9,6 +9,18 @@ public class Bird {
         this.name = name;
         this.latinName = latinName;
         this.observationCount = 0;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public String getLatinName() {
+        return this.latinName;
+    }
+
+    public int getObservationCount() {
+        return this.observationCount;
     }
 
 }
