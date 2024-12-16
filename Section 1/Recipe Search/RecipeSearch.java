@@ -10,6 +10,7 @@ public class RecipeSearch {
         RecipeManager manager = new RecipeManager();
         UserInterface userInterface = new UserInterface(scanner, manager);
         userInterface.getInput();
+
     }
 
 }

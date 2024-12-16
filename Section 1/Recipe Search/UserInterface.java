@@ -18,6 +18,8 @@ public class UserInterface {
         System.out.println("Commands:\r\n" + //
                 "list - lists the recipes\r\n" + //
                 "stop - stops the program");
+        System.out.println("");
+        System.out.print("Enter command: ");
 
         while (true) {
 
@@ -26,6 +28,12 @@ public class UserInterface {
                 break;
             } else if (input.equals("list")) {
                 manager.printRecipes();
+                System.out.print("\nEnter command: ");
+            } else if (input.equals("find name")) {
+                System.out.print("Searched word: ");
+                String findName = scanner.nextLine().toLowerCase();
+                int index = manager.searchName(findName);
+                manager.printRecipes(index);
             } else {
                 continue;
             }

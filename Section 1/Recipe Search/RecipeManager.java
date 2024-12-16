@@ -1,5 +1,7 @@
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class RecipeManager {
@@ -24,7 +26,7 @@ public class RecipeManager {
                     if (buffer.equals("")) {
                         break;
                     }
-                    System.out.println(buffer);
+                    // System.out.println(buffer);
                     list.add(buffer);
                 }
                 Recipe recipe = new Recipe(name, cookingTime, list);
@@ -39,13 +41,43 @@ public class RecipeManager {
         return "";
     }
 
+    public void printRecipes(int index) {
+
+        System.out.println("\nRecipes:");
+        if (index == -999) {
+            for (int i = 0; i < recipes.size(); i++) {
+                System.out.println(recipes.get(i).getName() + ", cooking time: " + recipes.get(i).getCookingTime());
+                // for (int j = 0; j < recipes.get(i).getIngredients().size(); j++) {
+                // System.out.println(recipes.get(i).getIngredients().get(j));
+                // }
+
+            }
+        } else {
+            System.out.println(recipes.get(index).getName() + ", cooking time: " + recipes.get(index).getCookingTime());
+        }
+
+    }
+
     public void printRecipes() {
-        System.out.println("Recipes:");
-        for (int i = 0; i < recipes.size(); i++) {
-            System.out.println(recipes.get(i).getName() + ", " + recipes.get(i).getCookingTime());
-            for (int j = 0; j < recipes.get(i).getIngredients().size(); j++) {
-                System.out.println(recipes.get(i).getIngredients().get(j));
+        printRecipes(-999);
+
+    }
+
+    public int searchName(String name) {
+        int index = -1;
+        for (Recipe item : recipes) {
+            String recipeName = item.getName().toLowerCase();
+            String[] bufferArray = recipeName.split(" ");
+            List<String> bufferArrayList = Arrays.asList(bufferArray);
+            if (bufferArrayList.contains(name)) {
+                index = recipes.indexOf(item);
             }
         }
+        if (index == -1) {
+            return -1;
+        } else {
+            return index;
+        }
+
     }
 }
