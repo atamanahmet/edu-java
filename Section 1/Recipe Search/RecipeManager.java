@@ -52,6 +52,8 @@ public class RecipeManager {
                 // }
 
             }
+        } else if (index == -1) {
+            System.out.println("Cant find recipe");
         } else {
             System.out.println(recipes.get(index).getName() + ", cooking time: " + recipes.get(index).getCookingTime());
         }
@@ -71,6 +73,12 @@ public class RecipeManager {
             List<String> bufferArrayList = Arrays.asList(bufferArray);
             if (bufferArrayList.contains(name)) {
                 index = recipes.indexOf(item);
+            }
+            for (String string : bufferArrayList) {
+                if (string.startsWith(name)) {
+                    index = recipes.indexOf(item);
+                }
+
             }
         }
         if (index == -1) {
