@@ -1,7 +1,7 @@
 import java.nio.file.Paths;
 import java.util.ArrayList;
-// import java.util.Arrays;
-// import java.util.List;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class RecipeManager {
@@ -71,26 +71,27 @@ public class RecipeManager {
         }
     }
 
-    public ArrayList<Recipe> searchName(String name) {
-        ArrayList<Recipe> recipes = new ArrayList<>();
+    public int searchName(String name) {
+        int index = -1;
         for (Recipe item : recipes) {
-            if (item.getName().contains(name)) {
-                recipes.add(item);
+            String recipeName = item.getName().toLowerCase();
+            String[] bufferArray = recipeName.split(" ");
+            List<String> bufferArrayList = Arrays.asList(bufferArray);
+            if (bufferArrayList.contains(name)) {
+                index = recipes.indexOf(item);
             }
-            // String recipeName = item.getName().toLowerCase();
-            // String[] bufferArray = recipeName.split(" ");
-            // List<String> bufferArrayList = Arrays.asList(bufferArray);
-            // if (bufferArrayList.contains(name)) {
-            // index = recipes.indexOf(item);
-            // }
-            // for (String string : bufferArrayList) {
-            // if (string.startsWith(name)) {
-            // index = recipes.indexOf(item);
-            // }
+            for (String string : bufferArrayList) {
+                if (string.startsWith(name)) {
+                    index = recipes.indexOf(item);
+                }
 
-            // }
+            }
         }
-        return recipes;
+        if (index == -1) {
+            return -1;
+        } else {
+            return index;
+        }
 
     }
 
