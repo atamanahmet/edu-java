@@ -19,7 +19,7 @@ public class UserInterface {
                 "list - lists the recipes\r\n" + //
                 "stop - stops the program\r\n" + "find name - searches recipes by name\r\n"
                 + "find cooking time - searches recipes by cooking time\r\n"
-                + "find ingredient - searches recipes by ingredient\r\n");
+                + "find ingredient - searches recipes by ingredient\r");
 
         while (true) {
             System.out.print("\nEnter command: ");

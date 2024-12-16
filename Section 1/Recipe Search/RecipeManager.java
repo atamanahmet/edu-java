@@ -110,7 +110,7 @@ public class RecipeManager {
         ArrayList<Recipe> searchedRecipes = new ArrayList<>();
         for (Recipe recipe : recipes) {
             for (String item : recipe.getIngredients()) {
-                if (item.startsWith(ingredient)) {
+                if (item.equals(ingredient)) {
                     searchedRecipes.add(recipe);
                 }
             }
