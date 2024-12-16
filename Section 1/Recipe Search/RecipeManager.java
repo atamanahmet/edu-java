@@ -19,8 +19,13 @@ public class RecipeManager {
                 int cookingTime = Integer.valueOf(read.nextLine());
 
                 ArrayList<String> list = new ArrayList<>();
-                while (!read.nextLine().equals("")) {
-                    list.add(read.nextLine());
+                while (read.hasNextLine()) {
+                    String buffer = read.nextLine();
+                    if (buffer.equals("")) {
+                        break;
+                    }
+                    System.out.println(buffer);
+                    list.add(buffer);
                 }
                 Recipe recipe = new Recipe(name, cookingTime, list);
                 recipes.add(recipe);
