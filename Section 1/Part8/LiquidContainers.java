@@ -9,7 +9,8 @@ public class LiquidContainers {
         Container second = new Container();
 
         while (true) {
-            System.out.print("> ");
+            System.out.println("\nFirst: " + first.getAmount() + "/" + first.getLimit());
+            System.out.println("Second: " + second.getAmount() + "/" + second.getLimit());
 
             String input = scan.nextLine();
             if (input.equals("quit")) {
@@ -18,6 +19,10 @@ public class LiquidContainers {
                 String[] buffer = input.split(" ");
                 int amount = Integer.valueOf(buffer[1]);
                 first.add(amount);
+            } else if (input.startsWith("move")) {
+                String[] buffer = input.split(" ");
+                int amount = Integer.valueOf(buffer[1]);
+                first.move(second, amount);
             }
 
         }
