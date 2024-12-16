@@ -105,4 +105,16 @@ public class RecipeManager {
         }
         return searchedRecipes;
     }
+
+    public ArrayList<Recipe> searchIngredient(String ingredient) {
+        ArrayList<Recipe> searchedRecipes = new ArrayList<>();
+        for (Recipe recipe : recipes) {
+            for (String item : recipe.getIngredients()) {
+                if (item.startsWith(ingredient)) {
+                    searchedRecipes.add(recipe);
+                }
+            }
+        }
+        return searchedRecipes;
+    }
 }
