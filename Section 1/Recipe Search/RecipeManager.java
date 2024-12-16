@@ -23,6 +23,7 @@ public class RecipeManager {
                 }
                 Recipe recipe = new Recipe(name, cookingTime, list);
                 recipes.add(recipe);
+
             }
 
         } catch (Exception e) {
