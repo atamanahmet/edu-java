@@ -12,11 +12,12 @@ public class RecipeManager {
     public String readFile(String url) {
 
         try {
-            this.read = new Scanner(Paths.get(url));
+            this.read = new Scanner(Paths.get("recipes.txt"));
 
             while (read.hasNextLine()) {
                 String name = read.nextLine();
                 int cookingTime = Integer.valueOf(read.nextLine());
+
                 ArrayList<String> list = new ArrayList<>();
                 while (!read.nextLine().equals("")) {
                     list.add(read.nextLine());
