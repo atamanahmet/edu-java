@@ -26,7 +26,9 @@ public class UserInterface {
             } else if (input.equals("All")) {
                 birdManager.printBirds();
             } else if (input.equals("One")) {
-
+                birdManager.printBird();
+            } else if (input.equals("Quit")) {
+                break;
             }
         }
     }
