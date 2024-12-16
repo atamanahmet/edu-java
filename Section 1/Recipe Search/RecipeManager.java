@@ -62,7 +62,13 @@ public class RecipeManager {
 
     public void printRecipes() {
         printRecipes(-999);
+    }
 
+    public void printRecipes(ArrayList<Recipe> recipes) {
+        System.out.println("\nRecipes:");
+        for (Recipe recipe : recipes) {
+            System.out.println(recipe.getName() + ", cooking time: " + recipe.getCookingTime());
+        }
     }
 
     public int searchName(String name) {
@@ -87,5 +93,16 @@ public class RecipeManager {
             return index;
         }
 
+    }
+
+    public ArrayList<Recipe> searchTime(int maxTime) {
+        ArrayList<Recipe> searchedRecipes = new ArrayList<>();
+        for (Recipe recipe : recipes) {
+            int cookingTime = recipe.getCookingTime();
+            if (cookingTime <= maxTime) {
+                searchedRecipes.add(recipe);
+            }
+        }
+        return searchedRecipes;
     }
 }
