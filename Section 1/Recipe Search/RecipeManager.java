@@ -14,7 +14,7 @@ public class RecipeManager {
     public String readFile(String url) {
 
         try {
-            this.read = new Scanner(Paths.get("recipes.txt"));
+            this.read = new Scanner(Paths.get(url));
 
             while (read.hasNextLine()) {
                 String name = read.nextLine();
