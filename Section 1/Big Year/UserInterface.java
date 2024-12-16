@@ -1,5 +1,5 @@
 import java.util.Scanner;
-import java.util.ArrayList;
+// import java.util.ArrayList;
 
 public class UserInterface {
     Scanner scanner = new Scanner(System.in);
@@ -19,6 +19,14 @@ public class UserInterface {
                 System.out.print("Name in Latin: ");
                 String latinName = scanner.nextLine();
                 birdManager.add(name, latinName);
+            } else if (input.equals("Observation")) {
+                System.out.print("Bird? ");
+                String birdSearch = scanner.nextLine();
+                birdManager.observation(birdSearch);
+            } else if (input.equals("All")) {
+                birdManager.printBirds();
+            } else if (input.equals("One")) {
+
             }
         }
     }

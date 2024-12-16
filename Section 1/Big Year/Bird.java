@@ -1,5 +1,3 @@
-// import java.util.ArrayList;
-
 public class Bird {
     private String name;
     private String latinName;
@@ -21,6 +19,10 @@ public class Bird {
 
     public int getObservationCount() {
         return this.observationCount;
+    }
+
+    public void setObservation() {
+        this.observationCount++;
     }
 
 }
