@@ -23,6 +23,10 @@ public class LiquidContainers {
                 String[] buffer = input.split(" ");
                 int amount = Integer.valueOf(buffer[1]);
                 first.move(second, amount);
+            } else if (input.startsWith("remove")) {
+                String[] buffer = input.split(" ");
+                int amount = Integer.valueOf(buffer[1]);
+                second.remove(amount);
             }
 
         }
