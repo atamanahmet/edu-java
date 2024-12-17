@@ -37,11 +37,14 @@ public class Container {
     }
 
     public void remove(int amount) {
-        if (this.currentAmount - amount < 0) {
-            this.currentAmount = 0;
-        } else {
-            this.currentAmount -= amount;
+        if (amount > 0) {
+            if (this.currentAmount - amount < 0) {
+                this.currentAmount = 0;
+            } else {
+                this.currentAmount -= amount;
+            }
         }
+
     }
 
     public void move(Container second, int amount) {
@@ -80,5 +83,9 @@ public class Container {
 
     public int getLimit() {
         return this.limit;
+    }
+
+    public String toString(){
+        return 
     }
 }
