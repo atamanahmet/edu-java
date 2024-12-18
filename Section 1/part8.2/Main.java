@@ -14,8 +14,9 @@ public class Main {
             map.put(j, persons.get(j));
 
         }
-        for (int i = 0; i < map.size(); i++) {
-            System.out.println(map.get(i));
-        }
+        // for (int i = 0; i < map.size(); i++) {
+        // System.out.println(map.get(i));
+        // }
+        System.out.println(map);
     }
 }
