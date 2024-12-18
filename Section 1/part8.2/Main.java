@@ -10,13 +10,12 @@ public class Main {
             persons.add(new Person(String.valueOf(i), i));
         }
         for (int j = 0; j < persons.size(); j++) {
-            for (Person person : persons) {
-                map.put(j, person);
-            }
+
+            map.put(j, persons.get(j));
 
         }
-        for (int i = 0; i < persons.size(); i++) {
-            System.out.println(persons.get(i));
+        for (int i = 0; i < map.size(); i++) {
+            System.out.println(map.get(i));
         }
     }
 }
