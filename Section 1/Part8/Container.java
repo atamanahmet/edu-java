@@ -1,39 +1,49 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 
+/**
+ *
+ * @author Fox
+ */
 public class Container {
 
     private int currentAmount;
-    private int limit;
+    private int limit = 100;
 
     public Container() {
-        this(0, 100);
+
     }
 
-    public Container(int limit) {
-        this(0, limit);
+    public String toString() {
+        return this.currentAmount + "/" + this.limit;
     }
 
-    public Container(int currentAmount, int limit) {
-        this.currentAmount = currentAmount;
-        this.limit = limit;
+    public int contains() {
+        return this.currentAmount;
+    }
+
+    public int getLimit() {
+        return this.limit;
+    }
+
+    public void setAmount(int amount) {
+        if (amount > 0 && amount <= 100) {
+            this.currentAmount = amount;
+
+        }
     }
 
     public void add(int amount) {
-        if (amount >= 0) {
+        if (amount > 0) {
             if (this.currentAmount + amount > limit) {
                 this.currentAmount = limit;
             } else {
                 this.currentAmount += amount;
             }
         }
-
-    }
-
-    public int getAmount() {
-        return this.currentAmount;
-    }
-
-    public void setAmount(int amount) {
-        this.currentAmount = amount;
     }
 
     public void remove(int amount) {
@@ -44,48 +54,34 @@ public class Container {
                 this.currentAmount -= amount;
             }
         }
-
     }
 
-    public void move(Container second, int amount) {
-        if (this.currentAmount == 0) {
-            return;
-        }
-        if (this.currentAmount < amount) {
-            if (second.getAmount() + this.currentAmount > limit) {
-                second.setAmount(100);
+    public void move(int amount, Container second) {
+        if (amount > 0 && this.currentAmount > 0) {
+            if (this.currentAmount - amount < 0) {
+                if (second.contains() + this.currentAmount <= 100) {
+                    second.setAmount(this.currentAmount + second.contains());
+                } else {
+                    second.setAmount(second.getLimit());
+                }
                 this.currentAmount = 0;
             } else {
-                second.setAmount(second.getAmount() + this.currentAmount);
-                this.currentAmount = 0;
-            }
-        } else {
-            if (amount > 0) {
-                if (this.currentAmount - amount < 0) {
-                    if (second.getAmount() + amount > limit) {
-                        second.setAmount(100);
-                    } else {
-                        second.setAmount(second.getAmount() + amount);
-                    }
-                    this.currentAmount = 0;
+                if (second.contains() + this.currentAmount <= 100) {
+                    second.setAmount(amount + second.contains());
                 } else {
-                    this.currentAmount = this.currentAmount - amount;
-                    if (second.getAmount() + amount > limit) {
-                        second.setAmount(100);
-                    } else {
-                        second.setAmount(second.getAmount() + amount);
-                    }
+                    second.setAmount(second.getLimit());
                 }
+                this.currentAmount -= amount;
+
             }
         }
-
     }
-
-    public int getLimit() {
-        return this.limit;
-    }
-
-    public String toString(){
-        return 
-    }
+    // public void moveRepeat(Container second){
+    // if(second.contains()+this.currentAmount<=100){
+    // second.setAmount(this.currentAmount+second.contains());
+    // }
+    // else{
+    // second.setAmount(second.getLimit());
+    // }
+    // }
 }
