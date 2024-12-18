@@ -9,12 +9,11 @@
  * @author Fox
  */
 import java.util.Scanner;
-import java.util.ArrayList;
+//import java.util.ArrayList;
 
 public class UserInterface {
     private Scanner scanner;
     private TodoList todoList;
-    private ArrayList<String> list = new ArrayList<>();
 
     public UserInterface(TodoList todoList, Scanner scan) {
         this.scanner = scan;
@@ -30,14 +29,12 @@ public class UserInterface {
             }
             if (input.equals("add")) {
                 System.out.print("Task: ");
-                list.add(scanner.nextLine());
+                todoList.add(scanner.nextLine());
             } else if (input.equals("list")) {
-                for (String item : list) {
-                    System.out.println((list.indexOf(item) + 1) + ": " + item);
-                }
+                todoList.print();
             } else if (input.equals("completed")) {
                 System.out.print("Which task was completed? ");
-                list.remove(Integer.valueOf(scanner.nextLine()) - 1);
+                todoList.remove(Integer.valueOf(scanner.nextLine()) - 1);
             }
         }
     }
