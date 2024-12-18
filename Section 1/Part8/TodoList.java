@@ -28,6 +28,6 @@ public class TodoList {
     }
 
     public void remove(int index) {
-        this.list.remove(index);
+        this.list.remove(index - 1);
     }
 }
