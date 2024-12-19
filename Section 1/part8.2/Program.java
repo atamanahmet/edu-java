@@ -10,6 +10,7 @@ public class Program {
         books.add(bookObject2);
         int bookOne = books.get(0).getName().hashCode();
         int bookTwo = books.get(1).getName().hashCode();
+
         System.out.println(bookOne);
         System.out.println(bookTwo);
 
@@ -23,4 +24,5 @@ public class Program {
         // System.out.println("Book Object was not found.");
         // }
     }
+
 }
