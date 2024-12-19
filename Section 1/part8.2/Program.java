@@ -8,8 +8,8 @@ public class Program {
         Book bookObject2 = new Book("Book Object", 2000, "...");
         books.add(bookObject);
         books.add(bookObject2);
-        int bookOne = books.get(0).getName().hashCode();
-        int bookTwo = books.get(1).getName().hashCode();
+        int bookOne = books.get(0).hashCode();
+        int bookTwo = books.get(1).hashCode();
 
         System.out.println(bookOne);
         System.out.println(bookTwo);
