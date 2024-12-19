@@ -63,4 +63,8 @@ public class Book {
         // otherwise, the objects aren't the same
         return false;
     }
+
+    public int hashCode() {
+        return this.name.hashCode();
+    }
 }
