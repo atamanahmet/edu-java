@@ -65,6 +65,9 @@ public class Book {
     }
 
     public int hashCode() {
-        return this.name.hashCode();
+        if (this.name.equals(null) || this.name == null) {
+            return this.published;
+        }
+        return this.published + this.name.hashCode();
     }
 }
