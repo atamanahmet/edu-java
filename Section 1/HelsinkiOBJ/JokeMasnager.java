@@ -105,11 +105,11 @@ import java.util.ArrayList;
 //import java.util.Scanner;
 import java.util.Random;
 
-public class JokeManager {
+public class JokeMasnager {
 
     private ArrayList<String> jokes;
 
-    public JokeManager() {
+    public JokeMasnager() {
         this.jokes = new ArrayList<>();
     }
 
