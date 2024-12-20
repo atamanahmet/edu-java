@@ -21,8 +21,11 @@ public class DictionaryOfManyTranslations {
     public ArrayList<String> translate(String word) {
         if (this.dictionary.containsKey(word)) {
             return this.dictionary.get(word);
-        } else
-            return null;
+        } else {
+            this.dictionary.put(word, new ArrayList<>());
+            return this.dictionary.get(word);
+        }
+
     }
 
     public void remove(String word) {
