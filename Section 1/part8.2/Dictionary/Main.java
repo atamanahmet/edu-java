@@ -1,15 +1,17 @@
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class main {
+public class Main {
     public static void main(String[] args) {
-        HashMap<String, ArrayList<String>> map = new HashMap<>();
-        ArrayList<String> list = new ArrayList<>();
-        for (int i = 0; i < 20; i++) {
-            list.add(i);
-        }
+        DictionaryOfManyTranslations dictionary = new DictionaryOfManyTranslations();
+        dictionary.add("lie", "maata");
+        dictionary.add("lie", "valehdella");
 
-        map.put("a", list);
-        System.out.println(map.get("a"));
+        dictionary.add("bow", "jousi");
+        dictionary.add("bow", "kumartaa");
+
+        System.out.println(dictionary.translate("lie"));
+        dictionary.remove("bow");
+        System.out.println(dictionary.translate("bow"));
     }
 }
