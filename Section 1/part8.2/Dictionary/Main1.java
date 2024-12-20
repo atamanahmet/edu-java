@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class Main {
+public class Main1 {
     public static void main(String[] args) {
         // DictionaryOfManyTranslations dictionary = new DictionaryOfManyTranslations();
         // dictionary.add("lie", "maata");
