@@ -10,23 +10,29 @@ public class VehicleRegistry {
     }
 
     public boolean add(LicensePlate license, String owner) {
-        if (registry.get(license) != null) {
+        if (this.registry.containsKey(license)) {
             return false;
+        } else {
+            this.registry.put(license, owner);
+            return true;
         }
-        registry.put(license, owner);
-        return true;
     }
 
     public String get(LicensePlate license) {
-        return this.get(license);
+        if (this.registry.containsKey(license)) {
+            return this.registry.get(license);
+        } else {
+            return null;
+        }
     }
 
     public boolean remove(LicensePlate license) {
-        if (registry.get(license) != null) {
-            this.remove(license);
+        if (this.registry.containsKey(license)) {
+            this.registry.remove(license);
             return true;
+        } else {
+            return false;
         }
-        return false;
     }
 
     public void printLicensePlates() {
@@ -45,10 +51,4 @@ public class VehicleRegistry {
         }
     }
 
-    public boolean search(LicensePlate license) {
-        if (registry.get(license) != null) {
-            return true;
-        }
-        return false;
-    }
 }
