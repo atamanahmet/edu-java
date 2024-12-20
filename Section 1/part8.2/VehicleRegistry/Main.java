@@ -34,7 +34,6 @@ public class Main {
         // if the hasCode-method hasn't been overwritten, the owners won't be found
         // VehicleRegistry vr = new VehicleRegistry();
         // vr.add(new LicensePlate("FI", "AAA-111"), "Arto");
-        VehicleRegistry vr = new VehicleRegistry();
-        vr.search(new LicensePlate("FI", "AAA-111"));
+
     }
 }
