@@ -20,7 +20,12 @@ public class StorageFacility {
     }
 
     public ArrayList<String> contents(String unit) {
-        return this.facility.get(unit);
+        if (this.facility.containsKey(unit)) {
+            return this.facility.get(unit);
+        } else {
+            this.facility.put(unit, new ArrayList<>());
+            return this.facility.get(unit);
+        }
     }
 
     public void remove(String unit, String item) {
@@ -29,10 +34,13 @@ public class StorageFacility {
         }
     }
 
-    public ArrayList<String> storageUnits(){
+    public ArrayList<String> storageUnits() {
         ArrayList<String> unitsThatNotEmpty = new ArrayList<>();
-        for(String unit: this.facility.keySet()){
-            if(this.facility.get(unit))
+        for (String unit : this.facility.keySet()) {
+            if (!this.facility.get(unit).isEmpty()) {
+                unitsThatNotEmpty.add(unit);
+            }
         }
+        return unitsThatNotEmpty;
     }
 }
