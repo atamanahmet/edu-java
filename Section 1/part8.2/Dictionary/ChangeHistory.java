@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class ChangeHistory {
+public class ChangeHistory extends ProductWarehouse {
     private ArrayList<Double> history;
 
     public ChangeHistory() {
@@ -43,5 +43,16 @@ public class ChangeHistory {
             }
         }
         return minValue;
+    }
+
+    public double average() {
+        if (history.isEmpty()) {
+            return 0.0;
+        }
+        double sum = 0;
+        for (Double value : history) {
+            sum += value;
+        }
+        return sum * 1.0 / this.history.size();
     }
 }
