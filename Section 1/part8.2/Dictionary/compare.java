@@ -1,14 +1,16 @@
+
 public class Warehouse {
 
     private double capacity;
     private double balance;
 
     public Warehouse(double capacity) {
-        if (capacity > 0) {
+        if (capacity > 0.0) {
             this.capacity = capacity;
         } else {
             this.capacity = 0.0;
         }
+
         this.balance = 0.0;
     }
 
@@ -25,30 +27,28 @@ public class Warehouse {
     }
 
     public void addToWarehouse(double amount) {
-        if (amount > 0) {
-            if (this.howMuchSpaceLeft() > amount) {
-                this.balance += amount;
-            } else {
-                this.balance = this.capacity;
-            }
+        if (amount < 0) {
+            return;
+        }
+        if (amount <= howMuchSpaceLeft()) {
+            this.balance = this.balance + amount;
+        } else {
+            this.balance = this.capacity;
         }
     }
 
     public double takeFromWarehouse(double amount) {
-        if (amount > 0) {
-            if (amount > this.balance) {
-                double helper = this.balance;
-                this.balance = 0;
-                return helper;
-            } else if (this.balance - amount >= 0) {
-                this.balance = this.balance - amount;
-                return amount;
-            } else {
-                return 0;
-            }
-        } else {
-            return 0;
+        if (amount < 0) {
+            return 0.0;
         }
+        if (amount > this.balance) {
+            double allThatWeCan = this.balance;
+            this.balance = 0.0;
+            return allThatWeCan;
+        }
+
+        this.balance = this.balance - amount;
+        return amount;
     }
 
     public String toString() {
