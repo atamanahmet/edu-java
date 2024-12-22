@@ -1,7 +1,11 @@
+
 public class ProductWarehouseWithHistory extends ProductWarehouse {
+
+    private ChangeHistory history;
 
     public ProductWarehouseWithHistory(String productName, double capacity, double initialBalance) {
         super(productName, capacity);
+        this.history = new ChangeHistory();
         this.addToWarehouse(initialBalance);
     }
 
@@ -41,9 +45,9 @@ public class ProductWarehouseWithHistory extends ProductWarehouse {
     }
 
     public void printAnalysis() {
-        System.out.println("Product: " + this.getName() +
-                "\nHistory: " + this.history().toString() +
-                "\nLargest amount of product: " + this.history.maxValue()
+        System.out.println("Product: " + this.getName()
+                + "\nHistory: " + this.history().toString()
+                + "\nLargest amount of product: " + this.history.maxValue()
                 + "\nSmallest amount of product: " + this.history.minValue()
                 + "\nAverage: " + this.history.average());
     }
