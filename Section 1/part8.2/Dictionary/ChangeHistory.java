@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class ChangeHistory extends ProductWarehouse {
+public class ChangeHistory {
     private ArrayList<Double> history;
 
     public ChangeHistory() {
@@ -8,7 +8,7 @@ public class ChangeHistory extends ProductWarehouse {
     }
 
     public void add(double status) {
-        history.add(status);
+        this.history.add(status);
     }
 
     public void clear() {

@@ -1,8 +1,10 @@
 public class ProductWarehouse extends Warehouse {
     private String productName;
+    protected ChangeHistory history;
 
     public ProductWarehouse(String productName, double capacity) {
         super(capacity);
+        this.history = new ChangeHistory();
         this.productName = productName;
     }
 
