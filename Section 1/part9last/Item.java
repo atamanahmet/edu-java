@@ -43,9 +43,9 @@ public class Item {
             return false;
         }
         final Item other = (Item) obj;
-        if (this.weight != other.weight) {
-            return false;
-        }
+        // if (this.weight != other.weight) {
+        // return false;
+        // }
         if (!Objects.equals(this.name, other.name)) {
             return false;
         }

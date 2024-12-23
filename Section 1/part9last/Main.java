@@ -1,5 +1,6 @@
 public class Main {
     public static void main(String[] args) {
+
         BoxWithMaxWeight coffeeBox = new BoxWithMaxWeight(10);
         coffeeBox.add(new Item("Saludo", 5));
         coffeeBox.add(new Item("Pirkka", 5));
