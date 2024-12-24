@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class OneItemBox extends Box {
+public class OneItemBox extends Box1 {
     private ArrayList<Item> list;
 
     public OneItemBox() {

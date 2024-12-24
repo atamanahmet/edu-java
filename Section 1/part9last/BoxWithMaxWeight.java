@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class BoxWithMaxWeight extends Box {
+public class BoxWithMaxWeight extends Box1 {
     private int capacity;
     private int currentWeight;
     private ArrayList<Item> itemList;
