@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class BoxWithMaxWeight extends Box1 {
     private int capacity;
     private int currentWeight;
-    private ArrayList<Item> itemList;
+    private ArrayList<Item2> itemList;
 
     public BoxWithMaxWeight(int capacity) {
         super();
@@ -12,7 +12,7 @@ public class BoxWithMaxWeight extends Box1 {
         this.currentWeight = 0;
     }
 
-    public void add(Item item) {
+    public void add(Item2 item) {
         int itemWeight = item.getWeight();
         if (itemWeight + this.currentWeight <= this.capacity) {
             this.itemList.add(item);
@@ -20,7 +20,7 @@ public class BoxWithMaxWeight extends Box1 {
         }
     }
 
-    public boolean isInBox(Item item) {
+    public boolean isInBox(Item2 item) {
         if (this.itemList.contains(item)) {
             return true;
         }
