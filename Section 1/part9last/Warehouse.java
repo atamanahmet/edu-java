@@ -13,10 +13,13 @@ public class Warehouse {
     }
 
     public void addProduct(String product, int price, int stock) {
-        this.product = product;
-        this.price = price;
-        this.stock = stock;
-        this.productMap.put(product, stock);
+        if (stock >= 0 || price >= 0) {
+            this.product = product;
+            this.price = price;
+            this.stock = stock;
+            this.productMap.put(product, stock);
+        }
+
     }
 
     public int price(String product) {
