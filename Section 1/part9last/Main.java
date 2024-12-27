@@ -21,6 +21,7 @@ public class Main {
         // List<Integer> numbersBy3 = list.stream().mapToInt(row ->
         // Integer.valueOf(row));
         System.out.println(counter);
-
+        double average = list.stream().mapToInt(line -> Integer.valueOf(line)).average().getAsDouble();
+        System.out.println(average);
     }
 }
