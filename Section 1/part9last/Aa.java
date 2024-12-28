@@ -166,13 +166,24 @@ public class Aa {
         // numberList.stream().mapToInt(line -> Integer.valueOf(line)).filter(number ->
         // number >= 1 && number <= 5)
         // .forEach(number -> System.out.println(number));
-        List<String> rows = new ArrayList<>();
+        // List<String> rows = new ArrayList<>();
+        // try {
+        // Files.lines(Paths.get("test.txt")).forEach(line -> rows.add(line));
+        // } catch (IOException e) {
+        // e.printStackTrace();
+        // }
+        // rows.stream().forEach(line -> System.out.println(line));
+        List<Person> presList = new ArrayList<>();
         try {
-            Files.lines(Paths.get("test.txt")).forEach(line -> rows.add(line));
+            Files.lines(Paths.get("test.txt")).map(line -> line.split("; "))
+                    .filter(splittedArray -> splittedArray.length >= 2)
+                    .map(splittedArray -> new Person(splittedArray[0], Integer.valueOf(splittedArray[1])))
+                    .forEach(person -> presList.add(person));
+            ;
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
-        rows.stream().forEach(line -> System.out.println(line));
+        presList.stream().forEach(person -> System.out.println(person));
     }
 
 }

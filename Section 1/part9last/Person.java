@@ -1,11 +1,10 @@
 public class Person {
     private String firstName;
-    private String lastName;
     private int birthYear;
 
-    public Person(String firstName, String lastName, int birthYear) {
+    public Person(String firstName, int birthYear) {
         this.firstName = firstName;
-        this.lastName = lastName;
+        // this.lastName = lastName;
         this.birthYear = birthYear;
     }
 
@@ -13,11 +12,15 @@ public class Person {
         return this.firstName;
     }
 
-    public String getLastName() {
-        return this.lastName;
-    }
+    // public String getLastName() {
+    // return this.lastName;
+    // }
 
     public int getBirthYear() {
         return this.birthYear;
+    }
+
+    public String toString() {
+        return this.firstName + " (" + this.birthYear + ")";
     }
 }
