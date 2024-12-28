@@ -1,3 +1,6 @@
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -152,16 +155,24 @@ public class Aa {
         // inputList.add(input);
         // }
         // inputList.stream().forEach(line -> System.out.println(line));
-        ArrayList<Integer> numberList = new ArrayList<>();
-        while (true) {
-            String input = scanner.nextLine();
-            if (Integer.valueOf(input) < 0) {
-                break;
-            }
-            numberList.add(Integer.valueOf(input));
+        // ArrayList<Integer> numberList = new ArrayList<>();
+        // while (true) {
+        // String input = scanner.nextLine();
+        // if (Integer.valueOf(input) < 0) {
+        // break;
+        // }
+        // numberList.add(Integer.valueOf(input));
+        // }
+        // numberList.stream().mapToInt(line -> Integer.valueOf(line)).filter(number ->
+        // number >= 1 && number <= 5)
+        // .forEach(number -> System.out.println(number));
+        List<String> rows = new ArrayList<>();
+        try {
+            Files.lines(Paths.get("test.txt")).forEach(line -> rows.add(line));
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        numberList.stream().mapToInt(line -> Integer.valueOf(line)).filter(number -> number >= 1 && number <= 5)
-                .forEach(number -> System.out.println(number));
+        rows.stream().forEach(line -> System.out.println(line));
     }
 
 }
