@@ -1,19 +1,31 @@
-public class Book implements Packables {
-    private double weight;
+public class Book {
+    // private double weight;
     private String name;
-    private String author;
+    private int ageReq;
+    // private String author;
 
-    public Book(String author, String name, double weight) {
-        this.author = author;
+    public Book(String name, int ageReq) {
+        this.ageReq = ageReq;
         this.name = name;
-        this.weight = weight;
+        // this.weight = weight;
     }
 
-    public double weight() {
-        return this.weight;
-    }
+    // public double weight() {
+    // return this.weight;
+    // }
 
+    // public String toString() {
+    // return this.author + ": " + this.name;
+    // }
     public String toString() {
-        return this.author + ": " + this.name;
+        return this.name + " (" + "recommended for " + this.ageReq + " year-olds or older)";
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAgeReq() {
+        return ageReq;
     }
 }
