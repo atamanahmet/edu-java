@@ -1,11 +1,5 @@
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Aaa {
     public static void main(String[] args) {
@@ -47,12 +41,42 @@ public class Aaa {
         // public int getAgeReq(){
         // return Integer.valueOf(this[1].);
         // }
-        String name = "asdasd";
-        String name2 = "asdasd";
-        String name3 = "zxczxc";
-        name2 = "qweqwe";
+        // String name = "asdasd";
+        // String name2 = "asdasd";
+        // String name3 = "zxczxc";
+        // name2 = "qweqwe";
 
-        System.out.println(name);
+        // System.out.println(name);i
+        // Pattern pattern = Pattern.compile("^(\\d{4})-(\\d{4})-(\\d{4})-(\\d{4})");
+        // Matcher matcher = pattern.matcher("1234-1111-1243-4444");
+        // boolean found = matcher.find();
+        // System.out.println("Found? = " + found);
+
+        // begin with 1 or more digit number, , any number of char, , any number of
+        // digit
+        Pattern pattern = Pattern.compile("^(\\d+) (.+) by (\\d+)");
+        Matcher matcher = pattern.matcher("10 divided by 2");
+        boolean found = matcher.find();
+        System.out.println("Found? = " + found);
+        int result = 0;
+
+        if (found) {
+            // String key = matcher.group(0);
+            // String maskedNumbers = new String(matcher.replaceAll("XXXX-XXXX-XXXX-" +
+            // matcher.group(4)));
+            // matcher.reset();
+            // System.out.println(key);
+            // System.out.println(maskedNumbers);
+            // System.out.println(maskedNumbers);
+            System.out.println(matcher.group(0));
+            System.out.println(matcher.group(1));
+            System.out.println(matcher.group(2));
+            System.out.println(matcher.group(3));
+            if (matcher.group(2).equals("divided")) {
+                result = Integer.valueOf(matcher.group(1)) / Integer.valueOf(matcher.group(3));
+            }
+            System.out.println(matcher.group(1) + " " + matcher.group(2) + " by " + matcher.group(3) + " = " + result);
+        }
 
     }
 }
