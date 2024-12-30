@@ -1,3 +1,4 @@
+import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -54,28 +55,67 @@ public class Aaa {
 
         // begin with 1 or more digit number, , any number of char, , any number of
         // digit
-        Pattern pattern = Pattern.compile("^(\\d+) (.+) by (\\d+)");
-        Matcher matcher = pattern.matcher("10 divided by 2");
-        boolean found = matcher.find();
-        System.out.println("Found? = " + found);
-        int result = 0;
+        // Pattern pattern = Pattern.compile("^(\\d+) (.+) by (\\d+)$");
+        // Matcher matcher = pattern.matcher("10 divided by 2");
+        // boolean found = matcher.find();
+        // System.out.println("Found? = " + found);
+        // int result = 0;
 
-        if (found) {
-            // String key = matcher.group(0);
-            // String maskedNumbers = new String(matcher.replaceAll("XXXX-XXXX-XXXX-" +
-            // matcher.group(4)));
-            // matcher.reset();
-            // System.out.println(key);
-            // System.out.println(maskedNumbers);
-            // System.out.println(maskedNumbers);
-            System.out.println(matcher.group(0));
-            System.out.println(matcher.group(1));
-            System.out.println(matcher.group(2));
-            System.out.println(matcher.group(3));
-            if (matcher.group(2).equals("divided")) {
-                result = Integer.valueOf(matcher.group(1)) / Integer.valueOf(matcher.group(3));
-            }
-            System.out.println(matcher.group(1) + " " + matcher.group(2) + " by " + matcher.group(3) + " = " + result);
+        // if (found) {
+        // // String key = matcher.group(0);
+        // // String maskedNumbers = new String(matcher.replaceAll("XXXX-XXXX-XXXX-" +
+        // // matcher.group(4)));
+        // // matcher.reset();
+        // // System.out.println(key);
+        // // System.out.println(maskedNumbers);
+        // // System.out.println(maskedNumbers);
+        // System.out.println(matcher.group(0));
+        // System.out.println(matcher.group(1));
+        // System.out.println(matcher.group(2));
+        // System.out.println(matcher.group(3));
+        // if (matcher.group(2).equals("divided")) {
+        // result = Integer.valueOf(matcher.group(1)) /
+        // Integer.valueOf(matcher.group(3));
+        // }
+        // System.out.println(matcher.group(1) + " " + matcher.group(2) + " by " +
+        // matcher.group(3) + " = " + result);
+        // }
+        // Scanner scanner = new Scanner(System.in);
+        // System.out.println("Enter your student number: ");
+        // String input = scanner.nextLine();
+
+        // if (input.matches("01\\d{7}")) {
+        // System.out.println("Correct format.");
+        // } else {
+        // System.out.println("Incorrect format. Try again.");
+        // }
+        // String string = "trolololololo";
+
+        // if (string.matches("(lo)?tro(lo){5}+")) {
+        // System.out.println("Correct form.");
+        // } else {
+        // System.out.println("Incorrect form.");
+        // }
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the day with only first three characters: ");
+        String input = scanner.nextLine();
+
+        Checker checker = new Checker();
+        // if (checker.isDayOfWeek(input)) {
+        // System.out.println("The form is correct.");
+        // } else {
+        // System.out.println("The form is incorrect.");
+        // }
+
+        // if (checker.allVowels(input)) {
+        // System.out.println("The form is correct.");
+        // } else {
+        // System.out.println("The form is incorrect.");
+        // }
+        if (checker.timeOfDay(input)) {
+            System.out.println("The form is correct.");
+        } else {
+            System.out.println("The form is incorrect.");
         }
 
     }
