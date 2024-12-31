@@ -122,7 +122,9 @@ public class Aaa {
         System.out.println(card.getSuit());
         System.out.println(Suit.SPADE);
         Suit suitSpade = Suit.SPADE;
-        Suit suit = Suit.HEART;
+        String suit = Suit.HEART.getName();
         System.out.println(suit);
+        // Suit.HEART.setName("test");
+        System.out.println(Suit.HEART.getName());
     }
 }
