@@ -96,27 +96,33 @@ public class Aaa {
         // } else {
         // System.out.println("Incorrect form.");
         // }
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter the day with only first three characters: ");
-        String input = scanner.nextLine();
+        // Scanner scanner = new Scanner(System.in);
+        // System.out.print("Enter the day with only first three characters: ");
+        // String input = scanner.nextLine();
 
-        Checker checker = new Checker();
-        // if (checker.isDayOfWeek(input)) {
+        // Checker checker = new Checker();
+        // // if (checker.isDayOfWeek(input)) {
+        // // System.out.println("The form is correct.");
+        // // } else {
+        // // System.out.println("The form is incorrect.");
+        // // }
+
+        // // if (checker.allVowels(input)) {
+        // // System.out.println("The form is correct.");
+        // // } else {
+        // // System.out.println("The form is incorrect.");
+        // // }
+        // if (checker.timeOfDay(input)) {
         // System.out.println("The form is correct.");
         // } else {
         // System.out.println("The form is incorrect.");
         // }
-
-        // if (checker.allVowels(input)) {
-        // System.out.println("The form is correct.");
-        // } else {
-        // System.out.println("The form is incorrect.");
-        // }
-        if (checker.timeOfDay(input)) {
-            System.out.println("The form is correct.");
-        } else {
-            System.out.println("The form is incorrect.");
-        }
-
+        Card card = new Card(7, Suit.SPADE);
+        System.out.println(card);
+        System.out.println(card.getSuit());
+        System.out.println(Suit.SPADE);
+        Suit suitSpade = Suit.SPADE;
+        Suit suit = Suit.HEART;
+        System.out.println(suit);
     }
 }
