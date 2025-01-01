@@ -117,14 +117,16 @@ public class Aaa {
         // } else {
         // System.out.println("The form is incorrect.");
         // }
-        Card card = new Card(7, Suit.SPADE);
-        System.out.println(card);
-        System.out.println(card.getSuit());
-        System.out.println(Suit.SPADE);
-        Suit suitSpade = Suit.SPADE;
-        String suit = Suit.HEART.getName();
-        System.out.println(suit);
-        // Suit.HEART.setName("test");
-        System.out.println(Suit.HEART.getName());
+        // Card card = new Card(7, Suit.SPADE);
+        // System.out.println(card);
+        // System.out.println(card.getSuit());
+        // System.out.println(Suit.SPADE);
+        // Suit suitSpade = Suit.SPADE;
+        // String suit = Suit.HEART.getName();
+        // System.out.println(suit);
+        // // Suit.HEART.setName("test");
+        // System.out.println(Suit.HEART.getName());
+        Person anna = new Person("Anna", Education.PHD);
+        System.out.println(anna);
     }
 }

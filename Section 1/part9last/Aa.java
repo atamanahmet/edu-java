@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 
 public class Aa {
     public static void main(String[] args) {
-        List<Person> list = new ArrayList<>();
+        List<Person2> list = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
 
         // while (true) {
@@ -173,11 +173,11 @@ public class Aa {
         // e.printStackTrace();
         // }
         // rows.stream().forEach(line -> System.out.println(line));
-        List<Person> presList = new ArrayList<>();
+        List<Person2> presList = new ArrayList<>();
         try {
             Files.lines(Paths.get("test.txt")).map(line -> line.split("; "))
                     .filter(splittedArray -> splittedArray.length >= 2)
-                    .map(splittedArray -> new Person(splittedArray[0], Integer.valueOf(splittedArray[1])))
+                    .map(splittedArray -> new Person2(splittedArray[0], Integer.valueOf(splittedArray[1])))
                     .forEach(person -> presList.add(person));
             ;
         } catch (IOException e) {

@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class UniqueLastNames {
 
     public static void main(String[] args) {
-        ArrayList<Person> persons = new ArrayList<>();
+        ArrayList<Person2> persons = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
@@ -35,7 +35,7 @@ public class UniqueLastNames {
                 birthYear = Integer.valueOf(scanner.nextLine());
             }
 
-            persons.add(new Person(firstName, lastName, birthYear));
+            persons.add(new Person2(firstName, lastName, birthYear));
             System.out.println("");
         }
         persons.stream().map(person -> person.getLastName()).distinct().sorted()

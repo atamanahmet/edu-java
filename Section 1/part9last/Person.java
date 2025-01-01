@@ -1,26 +1,17 @@
 public class Person {
-    private String firstName;
-    private int birthYear;
+    private String name;
+    private Education education;
 
-    public Person(String firstName, int birthYear) {
-        this.firstName = firstName;
-        // this.lastName = lastName;
-        this.birthYear = birthYear;
+    public Person(String name, Education education) {
+        this.name = name;
+        this.education = education;
     }
 
-    public String getFirstName() {
-        return this.firstName;
-    }
-
-    // public String getLastName() {
-    // return this.lastName;
-    // }
-
-    public int getBirthYear() {
-        return this.birthYear;
+    public Education getEducation() {
+        return this.education;
     }
 
     public String toString() {
-        return this.firstName + " (" + this.birthYear + ")";
+        return this.name + ", " + this.education;
     }
 }
