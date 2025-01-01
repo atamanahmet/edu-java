@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -126,7 +128,23 @@ public class Aaa {
         // System.out.println(suit);
         // // Suit.HEART.setName("test");
         // System.out.println(Suit.HEART.getName());
+        List<Person> list = new ArrayList<>();
         Person anna = new Person("Anna", Education.PHD);
-        System.out.println(anna);
+        Person anna1 = new Person("Anna1", Education.PHD);
+        Person anna2 = new Person("Anna2", Education.PHD);
+        Person anna3 = new Person("Anna3", Education.PHD);
+        Person anna4 = new Person("Anna4", Education.PHD);
+        Person anna5 = new Person("Anna5", Education.PHD);
+        Person anna6 = new Person("Anna6", Education.PHD);
+        list.add(anna);
+        list.add(anna1);
+        list.add(anna2);
+        list.add(anna3);
+        list.add(anna4);
+        list.add(anna5);
+        list.add(anna6);
+        Employees emp = new Employees();
+        emp.add(list);
+        emp.print();
     }
 }
