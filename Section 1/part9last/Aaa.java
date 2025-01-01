@@ -128,23 +128,38 @@ public class Aaa {
         // System.out.println(suit);
         // // Suit.HEART.setName("test");
         // System.out.println(Suit.HEART.getName());
-        List<Person> list = new ArrayList<>();
-        Person anna = new Person("Anna", Education.PHD);
-        Person anna1 = new Person("Anna1", Education.PHD);
-        Person anna2 = new Person("Anna2", Education.PHD);
-        Person anna3 = new Person("Anna3", Education.PHD);
-        Person anna4 = new Person("Anna4", Education.PHD);
-        Person anna5 = new Person("Anna5", Education.PHD);
-        Person anna6 = new Person("Anna6", Education.PHD);
-        list.add(anna);
-        list.add(anna1);
-        list.add(anna2);
-        list.add(anna3);
-        list.add(anna4);
-        list.add(anna5);
-        list.add(anna6);
-        Employees emp = new Employees();
-        emp.add(list);
-        emp.print();
+        // List<Person> list = new ArrayList<>();
+        // Person anna = new Person("Anna", Education.PHD);
+        // Person anna1 = new Person("qAnna1", Education.BA);
+        // Person anna2 = new Person("Anna2", Education.PHD);
+        // Person anna3 = new Person("xAnna3", Education.BA);
+        // Person anna4 = new Person("Anna4", Education.PHD);
+        // Person anna5 = new Person("Anna5", Education.PHD);
+        // Person anna6 = new Person("cAnna6", Education.BA);
+        // list.add(anna);
+        // list.add(anna1);
+        // list.add(anna2);
+        // list.add(anna3);
+        // list.add(anna4);
+        // list.add(anna5);
+        // list.add(anna6);
+        // Employees emp = new Employees();
+        // emp.add(list);
+        // emp.print();
+        // System.out.println("----------------");
+        // emp.fire(Education.BA);
+        // emp.print();
+        Employees university = new Employees();
+        university.add(new Person("Petrus", Education.PHD));
+        university.add(new Person("Arto", Education.HS));
+        university.add(new Person("Elina", Education.PHD));
+
+        university.print();
+
+        university.fire(Education.HS);
+
+        System.out.println("==");
+
+        university.print();
     }
 }

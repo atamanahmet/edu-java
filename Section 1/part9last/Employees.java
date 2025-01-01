@@ -32,4 +32,25 @@ public class Employees {
         }
     }
 
+    public void print(Education edu) {
+        Iterator<Person> it = this.employees.iterator();
+        while (it.hasNext()) {
+            Person person = it.next();
+            if (person.getEducation() == edu) {
+                System.out.println(person);
+            }
+        }
+
+    }
+
+    public void fire(Education edu) {
+        Iterator<Person> itFire = this.employees.iterator();
+        while (itFire.hasNext()) {
+            Person person = itFire.next();
+            if (person.getEducation() == edu) {
+                itFire.remove();
+            }
+        }
+    }
+
 }
