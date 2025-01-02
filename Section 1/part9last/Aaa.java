@@ -149,17 +149,25 @@ public class Aaa {
         // System.out.println("----------------");
         // emp.fire(Education.BA);
         // emp.print();
-        Employees university = new Employees();
-        university.add(new Person("Petrus", Education.PHD));
-        university.add(new Person("Arto", Education.HS));
-        university.add(new Person("Elina", Education.PHD));
+        // Employees university = new Employees();
+        // university.add(new Person("Petrus", Education.PHD));
+        // university.add(new Person("Arto", Education.HS));
+        // university.add(new Person("Elina", Education.PHD));
 
-        university.print();
+        // university.print();
 
-        university.fire(Education.HS);
+        // university.fire(Education.HS);
 
-        System.out.println("==");
+        // System.out.println("==");
 
-        university.print();
+        // university.print();
+        Card first = new Card(2, Suit.DIAMOND);
+        Card second = new Card(14, Suit.SPADE);
+        Card third = new Card(12, Suit.HEART);
+
+        System.out.println(first.getValue());
+        System.out.println(second);
+        System.out.println(third);
+        System.out.println(first.compareTo(second));
     }
 }
