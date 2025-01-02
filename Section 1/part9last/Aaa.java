@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Matcher;
@@ -161,13 +163,22 @@ public class Aaa {
         // System.out.println("==");
 
         // university.print();
+        List<Card> cardList = new ArrayList<>();
         Card first = new Card(2, Suit.DIAMOND);
         Card second = new Card(14, Suit.SPADE);
         Card third = new Card(12, Suit.HEART);
+        cardList.add(first);
+        cardList.add(second);
+        cardList.add(third);
 
         System.out.println(first.getValue());
         System.out.println(second);
         System.out.println(third);
         System.out.println(first.compareTo(second));
+        // Iterator<Card> it = cardList.iterator();
+        // while (it.hasNext()){
+
+        // }
+
     }
 }
