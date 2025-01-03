@@ -1,3 +1,5 @@
+import java.util.Collections;
+import java.util.List;
 
 public class Card implements Comparable<Card> {
 
@@ -47,5 +49,10 @@ public class Card implements Comparable<Card> {
 
         }
     }
+
+    // public static void sort(List<Card> cardList) {
+    // // Collections.sort(cardList);
+    // cardList.sort((p1, p2) -> p1.compareTo(p2));
+    // }
 
 }

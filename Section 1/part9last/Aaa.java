@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
@@ -165,16 +166,26 @@ public class Aaa {
         // university.print();
         List<Card> cardList = new ArrayList<>();
         Card first = new Card(2, Suit.DIAMOND);
+        Card first2 = new Card(9, Suit.DIAMOND);
+        Card first3 = new Card(4, Suit.DIAMOND);
         Card second = new Card(14, Suit.SPADE);
         Card third = new Card(12, Suit.HEART);
         cardList.add(first);
+        cardList.add(first2);
+        cardList.add(first3);
         cardList.add(second);
         cardList.add(third);
 
-        System.out.println(first.getValue());
-        System.out.println(second);
-        System.out.println(third);
-        System.out.println(first.compareTo(second));
+        // System.out.println(first.getValue());
+        // System.out.println(second);
+        // System.out.println(third);
+        // System.out.println(first.compareTo(second));
+        System.out.println(cardList);
+        cardList.sort((p1, p2) -> p1.compareTo(p2));
+
+        // cardList.sort(Comparator.comparing(Card::getValue).thenComparing(Card::getSuit));
+        System.out.println(cardList);
+        // cardList.stream().forEach(card -> System.out.println(card));
         // Iterator<Card> it = cardList.iterator();
         // while (it.hasNext()){
 
