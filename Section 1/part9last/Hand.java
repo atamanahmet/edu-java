@@ -21,6 +21,7 @@ public class Hand implements Comparable<Hand> {
     public int compareTo(Hand otherHand) {
         int thisHandValue = this.hand.stream().mapToInt(card -> card.getValue()).sum();
         int otherHandValue = otherHand.hand.stream().mapToInt(card -> card.getValue()).sum();
+
         if (thisHandValue == otherHandValue) {
             return 0;
         } else if (thisHandValue < otherHandValue) {

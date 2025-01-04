@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
@@ -190,23 +191,66 @@ public class Aaa {
         // while (it.hasNext()){
 
         // }
-        Hand hand = new Hand();
-        Hand hand2 = new Hand();
+        // Hand hand = new Hand();
+        // Hand hand2 = new Hand();
 
-        hand.add(new Card(2, Suit.DIAMOND));
-        hand.add(new Card(14, Suit.SPADE));
-        hand.add(new Card(12, Suit.HEART));
-        hand.add(new Card(2, Suit.SPADE));
+        // hand.add(new Card(2, Suit.DIAMOND));
+        // hand.add(new Card(14, Suit.SPADE));
+        // hand.add(new Card(12, Suit.HEART));
+        // hand.add(new Card(2, Suit.SPADE));
 
-        hand2.add(new Card(2, Suit.DIAMOND));
-        hand2.add(new Card(14, Suit.SPADE));
-        hand2.add(new Card(12, Suit.HEART));
-        hand2.add(new Card(2, Suit.SPADE));
+        // hand2.add(new Card(2, Suit.DIAMOND));
+        // hand2.add(new Card(14, Suit.SPADE));
+        // hand2.add(new Card(12, Suit.HEART));
+        // hand2.add(new Card(2, Suit.SPADE));
 
-        // hand.print();
-        // hand.sort();
-        // hand.print();
-        hand.compareTo(hand2);
+        // // hand.print();
+        // // hand.sort();
+        // // hand.print();
+        // hand.compareTo(hand2);
+        // Hand hand1 = new Hand();
 
+        // hand1.add(new Card(2, Suit.DIAMOND));
+        // hand1.add(new Card(14, Suit.SPADE));
+        // hand1.add(new Card(12, Suit.HEART));
+        // hand1.add(new Card(2, Suit.SPADE));
+
+        // Hand hand2 = new Hand();
+
+        // hand2.add(new Card(11, Suit.DIAMOND));
+        // hand2.add(new Card(11, Suit.SPADE));
+        // hand2.add(new Card(11, Suit.HEART));
+
+        // int comparison = hand1.compareTo(hand2);
+
+        // if (comparison < 0) {
+        // System.out.println("better hand is");
+        // hand2.print();
+        // } else if (comparison > 0) {
+        // System.out.println("better hand is");
+        // hand1.print();
+        // } else {
+        // System.out.println("hands are equal");
+        // }
+        Card card1 = new Card(2, Suit.DIAMOND);
+        Card card2 = new Card(7, Suit.SPADE);
+        ArrayList<Card> cards = new ArrayList<>();
+
+        cards.add(new Card(3, Suit.SPADE));
+        cards.add(new Card(2, Suit.DIAMOND));
+        cards.add(new Card(14, Suit.SPADE));
+        cards.add(new Card(12, Suit.HEART));
+        cards.add(new Card(2, Suit.SPADE));
+
+        // Comparator<Card> comparator = new Comparator<Card>() {
+        // public int compare(Card card1, Card card2) {
+        // return card1.getSuit().ordinal() - card2.getSuit().ordinal();
+        // }
+        // };
+        // SortBySuit sortBySuitSorter = new SortBySuit();
+        System.out.println(cards);
+        Collections.sort(cards, new SortBySuit());
+        System.out.println(cards);
+        cards.stream().forEach(c -> System.out.println(c));
     }
 }
