@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class Hand implements Comparable<Hand> {
@@ -36,7 +37,7 @@ public class Hand implements Comparable<Hand> {
     }
 
     public void sortBySuit() {
-        this.hand.sort((card1, card2) -> card1.getSuit().compareTo(card2.getSuit()));
+        this.hand.sort(new BySuitInValueOrder());
     }
 
     // public int handValue(Hand hand) {

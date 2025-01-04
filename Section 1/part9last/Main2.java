@@ -5,9 +5,9 @@ public class Main2 {
         Box box1 = new Box(10);
         Box box2 = new Box(10);
 
-        box1.add(new Book("Fyodor Dostoevsky", "Crime and Punishment", 2));
-        box1.add(new Book("Robert Martin", "Clean Code", 1));
-        box1.add(new Book("Kent Beck", "Test Driven Development", 0.7));
+        box1.add(new Book1("Fyodor Dostoevsky", "Crime and Punishment", 2));
+        box1.add(new Book1("Robert Martin", "Clean Code", 1));
+        box1.add(new Book1("Kent Beck", "Test Driven Development", 0.7));
 
         box2.add(new CD("Pink Floyd", "Dark Side of the Moon", 1973));
         box2.add(new CD("Wigwam", "Nuclear Nightclub", 1975));

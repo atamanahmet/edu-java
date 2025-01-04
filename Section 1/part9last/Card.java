@@ -40,14 +40,15 @@ public class Card implements Comparable<Card> {
     }
 
     public int compareTo(Card card) {
-        if (this.getValue() - card.getValue() == 0) {
-            return 0;
-        } else if (this.getValue() - card.getValue() > 0) {
+        // int suitCompare = this.getSuit().ordinal() - card.getSuit().ordinal();
+        if (this.getValue() < card.getValue()) {
+            return -1;
+        } else if (this.getValue() > card.getValue()) {
             return 1;
         } else {
-            return -1;
-
+            return this.getSuit().compareTo(card.getSuit());
         }
+
     }
 
     // public static void sort(List<Card> cardList) {

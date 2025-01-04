@@ -252,17 +252,17 @@ public class Aaa {
         // Collections.sort(cards, new BySuitInValueOrder());
         // System.out.println(cards);
         // cards.stream().forEach(c -> System.out.println(c));
-        Hand hand = new Hand();
+        // Hand hand = new Hand();
 
-        hand.add(new Card(12, Suit.HEART));
-        hand.add(new Card(4, Suit.SPADE));
-        hand.add(new Card(2, Suit.DIAMOND));
-        hand.add(new Card(14, Suit.SPADE));
-        hand.add(new Card(7, Suit.HEART));
-        hand.add(new Card(2, Suit.SPADE));
-
-        hand.sortBySuit();
-
-        hand.print();
+        // hand.add(new Card(14, Suit.SPADE));
+        // hand.add(new Card(12, Suit.HEART));
+        // hand.add(new Card(14, Suit.DIAMOND));
+        // hand.add(new Card(2, Suit.SPADE));
+        // hand.add(new Card(7, Suit.DIAMOND));
+        // hand.sortBySuit();
+        // hand.print();
+        // Card first = new Card(10, Suit.HEART);
+        // Card second = new Card(10, Suit.SPADE);
+        // System.out.println(first.compareTo(second));
     }
 }
