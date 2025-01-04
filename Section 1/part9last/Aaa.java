@@ -232,25 +232,37 @@ public class Aaa {
         // } else {
         // System.out.println("hands are equal");
         // }
-        Card card1 = new Card(2, Suit.DIAMOND);
-        Card card2 = new Card(7, Suit.SPADE);
-        ArrayList<Card> cards = new ArrayList<>();
+        // Card card1 = new Card(2, Suit.DIAMOND);
+        // Card card2 = new Card(7, Suit.SPADE);
+        // ArrayList<Card> cards = new ArrayList<>();
 
-        cards.add(new Card(3, Suit.SPADE));
-        cards.add(new Card(2, Suit.DIAMOND));
-        cards.add(new Card(14, Suit.SPADE));
-        cards.add(new Card(12, Suit.HEART));
-        cards.add(new Card(2, Suit.SPADE));
+        // cards.add(new Card(3, Suit.SPADE));
+        // cards.add(new Card(2, Suit.DIAMOND));
+        // cards.add(new Card(14, Suit.SPADE));
+        // cards.add(new Card(12, Suit.HEART));
+        // cards.add(new Card(2, Suit.SPADE));
 
-        // Comparator<Card> comparator = new Comparator<Card>() {
-        // public int compare(Card card1, Card card2) {
-        // return card1.getSuit().ordinal() - card2.getSuit().ordinal();
-        // }
-        // };
-        // SortBySuit sortBySuitSorter = new SortBySuit();
-        System.out.println(cards);
-        Collections.sort(cards, new SortBySuit());
-        System.out.println(cards);
-        cards.stream().forEach(c -> System.out.println(c));
+        // // Comparator<Card> comparator = new Comparator<Card>() {
+        // // public int compare(Card card1, Card card2) {
+        // // return card1.getSuit().ordinal() - card2.getSuit().ordinal();
+        // // }
+        // // };
+        // // SortBySuit sortBySuitSorter = new SortBySuit();
+        // System.out.println(cards);
+        // Collections.sort(cards, new BySuitInValueOrder());
+        // System.out.println(cards);
+        // cards.stream().forEach(c -> System.out.println(c));
+        Hand hand = new Hand();
+
+        hand.add(new Card(12, Suit.HEART));
+        hand.add(new Card(4, Suit.SPADE));
+        hand.add(new Card(2, Suit.DIAMOND));
+        hand.add(new Card(14, Suit.SPADE));
+        hand.add(new Card(7, Suit.HEART));
+        hand.add(new Card(2, Suit.SPADE));
+
+        hand.sortBySuit();
+
+        hand.print();
     }
 }

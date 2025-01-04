@@ -35,6 +35,10 @@ public class Hand implements Comparable<Hand> {
         this.hand.sort((card1, card2) -> card1.compareTo(card2));
     }
 
+    public void sortBySuit() {
+        this.hand.sort((card1, card2) -> card1.getSuit().compareTo(card2.getSuit()));
+    }
+
     // public int handValue(Hand hand) {
     // int handSum = hand.stream().map(card -> card.getValue()).mapToInt(value ->
     // Integer.valueOf(value))
