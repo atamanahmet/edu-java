@@ -1,0 +1,42 @@
+package Airport.flightControl;
+
+import java.util.Collection;
+import java.util.HashMap;
+import Airport.flightControl.logic.*;
+
+public class FlightControl {
+    private HashMap<String, Place> places;
+    private HashMap<String, Airplane> airplanes;
+    private HashMap<String, Flight> flights;
+
+    public FlightControl() {
+        HashMap<String, Place> places = new HashMap<>();
+        HashMap<String, Airplane> airplanes = new HashMap<>();
+        HashMap<String, Flight> flights = new HashMap<>();
+    }
+
+    public void addAirplane(String ID, int capacity) {
+        Airplane newAirplane = new Airplane(ID, capacity);
+        System.out.println(newAirplane);
+        this.airplanes.put(ID, newAirplane);
+    }
+
+    public void addFlight(Airplane airplane, String departureID, String destinationID) {
+        places.putIfAbsent(destinationID, new Place(destinationID));
+        places.putIfAbsent(departureID, new Place(departureID));
+        Flight newFlight = new Flight(airplane, places.get(departureID), places.get(destinationID));
+        this.flights.put(newFlight.toString(), newFlight);
+    }
+
+    public Collection<Airplane> getAirplanes() {
+        return this.airplanes.values();
+    }
+
+    public Collection<Flight> getFlights() {
+        return this.flights.values();
+    }
+
+    public Airplane getAirplane(String ID) {
+        return this.airplanes.get(ID);
+    }
+}
