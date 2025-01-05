@@ -10,15 +10,14 @@ public class FlightControl {
     private HashMap<String, Flight> flights;
 
     public FlightControl() {
-        HashMap<String, Place> places = new HashMap<>();
-        HashMap<String, Airplane> airplanes = new HashMap<>();
-        HashMap<String, Flight> flights = new HashMap<>();
+        this.places = new HashMap<>();
+        this.airplanes = new HashMap<String, Airplane>();
+        this.flights = new HashMap<>();
     }
 
     public void addAirplane(String ID, int capacity) {
         Airplane newAirplane = new Airplane(ID, capacity);
-        System.out.println(newAirplane);
-        this.airplanes.put(ID, newAirplane);
+        this.airplanes.putIfAbsent(ID, newAirplane);
     }
 
     public void addFlight(Airplane airplane, String departureID, String destinationID) {
