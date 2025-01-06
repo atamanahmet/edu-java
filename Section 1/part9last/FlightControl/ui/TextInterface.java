@@ -1,10 +1,10 @@
-package Airport.FlightControl.ui;
+package FlightControl.ui;
 
 import java.util.Scanner;
 
-import Airport.FlightControl.FlightControl;
-import Airport.FlightControl.logic.Airplane;
-import Airport.FlightControl.logic.Flight;
+import FlightControl.FlightControl;
+import FlightControl.logic.Airplane;
+import FlightControl.logic.Flight;
 
 public class TextInterface {
     private FlightControl flightControl;

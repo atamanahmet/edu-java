@@ -1,8 +1,7 @@
-
-import Airport.FlightControl.FlightControl;
-import Airport.FlightControl.ui.TextInterface;
+package FlightControl;
 
 import java.util.Scanner;
+import FlightControl.ui.TextInterface;
 
 public class Main {
 

@@ -1,4 +1,4 @@
-package Airport.FlightControl.logic;
+package FlightControl.logic;
 
 public class Airplane {
     private String ID;

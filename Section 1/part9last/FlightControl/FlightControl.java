@@ -1,9 +1,11 @@
-package Airport.FlightControl;
+package FlightControl;
 
 import java.util.Collection;
 import java.util.HashMap;
 
-import Airport.FlightControl.logic.*;
+import FlightControl.logic.Airplane;
+import FlightControl.logic.Flight;
+import FlightControl.logic.Place;
 
 public class FlightControl {
     private HashMap<String, Place> places;
