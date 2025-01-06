@@ -1,15 +1,16 @@
-package Airport.flightControl;
+
+import Airport.FlightControl.FlightControl;
+import Airport.FlightControl.ui.TextInterface;
 
 import java.util.Scanner;
 
-import Airport.flightControl.ui.TextInterface;
-
 public class Main {
-    public static void main(String[] args) {
-        FlightControl flightControl = new FlightControl();
-        Scanner scanner = new Scanner(System.in);
 
-        TextInterface textInterface = new TextInterface(flightControl, scanner);
-        textInterface.start();
+    public static void main(String[] args) {
+        // Write the main program here. It is useful to create some classes of your own.
+        Scanner scanner = new Scanner(System.in);
+        FlightControl flightControl = new FlightControl();
+        TextInterface textUI = new TextInterface(flightControl, scanner);
+        textUI.start();
     }
 }

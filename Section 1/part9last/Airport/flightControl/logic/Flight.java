@@ -1,4 +1,4 @@
-package Airport.flightControl.logic;
+package Airport.FlightControl.logic;
 
 public class Flight {
     private Place destinationPlace;

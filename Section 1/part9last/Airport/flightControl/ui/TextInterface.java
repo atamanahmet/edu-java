@@ -1,14 +1,14 @@
-package Airport.flightControl.ui;
+package Airport.FlightControl.ui;
 
-import java.util.Collection;
 import java.util.Scanner;
 
-import Airport.flightControl.FlightControl;
-// import Airport.flightControl.logic.*;
+import Airport.FlightControl.FlightControl;
+import Airport.FlightControl.logic.Airplane;
+import Airport.FlightControl.logic.Flight;
 
-public class TextInterface implements UserInterface {
-    private Scanner scanner;
+public class TextInterface {
     private FlightControl flightControl;
+    private Scanner scanner;
 
     public TextInterface(FlightControl flightControl, Scanner scanner) {
         this.flightControl = flightControl;
@@ -19,9 +19,14 @@ public class TextInterface implements UserInterface {
         startAssetControl();
         System.out.println();
         startFlightControl();
+        System.out.println();
     }
 
-    public void startAssetControl() {
+    private void startAssetControl() {
+        System.out.println("Airport Asset Control");
+        System.out.println("--------------------");
+        System.out.println();
+
         while (true) {
             System.out.println("Choose an action:");
             System.out.println("[1] Add an airplane");
@@ -30,37 +35,42 @@ public class TextInterface implements UserInterface {
 
             System.out.print("> ");
             String input = scanner.nextLine();
-            if (input.equals("x") || input.equals("X")) {
+
+            if (input.equals("1")) {
+                addAirplane(scanner);
+            } else if (input.equals("2")) {
+                addFlight(scanner);
+            } else if (input.equals("x")) {
                 break;
             }
-            if (input.equals("1")) {
-                addAirplane();
-            } else if (input.equals("2")) {
-                addFlight();
-            }
-
         }
     }
 
-    public void addAirplane() {
+    private void addAirplane(Scanner scanner) {
         System.out.print("Give the airplane id: ");
-        String id = scanner.nextLine();
+        String id = this.scanner.nextLine();
         System.out.print("Give the airplane capacity: ");
-        int capacity = Integer.valueOf(scanner.nextLine());
+        int capacity = Integer.parseInt(this.scanner.nextLine());
+
         this.flightControl.addAirplane(id, capacity);
     }
 
-    public void addFlight() {
-        System.out.println("Give the airplane id: ");
-        String airplaneID = scanner.nextLine();
-        System.out.println("Give the departure airport id: ");
-        String departureID = scanner.nextLine();
-        System.out.println("Give the target airport id: ");
-        String destinationID = scanner.nextLine();
-        this.flightControl.addFlight(this.flightControl.getAirplane(airplaneID), departureID, destinationID);
+    private void addFlight(Scanner scanner) {
+        System.out.print("Give the airplane id: ");
+        Airplane airplane = askForAirplane(this.scanner);
+        System.out.print("Give the departure airport id: ");
+        String departureID = this.scanner.nextLine();
+        System.out.print("Give the target airport id: ");
+        String destinationID = this.scanner.nextLine();
+
+        this.flightControl.addFlight(airplane, departureID, destinationID);
     }
 
-    public void startFlightControl() {
+    private void startFlightControl() {
+        System.out.println("Flight Control");
+        System.out.println("------------");
+        System.out.println();
+
         while (true) {
             System.out.println("Choose an action:");
             System.out.println("[1] Print airplanes");
@@ -69,37 +79,50 @@ public class TextInterface implements UserInterface {
             System.out.println("[x] Quit");
 
             System.out.print("> ");
-            String input = scanner.nextLine();
-            if (input.equals("x") || input.equals("X")) {
+            String answer = scanner.nextLine();
+            if (answer.equals("1")) {
+                printAirplanes();
+            } else if (answer.equals("2")) {
+                printFlights();
+            } else if (answer.equals("3")) {
+                printAirplaneDetails();
+            } else if (answer.equals("x")) {
                 break;
-            }
-            switch (input) {
-                case "1":
-                    printAirplanes();
-
-                    break;
-                case "2":
-                    printFlights();
-                    break;
-                case "3":
-                    printAirplane();
-                default:
-                    break;
             }
         }
     }
 
-    public void printAirplanes() {
-        this.flightControl.getAirplanes().stream().forEach(airplane -> System.out.println(airplane));
+    private void printAirplanes() {
+        for (Airplane plane : flightControl.getAirplanes()) {
+            System.out.println(plane);
+        }
     }
 
-    public void printFlights() {
-        this.flightControl.getFlights().stream().forEach(flight -> System.out.println(flight));
+    private void printFlights() {
+        for (Flight flight : flightControl.getFlights()) {
+            System.out.println(flight);
+            System.out.println("");
+        }
     }
 
-    public void printAirplane() {
-        System.out.println("Give the airplane id: ");
-        String airplaneID = scanner.nextLine();
-        System.out.println(this.flightControl.getAirplane(airplaneID));
+    private void printAirplaneDetails() {
+        System.out.print("Give the airplane id: ");
+        Airplane plane = askForAirplane(this.scanner);
+        System.out.println(plane);
+        System.out.println();
+    }
+
+    private Airplane askForAirplane(Scanner scanner) {
+        Airplane airplane = null;
+        while (airplane == null) {
+            String id = this.scanner.nextLine();
+            airplane = flightControl.getAirplane(id);
+
+            if (airplane == null) {
+                System.out.println("No airplane with the id " + id + ".");
+            }
+        }
+
+        return airplane;
     }
 }

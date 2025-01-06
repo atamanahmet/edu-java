@@ -1,4 +1,4 @@
-package Airport.flightControl.ui;
+package Airport.FlightControl.ui;
 
 public interface UserInterface {
     void start();
