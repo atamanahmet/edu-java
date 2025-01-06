@@ -11,7 +11,7 @@ public class Airplane {
 
     @Override
     public String toString() {
-        return this.ID + " (" + this.capacity + ")";
+        return this.ID + " (" + this.capacity + "capacity)";
     }
 
     public String getID() {
