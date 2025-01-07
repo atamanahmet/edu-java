@@ -1,3 +1,4 @@
+package application;
 
 public class StandardSensor implements Sensor {
     private boolean sensorState;
