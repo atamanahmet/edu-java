@@ -1,9 +1,9 @@
 
-public class StandartSensor implements Sensor {
+public class StandardSensor implements Sensor {
     private boolean sensorState;
     private int sensorValue;
 
-    public StandartSensor(int value) {
+    public StandardSensor(int value) {
         this.sensorValue = value;
         this.sensorState = true;
     }
