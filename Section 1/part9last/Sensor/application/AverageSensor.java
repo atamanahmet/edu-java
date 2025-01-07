@@ -4,9 +4,11 @@ import java.util.List;
 public class AverageSensor implements Sensor {
     private boolean sensorState;
     List<Sensor> sensorList;
+    List<Integer> allReadings;
 
     public AverageSensor() {
         this.sensorList = new ArrayList<>();
+        this.allReadings = new ArrayList<>();
     }
 
     public void addSensor(Sensor newSensor) {
@@ -39,6 +41,18 @@ public class AverageSensor implements Sensor {
         if (sensorList.isEmpty() || sensorState == false) {
             throw new IllegalStateException();
         }
-        return sensorList.stream().mapToInt(sensor -> sensor.read()).sum();
+        int sum = 0;
+        for (int i = 0; i < sensorList.size(); i++) {
+            int reading = sensorList.get(i).read();
+            sum += reading;
+
+        }
+        int average = sum / sensorList.size();
+        allReadings.add(average);
+        return average;
+    }
+
+    public List<Integer> readings() {
+        return allReadings;
     }
 }
