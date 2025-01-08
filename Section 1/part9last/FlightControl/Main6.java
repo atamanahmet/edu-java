@@ -3,7 +3,7 @@ package FlightControl;
 import java.util.Scanner;
 import FlightControl.ui.TextInterface;
 
-public class Main {
+public class Main6 {
 
     public static void main(String[] args) {
         // Write the main program here. It is useful to create some classes of your own.
