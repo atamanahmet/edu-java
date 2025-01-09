@@ -1,12 +1,15 @@
 public class TestObject<T> {
-    public T testVariable;
+    private T testVariable;
 
-    public TestObject(T newTestVariable) {
-        this.testVariable = newTestVariable;
+    public TestObject(T testVariable) {
+        this.testVariable = testVariable;
     }
 
     public T getTestVariable() {
         return this.testVariable;
     }
+    public void setTestVariable(T newTestVariable) {
+        this.testVariable = newTestVariable;
+        }
 
 }
