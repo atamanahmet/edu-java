@@ -45,7 +45,7 @@ public class List<T> {
     }
 
     public int size() {
-        return this.values.length;
+        return this.firstEmptyIndex;
     }
 
     public T get(int index) {
@@ -53,28 +53,39 @@ public class List<T> {
     }
 
     public boolean contains(T value) {
-        for (int i = 0; i < this.firstEmptyIndex; i++) {
-            if (this.values[i] == value) {
-                return true;
-            }
-        }
-        return false;
+        return indexOfValue(value) >= 0;
     }
 
     public void remove(T value) {
-        boolean isDone = false;
-        for (int i = 0; i < this.firstEmptyIndex; i++) {
-            if (this.values[i] == value || this.values[i].equals(value)) {
-                this.values[i] = null;
-                isDone = true;
-                for (int j = i; j < this.firstEmptyIndex; j++) {
-                    this.values[j] = this.values[j + 1];
+        int indexOfValue = indexOfValue(value);
+        if (indexOfValue == -1) {
+            System.out.println("Not Found.");
+            return;
+        }
+        moveToTheLeft(indexOfValue);
+        this.firstEmptyIndex--;
 
-                }
-            }
-            if (isDone) {
-                break;
+    }
+
+    public int indexOfValue(T value) {
+        for (int i = 0; i < firstEmptyIndex; i++) {
+            if (this.values[i] == value || this.values[i].equals(value)) {
+                return i;
             }
         }
+        return -1;
+    }
+
+    private void moveToTheLeft(int fromIndex) {
+        for (int i = fromIndex; i < this.firstEmptyIndex; i++) {
+            this.values[i] = this.values[i + 1];
+        }
+    }
+
+    public T value(int index) {
+        if (index < 0 || index >= this.firstEmptyIndex) {
+            throw new IndexOutOfBoundsException();
+        }
+        return this.values[index];
     }
 }
