@@ -11,7 +11,7 @@ public class Main {
         List<String> myList = new List<>();
         // myList.add("hello");
         // myList.add("world");
-        for (int i = 0; i < 11; i++) {
+        for (int i = 0; i < 100; i++) {
             try {
                 myList.add("hello" + i);
             } catch (ClassCastException e) {
