@@ -12,7 +12,6 @@ public class MagicSquare {
         if (size < 2) {
             size = 2;
         }
-
         this.square = new int[size][size];
     }
 
@@ -31,12 +30,47 @@ public class MagicSquare {
     }
 
     public ArrayList<Integer> sumsOfColumns() {
-        return new ArrayList<>();
+        ArrayList<Integer> columns = new ArrayList<>();
+        for (int i = 0; i < this.square.length; i++) {
+            int sum = 0;
+            for (int j = 0; j < this.square[i].length; j++) {
+
+                sum += this.square[j][i];
+            }
+            columns.add(sum);
+        }
+        return columns;
     }
 
     public ArrayList<Integer> sumsOfDiagonals() {
-        return new ArrayList<>();
+        ArrayList<Integer> diagonAlley = new ArrayList<>();
+        int lToRSum = 0;
+        int rTolSum = 0;
+        int lastDigit = this.square.length - 1;
+
+        for (int i = 0; i < square.length; i++) {
+            lToRSum += square[i][i]; // LtoRdone
+            rTolSum += square[i][lastDigit - i];
+
+        }
+        // if (square.length > 2 && square.length % 2 == 0) {
+        // rTolSum -= square[(int) square.length / 2][(int) square.length / 2];
+        // }
+        diagonAlley.add(lToRSum);
+        diagonAlley.add(rTolSum);
+        // System.out.println(rTolSum - square[(int) square.length / 2][(int)
+        // square.length / 2] + lToRSum);
+
+        return diagonAlley;
     }
+    // 0 1 2
+    // 1 2 3 |0
+    // 4 5 6 |1
+    // 7 8 9 |2
+
+    // 0 0
+    // 0 0
+    //
 
     // ready-made helper methods -- don't touch these
     public boolean isMagicSquare() {
