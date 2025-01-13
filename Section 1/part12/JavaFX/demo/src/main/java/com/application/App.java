@@ -38,6 +38,8 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class App extends Application {
@@ -50,10 +52,12 @@ public class App extends Application {
         Label south = new Label("SOUTH");
         Label east = new Label("EAST");
 
-        BorderPane layout = new BorderPane();
-        layout.setTop(north);
-        layout.setRight(east);
-        layout.setBottom(south);
+        VBox layout = new VBox(10);
+        layout.setSpacing(20);
+        layout.getChildren().add(north);
+        layout.getChildren().add(south);
+        layout.getChildren().add(east);
+        // layout.set
         Scene scene = new Scene(layout);
         window.setScene(scene);
         window.show();
