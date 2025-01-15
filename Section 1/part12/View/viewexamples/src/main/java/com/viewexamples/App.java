@@ -25,7 +25,7 @@ public class App extends Application {
 
         grid.add(instruction, 0, 0);
         grid.add(textField, 0, 1);
-        grid.add(startButton, 0, 2);
+        grid.add(startButton, 0, 2); 
         grid.setPrefSize(250, 150);
         grid.setVgap(20);
         grid.setHgap(20);
