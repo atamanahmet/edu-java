@@ -3,6 +3,7 @@ package com.viewexamples;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
@@ -18,7 +19,7 @@ public class App extends Application {
 
     public void start(Stage window) {
         Button jokeButton = new Button("Joke");
-        Button answerButton = new Button("Answar");
+        Button answerButton = new Button("Answer");
         Button explanationButton = new Button("Explanation");
 
         Label joke = new Label("\"What do you call a bear with no teeth?\"");
@@ -30,9 +31,11 @@ public class App extends Application {
         StackPane explainStack = new StackPane(explain);
 
         HBox menu = new HBox();
+        menu.getChildren().addAll(jokeButton, answerButton, explanationButton);
         menu.setSpacing(10);
 
         BorderPane borderPane = new BorderPane();
+        borderPane.setPrefSize(300, 180);
         BorderPane.setMargin(borderPane, new Insets(20.0));
         BorderPane.setAlignment(borderPane, Pos.CENTER);
         borderPane.setTop(menu);
@@ -47,6 +50,10 @@ public class App extends Application {
         explanationButton.setOnAction((event) -> {
             borderPane.setCenter(explainStack);
         });
+
+        Scene scene = new Scene(borderPane);
+        window.setScene(scene);
+        window.show();
 
     }
 }
