@@ -3,49 +3,50 @@ package com.viewexamples;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 public class App extends Application {
     public static void main(String[] args) {
         launch(App.class);
+
     }
 
     public void start(Stage window) {
-        Label instruction = new Label("Enter your name and start.");
-        Label welcomeText = new Label();
-        TextField textField = new TextField();
-        Button startButton = new Button("Start");
-        GridPane grid = new GridPane();
+        Button jokeButton = new Button("Joke");
+        Button answerButton = new Button("Answar");
+        Button explanationButton = new Button("Explanation");
 
-        grid.add(instruction, 0, 0);
-        grid.add(textField, 0, 1);
-        grid.add(startButton, 0, 2); 
-        grid.setPrefSize(250, 150);
-        grid.setVgap(20);
-        grid.setHgap(20);
-        grid.setAlignment(Pos.CENTER);
+        Label joke = new Label("\"What do you call a bear with no teeth?\"");
+        Label answer = new Label("\"A gummy bear.\"");
+        Label explain = new Label("\"Etc.Etc.\"");
 
-        VBox welcome = new VBox();
-        welcome.getChildren().add(welcomeText);
-        welcome.setPrefSize(300, 180);
-        welcome.setAlignment(Pos.CENTER);
+        StackPane jokeStack = new StackPane(joke);
+        StackPane answerStack = new StackPane(answer);
+        StackPane explainStack = new StackPane(explain);
 
-        Scene welcomeScene = new Scene(welcome);
+        HBox menu = new HBox();
+        menu.setSpacing(10);
 
-        Scene register = new Scene(grid);
+        BorderPane borderPane = new BorderPane();
+        BorderPane.setMargin(borderPane, new Insets(20.0));
+        BorderPane.setAlignment(borderPane, Pos.CENTER);
+        borderPane.setTop(menu);
+        borderPane.setCenter(jokeStack);
 
-        startButton.setOnAction((event) -> {
-            welcomeText.setText("Welcome " + textField.getText() + "!");
-            window.setScene(welcomeScene);
+        jokeButton.setOnAction((event) -> {
+            borderPane.setCenter(jokeStack);
+        });
+        answerButton.setOnAction((event) -> {
+            borderPane.setCenter(answerStack);
+        });
+        explanationButton.setOnAction((event) -> {
+            borderPane.setCenter(explainStack);
         });
 
-        window.setScene(register);
-        window.show();
     }
 }
