@@ -82,6 +82,7 @@ public class App extends Application {
 
         newTranslationButton.setOnAction((event) -> {
             borderPane.setCenter(addNewStack);
+            dictionary.add(String.valueOf(wordInput), String.valueOf(translationInput));
         });
         practiceButton.setOnAction((event) -> {
             borderPane.setCenter(practiceStack);
