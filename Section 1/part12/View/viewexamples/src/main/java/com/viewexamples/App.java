@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Border;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
@@ -27,16 +28,16 @@ public class App extends Application {
         Button practiceButton = new Button("Practice");
 
         HBox menu = new HBox();
-        menu.getChildren().addAll(newTranslationButton, practiceButton);
+        menu.getChildren().addAll(practiceButton, newTranslationButton);
         menu.setSpacing(10);
 
         Label randomWord = new Label();
+        randomWord.setPadding(new Insets(10));
         TextField textField = new TextField();
         Button guessButton = new Button("Guess");
-        Button passButton = new Button("Pass");
+        Button passButton = new Button("Next");
 
         Label emptyInput = new Label("Fill empty fields");
-        emptyInput.setFont("Calibri", 20);
 
         dictionary.add("word", "trans1");
         dictionary.add("word2", "trans2");
@@ -46,9 +47,12 @@ public class App extends Application {
         VBox vbox = new VBox();
         vbox.setSpacing(20);
         vbox.setAlignment(Pos.CENTER);
+
         HBox buttonHBox = new HBox();
         buttonHBox.setSpacing(30);
+        buttonHBox.setAlignment(Pos.CENTER);
         buttonHBox.getChildren().addAll(passButton, guessButton);
+
         vbox.getChildren().addAll(randomWord, textField, buttonHBox);
 
         StackPane practiceStack = new StackPane();
@@ -86,6 +90,8 @@ public class App extends Application {
 
         BorderPane borderPane = new BorderPane();
         borderPane.setPrefSize(350, 150);
+        BorderPane.setMargin(borderPane, new Insets(10));
+        borderPane.setPadding(new Insets(20));
         BorderPane.setAlignment(borderPane, Pos.CENTER);
         borderPane.setTop(menu);
         borderPane.setCenter(practiceStack);
@@ -99,14 +105,28 @@ public class App extends Application {
             borderPane.setCenter(practiceStack);
         });
         passButton.setOnAction((event) -> {
-            /////// System.out.println(dictionary.getRandomWord());
+            randomWord.setText(dictionary.getRandomWord());
         });
         addButton.setOnAction((event) -> {
             System.out.println(wordInput.getText());
 
             if (wordInput.getText().isEmpty() || translationInput.getText().isEmpty()) {
-
                 borderPane.setBottom(emptyInput);
+            } else {
+                dictionary.add(wordInput.getText(), translationInput.getText());
+                wordInput.setText("");
+                translationInput.setText("");
+            }
+        });
+        Label resultText = new Label();
+        guessButton.setOnAction((event) -> {
+            if (dictionary.get(randomWord.getText()).equals(textField.getText())) {
+                randomWord.setText("Correct!");
+                resultText.setText("");
+
+            } else {
+                resultText.setText("Try Again!");
+                borderPane.setBottom(resultText);
             }
         });
 
