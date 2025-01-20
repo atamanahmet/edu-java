@@ -33,13 +33,23 @@ public class App extends Application {
         Label randomWord = new Label();
         TextField textField = new TextField();
         Button guessButton = new Button("Guess");
+        Button passButton = new Button("Pass");
 
+        Label emptyInput = new Label("Fill empty fields");
+        emptyInput.setFont("Calibri", 20);
+
+        dictionary.add("word", "trans1");
+        dictionary.add("word2", "trans2");
+        dictionary.add("word3", "trans3");
         randomWord.setText(dictionary.getRandomWord());
 
         VBox vbox = new VBox();
-        vbox.setSpacing(30);
+        vbox.setSpacing(20);
         vbox.setAlignment(Pos.CENTER);
-        vbox.getChildren().addAll(randomWord, textField, guessButton);
+        HBox buttonHBox = new HBox();
+        buttonHBox.setSpacing(30);
+        buttonHBox.getChildren().addAll(passButton, guessButton);
+        vbox.getChildren().addAll(randomWord, textField, buttonHBox);
 
         StackPane practiceStack = new StackPane();
         practiceStack.getChildren().add(vbox);
@@ -81,11 +91,23 @@ public class App extends Application {
         borderPane.setCenter(practiceStack);
 
         newTranslationButton.setOnAction((event) -> {
+
             borderPane.setCenter(addNewStack);
-            dictionary.add(String.valueOf(wordInput), String.valueOf(translationInput));
+
         });
         practiceButton.setOnAction((event) -> {
             borderPane.setCenter(practiceStack);
+        });
+        passButton.setOnAction((event) -> {
+            /////// System.out.println(dictionary.getRandomWord());
+        });
+        addButton.setOnAction((event) -> {
+            System.out.println(wordInput.getText());
+
+            if (wordInput.getText().isEmpty() || translationInput.getText().isEmpty()) {
+
+                borderPane.setBottom(emptyInput);
+            }
         });
 
         Scene scene = new Scene(borderPane);
@@ -93,4 +115,5 @@ public class App extends Application {
         window.show();
 
     }
+
 }
