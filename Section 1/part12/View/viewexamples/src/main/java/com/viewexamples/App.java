@@ -24,7 +24,7 @@ public class App extends Application {
 
     public void start(Stage window) {
         Dictionary dictionary = new Dictionary();
-        Button newTranslationButton = new Button("Add New");
+        Button newTranslationButton = new Button("Enter new words");
         Button practiceButton = new Button("Practice");
 
         HBox menu = new HBox();
@@ -73,7 +73,7 @@ public class App extends Application {
         transLayout.setPadding(new Insets(10));
         wordLayout.setSpacing(10);
         transLayout.setSpacing(10);
-        Button addButton = new Button("Save");
+        Button addButton = new Button("Add the word pair");
 
         HBox hbox1 = new HBox();
         hbox1.getChildren().addAll(wordLayout, transLayout);
@@ -125,7 +125,7 @@ public class App extends Application {
                 resultText.setText("");
 
             } else {
-                resultText.setText("Try Again!");
+                resultText.setText("Incorrect!");
                 borderPane.setBottom(resultText);
             }
         });
