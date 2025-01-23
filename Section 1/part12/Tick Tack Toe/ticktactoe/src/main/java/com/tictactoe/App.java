@@ -14,6 +14,7 @@ import javafx.stage.Stage;
 
 public class App extends Application {
     public boolean state = true;
+    public Label turnText = new Label("Turn: X");
 
     public static void main(String[] args) {
         launch(App.class);
@@ -30,8 +31,6 @@ public class App extends Application {
         Button btn7 = new Button();
         Button btn8 = new Button();
         Button btn9 = new Button();
-
-        Label turnText = new Label("Turn: X");
 
         BorderPane borderPane = new BorderPane();
 
@@ -101,6 +100,13 @@ public class App extends Application {
             // if(getIndex(grid, col, row).equals("X")){
             // }
             int[][] stateArray = new int[3][3];
+            int number = 0;
+            for (int i = 0; i < stateArray.length; i++) {
+                for (int j = 0; j < stateArray.length; j++) {
+                    stateArray[i][j] = number;
+                    number++;
+                }
+            }
             if (btn.getText().isEmpty()) {
                 if (state) {
                     btn.setText("X");
@@ -112,6 +118,9 @@ public class App extends Application {
                     stateArray[col][row] = 0;
                     text.setText("Turn: X");
 
+                }
+                if (isWin(stateArray)) {
+                    turnText.setText(btn.getText() + " Wins!");
                 }
 
                 System.out.println(getIndex(grid, col, row).getText());
@@ -133,10 +142,16 @@ public class App extends Application {
     public boolean isWin(int[][] stateArray) {
         if (stateArray[0][0] == stateArray[1][0] && stateArray[2][0] == stateArray[0][0]
                 || stateArray[0][0] == stateArray[1][1] && stateArray[2][2] == stateArray[0][0] ||
-                stateArray[0][0] == stateArray[0][1] && stateArray[0][2] == stateArray[0][0]) {
+                stateArray[0][0] == stateArray[0][1] && stateArray[0][2] == stateArray[0][0] ||
+                stateArray[1][0] == stateArray[1][1] && stateArray[1][2] == stateArray[1][0] ||
+                stateArray[2][0] == stateArray[2][1] && stateArray[2][2] == stateArray[2][0]) {
             return true;
         }
         return false;
 
     }
 }
+// 0 1 2
+// 0
+// 1
+// 2
