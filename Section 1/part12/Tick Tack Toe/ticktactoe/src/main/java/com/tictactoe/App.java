@@ -16,7 +16,7 @@ public class App extends Application {
     public boolean state = true;
     public Label turnText = new Label("Turn: X");
     public int[][] stateArray = new int[3][3];
-    int number = 0;
+    int number = 10;
 
     public static void main(String[] args) {
 
@@ -96,6 +96,7 @@ public class App extends Application {
         borderPane.setCenter(grid);
         Scene scene = new Scene(borderPane);
         window.setScene(scene);
+        window.setTitle("Tick Tack Toe? Probably No.");
         window.show();
 
         // Application Logic
@@ -159,9 +160,9 @@ public class App extends Application {
                 || stateArray[0][1] == stateArray[1][1] && stateArray[2][1] == stateArray[0][1] // second row
                 || stateArray[0][2] == stateArray[1][2] && stateArray[2][2] == stateArray[0][2] // third row
                 || stateArray[0][0] == stateArray[1][1] && stateArray[2][2] == stateArray[0][0] // diagonal left to
-                                                                                                // right
-                || stateArray[0][2] == stateArray[1][1] && stateArray[2][0] == stateArray[0][0] // diagonal right to
-                                                                                                // left
+                                                                                                // right (from top)
+                || stateArray[0][2] == stateArray[1][1] && stateArray[2][0] == stateArray[0][2] // diagonal right to
+                                                                                                // left (from top)
                 || stateArray[0][0] == stateArray[0][1] && stateArray[0][2] == stateArray[0][0] // first column
                 || stateArray[1][0] == stateArray[1][1] && stateArray[1][2] == stateArray[1][0] // second column
                 || stateArray[2][0] == stateArray[2][1] && stateArray[2][2] == stateArray[2][0]) {// third column
