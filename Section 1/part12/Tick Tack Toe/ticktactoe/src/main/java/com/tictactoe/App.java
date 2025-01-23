@@ -15,12 +15,21 @@ import javafx.stage.Stage;
 public class App extends Application {
     public boolean state = true;
     public Label turnText = new Label("Turn: X");
+    public int[][] stateArray = new int[3][3];
+    int number = 0;
 
     public static void main(String[] args) {
+
         launch(App.class);
     }
 
     public void start(Stage window) {
+        for (int i = 0; i < stateArray.length; i++) {
+            for (int j = 0; j < stateArray.length; j++) {
+                stateArray[i][j] = number;
+                number++;
+            }
+        }
         GridPane grid = new GridPane();
         Button btn1 = new Button();
         Button btn2 = new Button();
@@ -94,40 +103,46 @@ public class App extends Application {
     }
 
     public void buttonLogic(Button btn, Label text, GridPane grid) {
-        btn.setOnAction((event) -> {
-            int col = GridPane.getColumnIndex(btn);
-            int row = GridPane.getRowIndex(btn);
-            // if(getIndex(grid, col, row).equals("X")){
-            // }
-            int[][] stateArray = new int[3][3];
-            int number = 0;
-            for (int i = 0; i < stateArray.length; i++) {
-                for (int j = 0; j < stateArray.length; j++) {
-                    stateArray[i][j] = number;
-                    number++;
+        if (!isWin(stateArray)) {
+            btn.setOnAction((event) -> {
+                int col = GridPane.getColumnIndex(btn);
+                int row = GridPane.getRowIndex(btn);
+                // if(getIndex(grid, col, row).equals("X")){
+                // }
+
+                if (btn.getText().isEmpty() && !isWin(stateArray)) {
+                    if (state) {
+                        btn.setText("X");
+                        stateArray[col][row] = 1;
+                        text.setText("Turn: O");
+
+                    } else {
+                        btn.setText("O");
+                        stateArray[col][row] = 0;
+                        text.setText("Turn: X");
+
+                    }
+                    System.out.println(isWin(stateArray));
+                    System.out.println(stateArray[0][0]);
+                    System.out.println(stateArray[1][0]);
+                    System.out.println(stateArray[2][0]);
+                    if (isWin(stateArray)) {
+                        turnText.setText(btn.getText() + " Wins!");
+                        return;
+                    }
+                    // System.out.println(getIndex(grid, col, row).getText());
+
+                    state = !state;
                 }
-            }
-            if (btn.getText().isEmpty()) {
-                if (state) {
-                    btn.setText("X");
-                    stateArray[col][row] = 1;
-                    text.setText("Turn: O");
+            });
+        } else {
+            System.out.println("Game Over!");
+            // System.out.println(isWin(stateArray));
+            // System.out.println(stateArray[0][0]);
+            // System.out.println(stateArray[1][0]);
+            // System.out.println(stateArray[2][0]);
+        }
 
-                } else {
-                    btn.setText("O");
-                    stateArray[col][row] = 0;
-                    text.setText("Turn: X");
-
-                }
-                if (isWin(stateArray)) {
-                    turnText.setText(btn.getText() + " Wins!");
-                }
-
-                System.out.println(getIndex(grid, col, row).getText());
-
-                state = !state;
-            }
-        });
     }
 
     public Button getIndex(GridPane grid, int col, int row) {
@@ -140,18 +155,23 @@ public class App extends Application {
     }
 
     public boolean isWin(int[][] stateArray) {
-        if (stateArray[0][0] == stateArray[1][0] && stateArray[2][0] == stateArray[0][0]
-                || stateArray[0][0] == stateArray[1][1] && stateArray[2][2] == stateArray[0][0] ||
-                stateArray[0][0] == stateArray[0][1] && stateArray[0][2] == stateArray[0][0] ||
-                stateArray[1][0] == stateArray[1][1] && stateArray[1][2] == stateArray[1][0] ||
-                stateArray[2][0] == stateArray[2][1] && stateArray[2][2] == stateArray[2][0]) {
+        if (stateArray[0][0] == stateArray[1][0] && stateArray[2][0] == stateArray[0][0] // first row
+                || stateArray[0][1] == stateArray[1][1] && stateArray[2][1] == stateArray[0][1] // second row
+                || stateArray[0][2] == stateArray[1][2] && stateArray[2][2] == stateArray[0][2] // third row
+                || stateArray[0][0] == stateArray[1][1] && stateArray[2][2] == stateArray[0][0] // diagonal left to
+                                                                                                // right
+                || stateArray[0][2] == stateArray[1][1] && stateArray[2][0] == stateArray[0][0] // diagonal right to
+                                                                                                // left
+                || stateArray[0][0] == stateArray[0][1] && stateArray[0][2] == stateArray[0][0] // first column
+                || stateArray[1][0] == stateArray[1][1] && stateArray[1][2] == stateArray[1][0] // second column
+                || stateArray[2][0] == stateArray[2][1] && stateArray[2][2] == stateArray[2][0]) {// third column
             return true;
         }
         return false;
 
     }
 }
-// 0 1 2
+// //0 1 2
 // 0
 // 1
 // 2
