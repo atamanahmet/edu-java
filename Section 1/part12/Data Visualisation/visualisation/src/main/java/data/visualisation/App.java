@@ -30,7 +30,6 @@ public class App extends Application {
     public void start(Stage window) {
         List<String> lines = new ArrayList<>();
         List<Integer> years = new ArrayList<>();
-        List<Double> votes = new ArrayList<>();
         List<String> parties = new ArrayList<>();
         List<String> bufferArray;
         Map<String, Map<Integer, Double>> partiesMapWithVoteAndYears = new HashMap<>();
@@ -44,28 +43,37 @@ public class App extends Application {
             bufferArray = Arrays.asList(lines.get(i).split("\t"));
             parties.add(bufferArray.get(0));
         }
-
+        int index = 0;
         for (int i = 1; i < lines.size(); i++) {
             bufferArray = Arrays.asList(lines.get(i).split("\t"));
+            List<Double> votes = new ArrayList<>();
+
             for (int j = 1; j < bufferArray.size(); j++) {
-                System.out.println(bufferArray.get(j));
                 if (bufferArray.get(j).equals("-")) {
-                    continue;
+                    votes.add(Double.valueOf(0));
+                } else {
+                    votes.add(Double.valueOf(bufferArray.get(j)));
                 }
-                votes.add(Double.valueOf(bufferArray.get(j)));
             }
+
             Map<Integer, Double> votesAndYears = new HashMap<>();
             for (int j = 0; j < years.size(); j++) {
                 votesAndYears.put(years.get(j), votes.get(j));
             }
-            for (int j = 0; j < parties.size(); j++) {
-                partiesMapWithVoteAndYears.put(parties.get(j), votesAndYears);
+            System.out.println(votesAndYears);
+            if (index < parties.size()) {
+                partiesMapWithVoteAndYears.put(parties.get(index), votesAndYears);
+                index++;
             }
+
+            // int counter = 0;
+            // if (counter < parties.size()) {
+            // partiesMapWithVoteAndYears.put(parties.get(counter), votesAndYears);
+
+            // }
         }
 
-        // System.out.println(parties);
-
-        // System.out.println(years);
+        System.out.println(partiesMapWithVoteAndYears);
 
         NumberAxis xAxis = new NumberAxis(Math.round(years.get(0)), (int) years.get(years.size() - 1), 1);
         NumberAxis yAxis = new NumberAxis();
@@ -97,13 +105,12 @@ public class App extends Application {
         for (Map.Entry<String, Map<Integer, Double>> party : partiesMapWithVoteAndYears.entrySet()) {
             XYChart.Series<Number, Number> dataSet = new XYChart.Series<>();
             dataSet.setName(party.getKey());
+            party.getValue().entrySet().stream().forEach(line -> {
+                dataSet.getData().add(new XYChart.Data<>(line.getKey(), line.getValue()));
+            });
             lineChart.getData().add(dataSet);
-            System.out.println(party);
-            // System.out.println(party.getKey());
-            // party.getKey().get(years.get(0));
         }
 
-        // lineChart.getData().add(dataSeries);
         lineChart.setHorizontalGridLinesVisible(false);
         BorderPane borderPane = new BorderPane();
         borderPane.setCenter(lineChart);
